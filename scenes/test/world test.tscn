@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b3aqyn0g2lncl"]
+
+[ext_resource type="Texture2D" uid="uid://bij2hog8dli0c" path="res://assets/Battleground1/Bright/Battleground1.png" id="1_bkoed"]
+[ext_resource type="PackedScene" uid="uid://cs1wr6nqaokic" path="res://scenes/player/player.tscn" id="2_nink7"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ehhkq"]
+b = Vector2(2.999939, -1160)
+
+[node name="WorldTest" type="Node2D" unique_id=1811701577]
+
+[node name="Battleground1" type="Sprite2D" parent="." unique_id=1263917105]
+position = Vector2(578, 324.5)
+scale = Vector2(0.6020834, 0.5972222)
+texture = ExtResource("1_bkoed")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1936146989]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=549794687]
+position = Vector2(0, 302)
+rotation = 1.5707964
+shape = SubResource("SegmentShape2D_ehhkq")
+
+[node name="Player" parent="." unique_id=1463276590 instance=ExtResource("2_nink7")]
+position = Vector2(653, 417)
+scale = Vector2(3, 3)
+collision_mask = 2
+
+[node name="Camera2D" parent="Player" index="2" unique_id=1732831423]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[editable path="Player"]
