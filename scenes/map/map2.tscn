@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dluvaqxdavajf"]
+
+[ext_resource type="Texture2D" uid="uid://b1vrdbe52gvah" path="res://assets/Background/Jungle/Bright/sky.png" id="1_6txgq"]
+[ext_resource type="Texture2D" uid="uid://c0wse1ldmk2iq" path="res://assets/Background/off-image/Background-hitam-solid.png" id="1_dwld0"]
+[ext_resource type="Texture2D" uid="uid://b1wr1cs1pywty" path="res://assets/Background/Jungle/Bright/trees&bushes.png" id="2_dwld0"]
+[ext_resource type="Texture2D" uid="uid://qya0sblxlm4y" path="res://assets/Background/Jungle/Bright/grasses.png" id="3_eq4l0"]
+[ext_resource type="Texture2D" uid="uid://p7scusepqpce" path="res://assets/Background/Jungle/Bright/tree_face.png" id="4_gdhfg"]
+[ext_resource type="Texture2D" uid="uid://dnwjo0k53ty52" path="res://assets/Background/Jungle/Bright/grass&road.png" id="5_ugp06"]
+
+[node name="Map2" type="Node2D" unique_id=806857332]
+
+[node name="bg-black" type="Sprite2D" parent="." unique_id=155103441]
+position = Vector2(9937.355, -397.50003)
+scale = Vector2(632.1815, 100.35417)
+texture = ExtResource("1_dwld0")
+
+[node name="bg-sky" type="Sprite2D" parent="." unique_id=1041227283]
+position = Vector2(6004.501, -519)
+scale = Vector2(7.241147, 1)
+texture = ExtResource("1_6txgq")
+
+[node name="bg-tree1" type="Sprite2D" parent="." unique_id=485059698]
+position = Vector2(398.00003, -368)
+scale = Vector2(1.400521, 2.4968169)
+texture = ExtResource("2_dwld0")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 567.15247)
+
+[node name="bg-tree3" type="Sprite2D" parent="." unique_id=868646993]
+position = Vector2(5556.9995, -282.00006)
+scale = Vector2(1.1893232, 2.501186)
+texture = ExtResource("2_dwld0")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 638.1657)
+
+[node name="bg-tree4" type="Sprite2D" parent="." unique_id=1897309548]
+position = Vector2(7557, -282)
+scale = Vector2(1.1893232, 2.501186)
+texture = ExtResource("2_dwld0")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 638.1657)
+
+[node name="bg-tree5" type="Sprite2D" parent="." unique_id=1650898164]
+position = Vector2(9422.125, -282)
+scale = Vector2(1.0488281, 2.501186)
+texture = ExtResource("2_dwld0")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 638.1657)
+
+[node name="bg-tree6" type="Sprite2D" parent="." unique_id=1276079743]
+position = Vector2(11703.625, -282)
+scale = Vector2(1.3420573, 2.501186)
+texture = ExtResource("2_dwld0")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 638.1657)
+
+[node name="bg-grass1" type="Sprite2D" parent="." unique_id=1722384381]
+position = Vector2(301.00003, -1.0000305)
+scale = Vector2(1.3182292, 1.45)
+texture = ExtResource("3_eq4l0")
+
+[node name="bg-grass2" type="Sprite2D" parent="." unique_id=364646896]
+position = Vector2(2413, -59)
+scale = Vector2(1.2427082, 1)
+texture = ExtResource("3_eq4l0")
+
+[node name="obj-tree" type="Sprite2D" parent="." unique_id=787887836]
+position = Vector2(3658, -65)
+scale = Vector2(1, 1.2810186)
+texture = ExtResource("4_gdhfg")
+
+[node name="bg-tree2" type="Sprite2D" parent="." unique_id=521813153]
+position = Vector2(3087.0002, -364)
+scale = Vector2(1.400521, 2.492853)
+texture = ExtResource("2_dwld0")
+region_enabled = true
+region_rect = Rect2(0, 7.4008064, 1920, 576.46063)
+
+[node name="floor1" type="Sprite2D" parent="." unique_id=1059142659]
+position = Vector2(39.500034, -41.000046)
+scale = Vector2(1.0411459, 1.5703703)
+texture = ExtResource("5_ugp06")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="floor2" type="Sprite2D" parent="." unique_id=906135287]
+position = Vector2(2000, -41)
+scale = Vector2(1.0411459, 1.5703703)
+texture = ExtResource("5_ugp06")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="floor3" type="Sprite2D" parent="." unique_id=1087223]
+position = Vector2(3999.5, -41)
+scale = Vector2(1.0473958, 1.5703703)
+texture = ExtResource("5_ugp06")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="floor4" type="Sprite2D" parent="." unique_id=1270019456]
+position = Vector2(6000, -41)
+scale = Vector2(1.0411459, 1.5703703)
+texture = ExtResource("5_ugp06")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="floor5" type="Sprite2D" parent="." unique_id=139931222]
+position = Vector2(7999.0005, -41)
+scale = Vector2(1.0411459, 1.5703703)
+texture = ExtResource("5_ugp06")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="floor6" type="Sprite2D" parent="." unique_id=1906486614]
+position = Vector2(9998.001, -41)
+scale = Vector2(1.0411459, 1.5703703)
+texture = ExtResource("5_ugp06")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="floor7" type="Sprite2D" parent="." unique_id=771031939]
+position = Vector2(11997, -41)
+scale = Vector2(1.0411459, 1.5703703)
+texture = ExtResource("5_ugp06")
+region_rect = Rect2(0, 0, 1920, 1080)

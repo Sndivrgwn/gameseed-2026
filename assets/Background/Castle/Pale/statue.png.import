@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://daonawl1mey28"
-path="res://.godot/imported/statue.png-976dad29c720f5028a308148b63c714a.ctex"
+path="res://.godot/imported/statue.png-165283958907c71171b31ab1c5d087ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Battleground1/Pale/statue.png"
-dest_files=["res://.godot/imported/statue.png-976dad29c720f5028a308148b63c714a.ctex"]
+source_file="res://assets/Background/Castle/Pale/statue.png"
+dest_files=["res://.godot/imported/statue.png-165283958907c71171b31ab1c5d087ff.ctex"]
 
 [params]
 

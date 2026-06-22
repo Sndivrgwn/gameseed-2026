@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tcifvawak41g"
-path="res://.godot/imported/ruins2.png-4922e06aea2cae963194ce68c8e54115.ctex"
+uid="uid://cqowleorvnybp"
+path="res://.godot/imported/candeliar.png-121823f85b9b6dd9e45ad4472ec501f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Castle/Pale/ruins2.png"
-dest_files=["res://.godot/imported/ruins2.png-4922e06aea2cae963194ce68c8e54115.ctex"]
+source_file="res://assets/Background/Castle/Pale/candeliar.png"
+dest_files=["res://.godot/imported/candeliar.png-121823f85b9b6dd9e45ad4472ec501f3.ctex"]
 
 [params]
 

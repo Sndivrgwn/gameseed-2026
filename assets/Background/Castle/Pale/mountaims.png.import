@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tcifvawak41g"
-path="res://.godot/imported/ruins2.png-4922e06aea2cae963194ce68c8e54115.ctex"
+uid="uid://dj27chh204uos"
+path="res://.godot/imported/mountaims.png-b485c62cc56045830207e58eb0cdb241.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Castle/Pale/ruins2.png"
-dest_files=["res://.godot/imported/ruins2.png-4922e06aea2cae963194ce68c8e54115.ctex"]
+source_file="res://assets/Background/Castle/Pale/mountaims.png"
+dest_files=["res://.godot/imported/mountaims.png-b485c62cc56045830207e58eb0cdb241.ctex"]
 
 [params]
 
