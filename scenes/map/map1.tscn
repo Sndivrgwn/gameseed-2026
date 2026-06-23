@@ -10,80 +10,81 @@
 
 [node name="Map1" type="Node2D" unique_id=1882102384]
 
-[node name="bg-black" type="Sprite2D" parent="." unique_id=1356520584]
+[node name="background" type="Sprite2D" parent="." unique_id=2138208726]
+
+[node name="bg-black" type="Sprite2D" parent="background" unique_id=1356520584]
 position = Vector2(-330.74994, -21.000046)
 scale = Vector2(246.44792, 94.41667)
 texture = ExtResource("1_evlam")
 
-[node name="bg-blue" type="Sprite2D" parent="." unique_id=1669992821]
+[node name="bg-blue" type="Sprite2D" parent="background" unique_id=1669992821]
 position = Vector2(-31.249878, -256.75)
 scale = Vector2(3.9721355, 0.4597222)
 texture = ExtResource("1_2mej6")
 
-[node name="mountain" type="Sprite2D" parent="." unique_id=399295514]
+[node name="mountain" type="Sprite2D" parent="background" unique_id=399295514]
 position = Vector2(-2868, -5)
 texture = ExtResource("2_evlam")
 
-[node name="mountain2" type="Sprite2D" parent="." unique_id=2140921346]
+[node name="mountain2" type="Sprite2D" parent="background" unique_id=2140921346]
 position = Vector2(872.7498, 32)
 scale = Vector2(3.0617187, 1)
 texture = ExtResource("2_evlam")
 
-[node name="floor1" type="Sprite2D" parent="." unique_id=620382798]
+[node name="floor1" type="Sprite2D" parent="background" unique_id=620382798]
 position = Vector2(962, 37.500088)
 scale = Vector2(1, 1.4101855)
 texture = ExtResource("3_1l12j")
 
-[node name="floor2" type="Sprite2D" parent="." unique_id=640292716]
+[node name="floor2" type="Sprite2D" parent="background" unique_id=640292716]
 position = Vector2(-958, 39.000015)
 scale = Vector2(1, 1.4074074)
 texture = ExtResource("3_1l12j")
 
-[node name="floor3" type="Sprite2D" parent="." unique_id=2078422027]
+[node name="floor3" type="Sprite2D" parent="background" unique_id=2078422027]
 position = Vector2(-2878, 39.500008)
 scale = Vector2(1, 1.4046296)
 texture = ExtResource("3_1l12j")
 
-[node name="floor4" type="Sprite2D" parent="." unique_id=1696415400]
+[node name="floor4" type="Sprite2D" parent="background" unique_id=1696415400]
 position = Vector2(2881, 40)
 scale = Vector2(1, 1.4046296)
 texture = ExtResource("3_1l12j")
 
-[node name="wall1" type="Sprite2D" parent="." unique_id=1035311196]
+[node name="wall1" type="Sprite2D" parent="background" unique_id=1035311196]
 position = Vector2(962, 12)
 texture = ExtResource("4_6802f")
 
-[node name="wall2" type="Sprite2D" parent="." unique_id=1757405882]
+[node name="wall2" type="Sprite2D" parent="background" unique_id=1757405882]
 position = Vector2(-962, 12)
 texture = ExtResource("4_6802f")
 
-[node name="wall3" type="Sprite2D" parent="." unique_id=1361506236]
+[node name="wall3" type="Sprite2D" parent="background" unique_id=1361506236]
 position = Vector2(-2878, 12)
 texture = ExtResource("4_6802f")
 
-[node name="wall4" type="Sprite2D" parent="." unique_id=683674805]
+[node name="wall4" type="Sprite2D" parent="background" unique_id=683674805]
 position = Vector2(2880, 12)
 texture = ExtResource("4_6802f")
 
-[node name="wall-decor1" type="Sprite2D" parent="." unique_id=660322364]
+[node name="wall-decor1" type="Sprite2D" parent="background" unique_id=660322364]
 position = Vector2(2880, 12)
 texture = ExtResource("6_txm0c")
 
-[node name="wall-decor2" type="Sprite2D" parent="." unique_id=992473503]
+[node name="wall-decor2" type="Sprite2D" parent="background" unique_id=992473503]
 position = Vector2(962, 12)
 texture = ExtResource("6_txm0c")
 
-[node name="wall-decor3" type="Sprite2D" parent="." unique_id=570673099]
+[node name="wall-decor3" type="Sprite2D" parent="background" unique_id=570673099]
 position = Vector2(-962, 12)
 texture = ExtResource("6_txm0c")
 
-[node name="wall-decor4" type="Sprite2D" parent="." unique_id=1314907274]
+[node name="wall-decor4" type="Sprite2D" parent="background" unique_id=1314907274]
 position = Vector2(-2878, 12)
 texture = ExtResource("6_txm0c")
 
-[node name="wall-decor5" type="Sprite2D" parent="." unique_id=889097685]
+[node name="wall-decor5" type="Sprite2D" parent="background" unique_id=889097685]
 position = Vector2(-642, 64.00001)
-rotation = -6.2831855
 scale = Vector2(1.5700208, 1.6459265)
-skew = -0.06981317
+skew = -0.06981325
 texture = ExtResource("7_2wq0s")

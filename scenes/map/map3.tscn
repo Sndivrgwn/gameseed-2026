@@ -10,30 +10,32 @@
 
 [node name="Map3" type="Node2D" unique_id=1662914635]
 
-[node name="bg-sky" type="Sprite2D" parent="." unique_id=250270325]
+[node name="background" type="Sprite2D" parent="." unique_id=1223644025]
+
+[node name="bg-sky" type="Sprite2D" parent="background" unique_id=250270325]
 position = Vector2(49, -266)
 texture = ExtResource("1_ed3qy")
 
-[node name="grave" type="Sprite2D" parent="." unique_id=749557815]
+[node name="grave" type="Sprite2D" parent="background" unique_id=749557815]
 position = Vector2(30, 5)
 texture = ExtResource("2_184m8")
 
-[node name="bg-tree3" type="Sprite2D" parent="." unique_id=1065115180]
+[node name="bg-tree3" type="Sprite2D" parent="background" unique_id=1065115180]
 position = Vector2(46, -59)
 texture = ExtResource("3_7qs83")
 
-[node name="floor-green1" type="Sprite2D" parent="." unique_id=647547365]
+[node name="floor-green1" type="Sprite2D" parent="background" unique_id=647547365]
 position = Vector2(32, -52)
 texture = ExtResource("4_y25bf")
 
-[node name="bg-tree" type="Sprite2D" parent="." unique_id=891759798]
+[node name="bg-tree" type="Sprite2D" parent="background" unique_id=891759798]
 position = Vector2(12, -32)
 texture = ExtResource("5_btmpc")
 
-[node name="bg-tree2" type="Sprite2D" parent="." unique_id=60201084]
+[node name="bg-tree2" type="Sprite2D" parent="background" unique_id=60201084]
 position = Vector2(-2, -35)
 texture = ExtResource("6_ki541")
 
-[node name="floor1" type="Sprite2D" parent="." unique_id=2085896904]
+[node name="floor1" type="Sprite2D" parent="background" unique_id=2085896904]
 position = Vector2(18, 0)
 texture = ExtResource("7_sitnb")
