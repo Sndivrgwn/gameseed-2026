@@ -1,19 +1,16 @@
 extends CharacterBody2D
 
-@onready var spell_input: LineEdit = $"../CanvasLayer/SpellInput"
 @export var speed = 200
 @onready var anim = $AnimatedSprite2D
+@onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
+
 enum State {
 	NORMAL,
 	SPELL_INPUT
 }
-var spells = {
-	"fireball": "fireball",
-	"icebolt": "icebolt",
-	"heal": "heal"
-}
+
 var current_state = State.NORMAL
-var fireball_scene = preload("res://skills/magician/fireball/fireball.tscn")
+var mana := 100
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -36,41 +33,27 @@ func handle_animation(direction):
 	elif direction.x > 0:
 		anim.play("magician_right")
 
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if Input.is_action_pressed("state_magic"):
-			if current_state == State.NORMAL:
-				current_state = State.SPELL_INPUT
-				
-				spell_input.visible = true
-				spell_input.grab_focus()
-				print("Spell mode active")
-			else:
-				current_state = State.NORMAL
-				
-				spell_input.visible = false
-				print("Spell mode not active")
-		
-		if current_state == State.SPELL_INPUT:
-			if Input.is_action_pressed("cast_magic"):
-				cast_spell()
+func enter_spell_mode():
+	current_state = State.SPELL_INPUT
+	print("enter spell mode")
+	spell_input.visible = true
+	spell_input.grab_focus()
 
-func fireball():
-	var fb = fireball_scene.instantiate()
-
-	get_parent().add_child(fb)
-
-	fb.global_position = global_position
-
-func cast_spell():
-	var spell_name = spell_input.text.to_lower()
-	
-	match spell_name:
-		"fireball":
-			fireball()
-		_:
-			print("skill tidak ditemukan")
-	
-	spell_input.text = ""
-	spell_input.visible = false
+func exit_spell_mode():
 	current_state = State.NORMAL
+	print("exit spell mode")
+	spell_input.visible = false
+	
+func submit_spell():
+	var spell_name = spell_input.text.to_lower()
+	print("submit spellddd")
+	SpellManager.cast(self, spell_name)
+	spell_input.text = ""
+	exit_spell_mode()
+
+func _input(event):
+	if event.is_action_pressed("state_magic"):
+		if current_state == State.NORMAL:
+			enter_spell_mode()
+		else:
+			exit_spell_mode()

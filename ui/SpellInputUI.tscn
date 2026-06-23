@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c4yy0wj5vyunq"]
+
+[node name="SpellInputUi" type="CanvasLayer" unique_id=633345769]
+
+[node name="SpellLineEdit" type="LineEdit" parent="." unique_id=787768992]
+visible = false
+offset_left = 404.0
+offset_top = 276.0
+offset_right = 752.0
+offset_bottom = 307.0
