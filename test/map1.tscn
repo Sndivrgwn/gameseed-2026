@@ -9,8 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://dpgy4xlgkxulb" path="res://assets/Background/Castle/Bright/columns&falgs.png" id="6_ggk5q"]
 [ext_resource type="Texture2D" uid="uid://lqiu4rj3aheo" path="res://assets/Background/Castle/Bright/dragon.png" id="7_3qvml"]
 [ext_resource type="PackedScene" uid="uid://c4yy0wj5vyunq" path="res://ui/SpellInputUI.tscn" id="9_6xffr"]
+[ext_resource type="PackedScene" uid="uid://dnukjf7em0khy" path="res://ui/hud/Hud.tscn" id="10_8uxgk"]
 
 [node name="Map1" type="Node2D" unique_id=1882102384]
+
+[node name="Hud" parent="." unique_id=1562880650 instance=ExtResource("10_8uxgk")]
 
 [node name="Map Group" type="Node2D" parent="." unique_id=338294589]
 
@@ -58,7 +61,7 @@ position = Vector2(962, 12)
 texture = ExtResource("5_7eyj2")
 
 [node name="wall2" type="Sprite2D" parent="Map Group" unique_id=1757405882]
-position = Vector2(-962, 12)
+position = Vector2(-958, 12)
 texture = ExtResource("5_7eyj2")
 
 [node name="wall3" type="Sprite2D" parent="Map Group" unique_id=1361506236]

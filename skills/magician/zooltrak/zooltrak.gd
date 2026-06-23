@@ -1,6 +1,13 @@
 extends Area2D
 
-@export var speed := 500
+var skill_data : SkillData
 
-func _process(delta):
-	position += Vector2.RIGHT * speed * delta
+@export var speed := 0
+@export var lifetime := 5
+
+func _ready():
+	print("display name: ",skill_data.display_name)
+	print("damage: ", skill_data.damage)
+	print("element: ", skill_data.element)
+	await get_tree().create_timer(lifetime).timeout
+	queue_free()

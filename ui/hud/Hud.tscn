@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dnukjf7em0khy"]
+
+[ext_resource type="Script" uid="uid://ctc24hbo0kjtk" path="res://ui/hud/hud.gd" id="1_fc3h1"]
+[ext_resource type="Script" uid="uid://daidif03af1d4" path="res://ui/hud/hp_bar.gd" id="2_4sqfl"]
+[ext_resource type="Script" uid="uid://bgypwp0bcebpj" path="res://ui/hud/mana_bar.gd" id="3_by07e"]
+
+[sub_resource type="Gradient" id="Gradient_fc3h1"]
+offsets = PackedFloat32Array(0, 0.14766839, 1)
+colors = PackedColorArray(0.46653944, 0.026650267, 0.04719258, 1, 0.8901961, 0.105882354, 0.13725491, 1, 0.98161036, 0.22094241, 0.21443665, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ywxef"]
+gradient = SubResource("Gradient_fc3h1")
+
+[sub_resource type="Gradient" id="Gradient_4sqfl"]
+colors = PackedColorArray(0, 0.23921569, 0.35686275, 1, 0, 0.4509804, 0.65882355, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_by07e"]
+gradient = SubResource("Gradient_4sqfl")
+
+[node name="Hud" type="CanvasLayer" unique_id=1562880650]
+script = ExtResource("1_fc3h1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=846779730]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=974201450]
+layout_mode = 2
+
+[node name="HpBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer" unique_id=5775213]
+custom_minimum_size = Vector2(300, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_ywxef")
+script = ExtResource("2_4sqfl")
+
+[node name="ManaBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1479063055]
+custom_minimum_size = Vector2(300, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_by07e")
+script = ExtResource("3_by07e")
+
+[node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1074142626]
+layout_mode = 2
+
+[node name="CastingBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=93831371]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+show_percentage = false

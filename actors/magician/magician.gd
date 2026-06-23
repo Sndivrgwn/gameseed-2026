@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 200
 @onready var anim = $AnimatedSprite2D
 @onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
+@onready var hud: CanvasLayer = $"../Hud"
 
 enum State {
 	NORMAL,
@@ -10,9 +11,22 @@ enum State {
 }
 
 var current_state = State.NORMAL
-var mana := 100
 var hp := 100
+var max_hp := 100
+var mana := 100
+var max_mana := 100
 
+func _ready():
+	hud.update_hp(hp, max_hp)
+	hud.update_mana(mana, max_mana)
+
+func update_hud():
+	hud.update_hp(hp, max_hp)
+	hud.update_mana(mana, max_mana)
+	
+func show_cast_time(duration)  :
+	hud.show_cast_bar(duration)
+	
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 	if current_state == State.NORMAL:
@@ -47,7 +61,7 @@ func exit_spell_mode():
 	
 func submit_spell():
 	var spell_name = spell_input.text.to_lower()
-	print("submit spellddd")
+	print("submit spell")
 	SpellManager.cast(self, spell_name)
 	spell_input.text = ""
 	exit_spell_mode()

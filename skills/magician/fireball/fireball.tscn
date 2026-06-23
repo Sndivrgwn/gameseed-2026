@@ -49,7 +49,8 @@ script = ExtResource("1_rf0ts")
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_8o1b6")
 animation = &"fireball"
-frame_progress = 0.4690863
+autoplay = "fireball"
+frame_progress = 0.45779568
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=8243923]
 position = Vector2(-1, 0)
