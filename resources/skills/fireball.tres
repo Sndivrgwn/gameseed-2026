@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://cb4diate7a5gt"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_sur1k"]
+[ext_resource type="PackedScene" uid="uid://bju8q8dvw20t8" path="res://skills/magician/fireball/fireball.tscn" id="2_vwvjn"]
+
+[resource]
+script = ExtResource("1_sur1k")
+skill_name = "fireball"
+mana_cost = 10
+cast_time = 1.0
+spell_scene = ExtResource("2_vwvjn")
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

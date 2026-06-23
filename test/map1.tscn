@@ -8,16 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cq7lhetw2aexh" path="res://assets/Background/Castle/Bright/wall@windows.png" id="5_7eyj2"]
 [ext_resource type="Texture2D" uid="uid://dpgy4xlgkxulb" path="res://assets/Background/Castle/Bright/columns&falgs.png" id="6_ggk5q"]
 [ext_resource type="Texture2D" uid="uid://lqiu4rj3aheo" path="res://assets/Background/Castle/Bright/dragon.png" id="7_3qvml"]
+[ext_resource type="PackedScene" uid="uid://c4yy0wj5vyunq" path="res://ui/SpellInputUI.tscn" id="9_6xffr"]
 
 [node name="Map1" type="Node2D" unique_id=1882102384]
-
-[node name="Player" parent="." unique_id=1463276590 instance=ExtResource("1_c6uj4")]
-z_index = 1
-position = Vector2(-3387, 369)
-scale = Vector2(10, 10)
-
-[node name="Camera2D" parent="Player" index="2" unique_id=1732831423]
-zoom = Vector2(0.5, 0.5)
 
 [node name="Map Group" type="Node2D" parent="." unique_id=338294589]
 
@@ -98,13 +91,11 @@ scale = Vector2(1.5700208, 1.6459265)
 skew = -0.06981325
 texture = ExtResource("7_3qvml")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=407212164]
+[node name="SpellInputUi" parent="." unique_id=633345769 instance=ExtResource("9_6xffr")]
 
-[node name="SpellInput" type="LineEdit" parent="CanvasLayer" unique_id=722569473]
-visible = false
-offset_left = 402.0
-offset_top = 261.0
-offset_right = 743.0
-offset_bottom = 292.0
+[node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("1_c6uj4")]
+position = Vector2(86, 98)
 
-[editable path="Player"]
+[connection signal="text_submitted" from="SpellInputUi/SpellLineEdit" to="Magician" method="_on_spell_line_edit_text_submitted"]
+
+[editable path="SpellInputUi"]

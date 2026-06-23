@@ -15,6 +15,11 @@ run/main_scene="uid://cs1wr6nqaokic"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SkillDatabase="*uid://cwp6fvqb64iyk"
+SpellManager="*uid://c0mur0wq8mf"
+
 [input]
 
 move_up={
