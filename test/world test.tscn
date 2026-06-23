@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://b3aqyn0g2lncl"]
+[gd_scene format=3 uid="uid://b6hekmxeeew77"]
 
-[ext_resource type="Texture2D" uid="uid://bij2hog8dli0c" path="res://assets/Battleground1/Bright/Battleground1.png" id="1_bkoed"]
-[ext_resource type="PackedScene" uid="uid://cs1wr6nqaokic" path="res://scenes/player/player.tscn" id="2_nink7"]
+[ext_resource type="PackedScene" uid="uid://cs1wr6nqaokic" path="res://actors/magician/magician.tscn" id="2_nink7"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ehhkq"]
 b = Vector2(2.999939, -1160)
@@ -11,7 +10,6 @@ b = Vector2(2.999939, -1160)
 [node name="Battleground1" type="Sprite2D" parent="." unique_id=1263917105]
 position = Vector2(578, 324.5)
 scale = Vector2(0.6020834, 0.5972222)
-texture = ExtResource("1_bkoed")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1936146989]
 collision_layer = 2

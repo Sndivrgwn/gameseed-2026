@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://ca72u32try7d0"]
+
+[ext_resource type="PackedScene" uid="uid://cs1wr6nqaokic" path="res://actors/magician/magician.tscn" id="1_c6uj4"]
+[ext_resource type="Texture2D" uid="uid://c0wse1ldmk2iq" path="res://assets/Background/off-image/Background-hitam-solid.png" id="1_dpdr3"]
+[ext_resource type="Texture2D" uid="uid://u71hpdiu8jl" path="res://assets/Background/Castle/Bright/bg.png" id="2_c6uj4"]
+[ext_resource type="Texture2D" uid="uid://dosk8a2if3m18" path="res://assets/Background/Castle/Bright/mountaims.png" id="3_grpo2"]
+[ext_resource type="Texture2D" uid="uid://4najlhiskvfc" path="res://assets/Background/Castle/Bright/floor.png" id="4_8aep6"]
+[ext_resource type="Texture2D" uid="uid://cq7lhetw2aexh" path="res://assets/Background/Castle/Bright/wall@windows.png" id="5_7eyj2"]
+[ext_resource type="Texture2D" uid="uid://dpgy4xlgkxulb" path="res://assets/Background/Castle/Bright/columns&falgs.png" id="6_ggk5q"]
+[ext_resource type="Texture2D" uid="uid://lqiu4rj3aheo" path="res://assets/Background/Castle/Bright/dragon.png" id="7_3qvml"]
+
+[node name="Map1" type="Node2D" unique_id=1882102384]
+
+[node name="Player" parent="." unique_id=1463276590 instance=ExtResource("1_c6uj4")]
+z_index = 1
+position = Vector2(-3387, 369)
+scale = Vector2(10, 10)
+
+[node name="Camera2D" parent="Player" index="2" unique_id=1732831423]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Map Group" type="Node2D" parent="." unique_id=338294589]
+
+[node name="bg-black" type="Sprite2D" parent="Map Group" unique_id=1356520584]
+position = Vector2(-330.74994, -21.000046)
+scale = Vector2(246.44792, 94.41667)
+texture = ExtResource("1_dpdr3")
+
+[node name="bg-blue" type="Sprite2D" parent="Map Group" unique_id=1669992821]
+position = Vector2(-31.249878, -256.75)
+scale = Vector2(3.9721355, 0.4597222)
+texture = ExtResource("2_c6uj4")
+
+[node name="mountain" type="Sprite2D" parent="Map Group" unique_id=399295514]
+position = Vector2(-2868, -5)
+texture = ExtResource("3_grpo2")
+
+[node name="mountain2" type="Sprite2D" parent="Map Group" unique_id=2140921346]
+position = Vector2(872.7498, 32)
+scale = Vector2(3.0617187, 1)
+texture = ExtResource("3_grpo2")
+
+[node name="floor1" type="Sprite2D" parent="Map Group" unique_id=620382798]
+position = Vector2(962, 37.500088)
+scale = Vector2(1, 1.4101855)
+texture = ExtResource("4_8aep6")
+
+[node name="floor2" type="Sprite2D" parent="Map Group" unique_id=640292716]
+position = Vector2(-958, 39.000015)
+scale = Vector2(1, 1.4074074)
+texture = ExtResource("4_8aep6")
+
+[node name="floor3" type="Sprite2D" parent="Map Group" unique_id=2078422027]
+position = Vector2(-2878, 39.500008)
+scale = Vector2(1, 1.4046296)
+texture = ExtResource("4_8aep6")
+
+[node name="floor4" type="Sprite2D" parent="Map Group" unique_id=1696415400]
+position = Vector2(2881, 40)
+scale = Vector2(1, 1.4046296)
+texture = ExtResource("4_8aep6")
+
+[node name="wall1" type="Sprite2D" parent="Map Group" unique_id=1035311196]
+position = Vector2(962, 12)
+texture = ExtResource("5_7eyj2")
+
+[node name="wall2" type="Sprite2D" parent="Map Group" unique_id=1757405882]
+position = Vector2(-962, 12)
+texture = ExtResource("5_7eyj2")
+
+[node name="wall3" type="Sprite2D" parent="Map Group" unique_id=1361506236]
+position = Vector2(-2878, 12)
+texture = ExtResource("5_7eyj2")
+
+[node name="wall4" type="Sprite2D" parent="Map Group" unique_id=683674805]
+position = Vector2(2880, 12)
+texture = ExtResource("5_7eyj2")
+
+[node name="wall-decor1" type="Sprite2D" parent="Map Group" unique_id=660322364]
+position = Vector2(2880, 12)
+texture = ExtResource("6_ggk5q")
+
+[node name="wall-decor2" type="Sprite2D" parent="Map Group" unique_id=992473503]
+position = Vector2(962, 12)
+texture = ExtResource("6_ggk5q")
+
+[node name="wall-decor3" type="Sprite2D" parent="Map Group" unique_id=570673099]
+position = Vector2(-962, 12)
+texture = ExtResource("6_ggk5q")
+
+[node name="wall-decor4" type="Sprite2D" parent="Map Group" unique_id=1314907274]
+position = Vector2(-2878, 12)
+texture = ExtResource("6_ggk5q")
+
+[node name="wall-decor5" type="Sprite2D" parent="Map Group" unique_id=889097685]
+position = Vector2(-642, 64.00001)
+scale = Vector2(1.5700208, 1.6459265)
+skew = -0.06981325
+texture = ExtResource("7_3qvml")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=407212164]
+
+[node name="SpellInput" type="LineEdit" parent="CanvasLayer" unique_id=722569473]
+visible = false
+offset_left = 402.0
+offset_top = 261.0
+offset_right = 743.0
+offset_bottom = 292.0
+
+[editable path="Player"]

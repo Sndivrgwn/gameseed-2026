@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cs1wr6nqaokic"]
 
 [ext_resource type="Texture2D" uid="uid://6djig5ualr6r" path="res://assets/sprites/player/charsets_12_m-f_complete_by_antifarea.png" id="1_8afob"]
-[ext_resource type="Script" uid="uid://ksskf4nv13f" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://ksskf4nv13f" path="res://actors/magician/magician.gd" id="1_dovo2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
 atlas = ExtResource("1_8afob")
