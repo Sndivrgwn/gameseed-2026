@@ -11,6 +11,7 @@ enum State {
 
 var current_state = State.NORMAL
 var mana := 100
+var hp := 100
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -51,9 +52,16 @@ func submit_spell():
 	spell_input.text = ""
 	exit_spell_mode()
 
+
+
 func _input(event):
 	if event.is_action_pressed("state_magic"):
 		if current_state == State.NORMAL:
 			enter_spell_mode()
 		else:
 			exit_spell_mode()
+
+
+func _on_spell_line_edit_text_submitted(new_text: String) -> void:
+	submit_spell()
+	print("mana left: ", mana)

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bnkdj2rehuh4d"]
+
+[ext_resource type="Script" uid="uid://c84uu3f0or5jr" path="res://skills/magician/zooltrak/zooltrak.gd" id="1_78ctx"]
+[ext_resource type="Texture2D" uid="uid://cl5q0g2rqouvd" path="res://assets/Skill/Magic/Magic/1 Magic/3_2.png" id="2_0bkc7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjw52"]
+atlas = ExtResource("2_0bkc7")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xhke"]
+atlas = ExtResource("2_0bkc7")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8ya4"]
+atlas = ExtResource("2_0bkc7")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvhp4"]
+atlas = ExtResource("2_0bkc7")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwh8x"]
+atlas = ExtResource("2_0bkc7")
+region = Rect2(288, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67gt2"]
+atlas = ExtResource("2_0bkc7")
+region = Rect2(360, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqnct"]
+atlas = ExtResource("2_0bkc7")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh1es"]
+atlas = ExtResource("2_0bkc7")
+region = Rect2(504, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5fvyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjw52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xhke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8ya4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvhp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwh8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67gt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqnct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh1es")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_78ctx"]
+radius = 9.0
+height = 92.037964
+
+[node name="Zooltrak" type="Area2D" unique_id=1702734907]
+scale = Vector2(5, 5)
+script = ExtResource("1_78ctx")
+speed = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1360409479]
+sprite_frames = SubResource("SpriteFrames_5fvyk")
+autoplay = "default"
+frame_progress = 0.92675865
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=232917253]
+position = Vector2(2, 2)
+rotation = 2.3439772
+shape = SubResource("CapsuleShape2D_78ctx")

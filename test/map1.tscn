@@ -95,3 +95,7 @@ texture = ExtResource("7_3qvml")
 
 [node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("1_c6uj4")]
 position = Vector2(86, 98)
+
+[connection signal="text_submitted" from="SpellInputUi/SpellLineEdit" to="Magician" method="_on_spell_line_edit_text_submitted"]
+
+[editable path="SpellInputUi"]

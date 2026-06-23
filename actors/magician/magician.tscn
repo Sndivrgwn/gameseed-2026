@@ -114,6 +114,7 @@ animations = [{
 radius = 17.0
 
 [node name="Magician" type="CharacterBody2D" unique_id=1463276590]
+scale = Vector2(5, 5)
 script = ExtResource("1_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837991875]
@@ -125,4 +126,3 @@ frame_progress = 0.8536635
 shape = SubResource("CircleShape2D_p47bc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1732831423]
-zoom = Vector2(5, 5)
