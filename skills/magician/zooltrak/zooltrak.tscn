@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c84uu3f0or5jr" path="res://skills/magician/zooltrak/zooltrak.gd" id="1_78ctx"]
 [ext_resource type="Texture2D" uid="uid://cl5q0g2rqouvd" path="res://assets/Skill/Magic/Magic/1 Magic/3_2.png" id="2_0bkc7"]
+[ext_resource type="Texture2D" uid="uid://cfbtd7k0ket66" path="res://assets/Skill/Magic Circle/2/192x192/pipo-btleffect210_192.png" id="3_0bkc7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjw52"]
 atlas = ExtResource("2_0bkc7")
@@ -63,7 +64,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_uh1es")
 }],
 "loop": true,
-"name": &"default",
+"name": &"zooltrak",
 "speed": 7.0
 }]
 
@@ -71,17 +72,108 @@ animations = [{
 radius = 9.0
 height = 92.037964
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bkc7"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(768, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4shl"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(576, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbe1e"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(384, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkqqk"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(192, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qm6w"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(0, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fvyk"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(0, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_javoj"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(192, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ant8y"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(384, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frqbm"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(576, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80mu3"]
+atlas = ExtResource("3_0bkc7")
+region = Rect2(768, 0, 192, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4shl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bkc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4shl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbe1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkqqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qm6w")
+}],
+"loop": true,
+"name": &"circle_end",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fvyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_javoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ant8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frqbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80mu3")
+}],
+"loop": false,
+"name": &"circle_start",
+"speed": 7.0
+}]
+
 [node name="Zooltrak" type="Area2D" unique_id=1702734907]
 scale = Vector2(5, 5)
 script = ExtResource("1_78ctx")
-speed = 0
+lifetime = 3
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1360409479]
+[node name="zooltrak" type="AnimatedSprite2D" parent="." unique_id=1360409479]
 sprite_frames = SubResource("SpriteFrames_5fvyk")
-autoplay = "default"
-frame_progress = 0.92675865
+animation = &"zooltrak"
+frame_progress = 0.75768614
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=232917253]
 position = Vector2(2, 2)
 rotation = 2.3439772
 shape = SubResource("CapsuleShape2D_78ctx")
+
+[node name="circle" type="AnimatedSprite2D" parent="." unique_id=1933710162]
+position = Vector2(-42.999985, -33.400005)
+rotation = 2.443461
+scale = Vector2(0.7, 0.7)
+skew = 1.1082841
+sprite_frames = SubResource("SpriteFrames_i4shl")
+animation = &"circle_end"

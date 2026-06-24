@@ -413,6 +413,7 @@ script = ExtResource("1_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837991875]
 z_index = 4
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_x7p2l")
 animation = &"magician_up"
 frame_progress = 0.8536635
@@ -422,6 +423,7 @@ position = Vector2(-0.20000002, 0)
 shape = SubResource("CircleShape2D_p47bc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1732831423]
+zoom = Vector2(0.6, 0.6)
 
 [node name="MagicCircle" type="AnimatedSprite2D" parent="." unique_id=1422474221]
 visible = false
