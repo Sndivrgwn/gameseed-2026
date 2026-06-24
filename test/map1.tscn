@@ -16,6 +16,7 @@
 [node name="Hud" parent="." unique_id=1562880650 instance=ExtResource("10_8uxgk")]
 
 [node name="Map Group" type="Node2D" parent="." unique_id=338294589]
+z_index = -2
 
 [node name="bg-black" type="Sprite2D" parent="Map Group" unique_id=1356520584]
 position = Vector2(-330.74994, -21.000046)

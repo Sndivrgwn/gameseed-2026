@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 @onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
 @onready var hud: CanvasLayer = $"../Hud"
+@onready var magic_circle: AnimatedSprite2D = $MagicCircle
 
 enum State {
 	NORMAL,
@@ -51,13 +52,20 @@ func handle_animation(direction):
 func enter_spell_mode():
 	current_state = State.SPELL_INPUT
 	print("enter spell mode")
+	magic_circle.visible = true
+	magic_circle.play("circle_start")
 	spell_input.visible = true
 	spell_input.grab_focus()
 
 func exit_spell_mode():
 	current_state = State.NORMAL
+	magic_circle.play("circle_stop")
 	print("exit spell mode")
 	spell_input.visible = false
+	await self.get_tree().create_timer(
+			4
+		).timeout
+	magic_circle.visible = false
 	
 func submit_spell():
 	var spell_name = spell_input.text.to_lower()
