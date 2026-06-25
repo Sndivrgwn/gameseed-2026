@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://u71hpdiu8jl" path="res://assets/Background/Castle/Bright/bg.png" id="2_c6uj4"]
 [ext_resource type="Texture2D" uid="uid://dosk8a2if3m18" path="res://assets/Background/Castle/Bright/mountaims.png" id="3_grpo2"]
 [ext_resource type="Texture2D" uid="uid://4najlhiskvfc" path="res://assets/Background/Castle/Bright/floor.png" id="4_8aep6"]
-[ext_resource type="Script" uid="uid://2rc7wqbj0pqn" path="res://test/background_manager.gd" id="4_n7ryp"]
 [ext_resource type="Texture2D" uid="uid://cq7lhetw2aexh" path="res://assets/Background/Castle/Bright/wall@windows.png" id="5_7eyj2"]
 [ext_resource type="Texture2D" uid="uid://dpgy4xlgkxulb" path="res://assets/Background/Castle/Bright/columns&falgs.png" id="6_ggk5q"]
 [ext_resource type="Texture2D" uid="uid://lqiu4rj3aheo" path="res://assets/Background/Castle/Bright/dragon.png" id="7_3qvml"]
@@ -19,14 +18,94 @@
 [node name="SpellInputUi" parent="." unique_id=633345769 instance=ExtResource("9_6xffr")]
 
 [node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("1_c6uj4")]
-position = Vector2(86, 98)
-speed = 500
+position = Vector2(-2879.9998, 233.99998)
 
 [node name="BackgroundManager" type="Node2D" parent="." unique_id=1668655934]
-script = ExtResource("4_n7ryp")
+
+[node name="Chunk1" type="Node2D" parent="BackgroundManager" unique_id=338294589]
+z_index = -2
+position = Vector2(0, 4485)
+
+[node name="bg-black" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1356520584]
+position = Vector2(-330.74994, -21.000046)
+scale = Vector2(246.44792, 94.41667)
+texture = ExtResource("1_dpdr3")
+
+[node name="bg-blue" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1669992821]
+position = Vector2(-31.249878, -256.75)
+scale = Vector2(3.9721355, 0.4597222)
+texture = ExtResource("2_c6uj4")
+
+[node name="mountain" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=399295514]
+position = Vector2(-2868, -5)
+texture = ExtResource("3_grpo2")
+
+[node name="mountain2" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=2140921346]
+position = Vector2(872.7498, 32)
+scale = Vector2(3.0617187, 1)
+texture = ExtResource("3_grpo2")
+
+[node name="floor1" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=620382798]
+position = Vector2(962, 37.500088)
+scale = Vector2(1, 1.4101855)
+texture = ExtResource("4_8aep6")
+
+[node name="floor2" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=640292716]
+position = Vector2(-958, 39.000015)
+scale = Vector2(1, 1.4074074)
+texture = ExtResource("4_8aep6")
+
+[node name="floor3" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=2078422027]
+position = Vector2(-2878, 39.500008)
+scale = Vector2(1, 1.4046296)
+texture = ExtResource("4_8aep6")
+
+[node name="floor4" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1696415400]
+position = Vector2(2881, 40)
+scale = Vector2(1, 1.4046296)
+texture = ExtResource("4_8aep6")
+
+[node name="wall1" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1035311196]
+position = Vector2(962, 12)
+texture = ExtResource("5_7eyj2")
+
+[node name="wall2" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1757405882]
+position = Vector2(-958, 12)
+texture = ExtResource("5_7eyj2")
+
+[node name="wall3" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1361506236]
+position = Vector2(-2878, 12)
+texture = ExtResource("5_7eyj2")
+
+[node name="wall4" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=683674805]
+position = Vector2(2880, 12)
+texture = ExtResource("5_7eyj2")
+
+[node name="wall-decor1" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=660322364]
+position = Vector2(2880, 12)
+texture = ExtResource("6_ggk5q")
+
+[node name="wall-decor2" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=992473503]
+position = Vector2(962, 12)
+texture = ExtResource("6_ggk5q")
+
+[node name="wall-decor3" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=570673099]
+position = Vector2(-962, 12)
+texture = ExtResource("6_ggk5q")
+
+[node name="wall-decor4" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1314907274]
+position = Vector2(-2878, 12)
+texture = ExtResource("6_ggk5q")
+
+[node name="wall-decor5" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=889097685]
+position = Vector2(-642, 64.00001)
+scale = Vector2(1.5700208, 1.6459265)
+skew = -0.06981325
+texture = ExtResource("7_3qvml")
 
 [node name="Chunk2" type="Node2D" parent="BackgroundManager" unique_id=1375796568]
 z_index = -2
+position = Vector2(11466, 4817)
 
 [node name="bg-black" type="Sprite2D" parent="BackgroundManager/Chunk2" unique_id=1917544582]
 position = Vector2(-330.74994, -21.000046)
@@ -105,82 +184,61 @@ scale = Vector2(1.5700208, 1.6459265)
 skew = -0.06981325
 texture = ExtResource("7_3qvml")
 
-[node name="Chunk1" type="Node2D" parent="BackgroundManager" unique_id=338294589]
-z_index = -2
+[node name="Parallax2D" type="ParallaxBackground" parent="." unique_id=572752202]
 
-[node name="bg-black" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1356520584]
-position = Vector2(-330.74994, -21.000046)
-scale = Vector2(246.44792, 94.41667)
-texture = ExtResource("1_dpdr3")
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D" unique_id=750164104]
+motion_mirroring = Vector2(1920, 0)
 
-[node name="bg-blue" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1669992821]
-position = Vector2(-31.249878, -256.75)
-scale = Vector2(3.9721355, 0.4597222)
+[node name="bg-blue" type="Sprite2D" parent="Parallax2D/ParallaxLayer" unique_id=2029189491]
+position = Vector2(932.8438, -269)
+scale = Vector2(0.97307956, 0.4597222)
 texture = ExtResource("2_c6uj4")
 
-[node name="mountain" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=399295514]
-position = Vector2(-2868, -5)
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax2D" unique_id=951838441]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="mountain" type="Sprite2D" parent="Parallax2D/ParallaxLayer2" unique_id=1904755717]
+position = Vector2(936.5, -87)
+scale = Vector2(0.97968745, 1)
 texture = ExtResource("3_grpo2")
 
-[node name="mountain2" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=2140921346]
-position = Vector2(872.7498, 32)
-scale = Vector2(3.0617187, 1)
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Parallax2D" unique_id=993779651]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="mountain2" type="Sprite2D" parent="Parallax2D/ParallaxLayer3" unique_id=1643876035]
+position = Vector2(908.8126, -9)
+scale = Vector2(0.95957035, 1)
 texture = ExtResource("3_grpo2")
 
-[node name="floor1" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=620382798]
-position = Vector2(962, 37.500088)
-scale = Vector2(1, 1.4101855)
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Parallax2D" unique_id=636551260]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="floor1" type="Sprite2D" parent="Parallax2D/ParallaxLayer4" unique_id=542409456]
+position = Vector2(1030.5, 37.500088)
+scale = Vector2(1.0713543, 1.4101855)
 texture = ExtResource("4_8aep6")
 
-[node name="floor2" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=640292716]
-position = Vector2(-958, 39.000015)
-scale = Vector2(1, 1.4074074)
-texture = ExtResource("4_8aep6")
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Parallax2D" unique_id=1415351373]
+motion_mirroring = Vector2(1920, 0)
 
-[node name="floor3" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=2078422027]
-position = Vector2(-2878, 39.500008)
-scale = Vector2(1, 1.4046296)
-texture = ExtResource("4_8aep6")
-
-[node name="floor4" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1696415400]
-position = Vector2(2881, 40)
-scale = Vector2(1, 1.4046296)
-texture = ExtResource("4_8aep6")
-
-[node name="wall1" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1035311196]
-position = Vector2(962, 12)
+[node name="wall1" type="Sprite2D" parent="Parallax2D/ParallaxLayer5" unique_id=689834000]
+position = Vector2(955, 12)
+scale = Vector2(0.9927083, 1)
 texture = ExtResource("5_7eyj2")
 
-[node name="wall2" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1757405882]
-position = Vector2(-958, 12)
-texture = ExtResource("5_7eyj2")
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Parallax2D" unique_id=249153484]
+motion_mirroring = Vector2(1920, 0)
 
-[node name="wall3" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1361506236]
-position = Vector2(-2878, 12)
-texture = ExtResource("5_7eyj2")
-
-[node name="wall4" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=683674805]
-position = Vector2(2880, 12)
-texture = ExtResource("5_7eyj2")
-
-[node name="wall-decor1" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=660322364]
-position = Vector2(2880, 12)
+[node name="wall-decor1" type="Sprite2D" parent="Parallax2D/ParallaxLayer6" unique_id=405825124]
+position = Vector2(953.99994, 30)
+scale = Vector2(0.9937499, 1.0305556)
 texture = ExtResource("6_ggk5q")
 
-[node name="wall-decor2" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=992473503]
-position = Vector2(962, 12)
-texture = ExtResource("6_ggk5q")
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="Parallax2D" unique_id=1816488053]
+motion_mirroring = Vector2(2500, 0)
 
-[node name="wall-decor3" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=570673099]
-position = Vector2(-962, 12)
-texture = ExtResource("6_ggk5q")
-
-[node name="wall-decor4" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=1314907274]
-position = Vector2(-2878, 12)
-texture = ExtResource("6_ggk5q")
-
-[node name="wall-decor5" type="Sprite2D" parent="BackgroundManager/Chunk1" unique_id=889097685]
-position = Vector2(-642, 64.00001)
+[node name="wall-decor5" type="Sprite2D" parent="Parallax2D/ParallaxLayer7" unique_id=1330910498]
+position = Vector2(1105, 43.000004)
 scale = Vector2(1.5700208, 1.6459265)
 skew = -0.06981325
 texture = ExtResource("7_3qvml")
