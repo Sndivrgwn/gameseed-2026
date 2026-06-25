@@ -112,7 +112,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p47bc"]
-radius = 17.0
+radius = 5.9999995
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c52x1"]
 atlas = ExtResource("3_f0n2r")
@@ -409,6 +409,7 @@ animations = [{
 
 [node name="Magician" type="CharacterBody2D" unique_id=1463276590]
 scale = Vector2(5, 5)
+collision_layer = 2
 script = ExtResource("1_dovo2")
 speed = 1000
 
@@ -420,7 +421,8 @@ animation = &"magician_up"
 frame_progress = 0.8536635
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=197897488]
-position = Vector2(-0.20000002, 0)
+z_index = 9
+position = Vector2(-0.4, 10)
 shape = SubResource("CircleShape2D_p47bc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1732831423]

@@ -18,5 +18,6 @@ enum ElementType {
 @export var mana_cost: int = 0
 @export var damage: int = 0
 @export var cast_time: float = 0
+@export var lifetime: float = 0
 @export var element: ElementType
 @export var spell_scene: PackedScene

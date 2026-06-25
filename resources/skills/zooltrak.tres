@@ -10,6 +10,7 @@ display_name = "Zooltrak"
 mana_cost = 20
 damage = 50
 cast_time = 1.0
+lifetime = 3.0
 element = 6
 spell_scene = ExtResource("2_8imgu")
 metadata/_custom_type_script = "uid://cqev7m7q7tonm"
