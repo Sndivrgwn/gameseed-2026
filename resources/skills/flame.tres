@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://cy5ksjrjvftei"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_dy7j7"]
+[ext_resource type="PackedScene" uid="uid://ca3gnhj6wie8e" path="res://skills/magician/flame/flame.tscn" id="2_7mbmf"]
+
+[resource]
+script = ExtResource("1_dy7j7")
+skill_name = "flame"
+display_name = "Flame"
+mana_cost = 10
+damage = 25
+cast_time = 2.0
+lifetime = 5.0
+spell_scene = ExtResource("2_7mbmf")
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

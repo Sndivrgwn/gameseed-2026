@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ca3gnhj6wie8e"]
+
+[ext_resource type="Script" uid="uid://gurflqwic0gn" path="res://skills/magician/flame/flame.gd" id="1_sydcw"]
+[ext_resource type="Texture2D" uid="uid://dxslwrwujthdb" path="res://assets/Skill/Magic/Magic/1 Magic/4_2.png" id="2_eqtnb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5wjn"]
+atlas = ExtResource("2_eqtnb")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlh8i"]
+atlas = ExtResource("2_eqtnb")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8j8t"]
+atlas = ExtResource("2_eqtnb")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45umo"]
+atlas = ExtResource("2_eqtnb")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7idk7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5wjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlh8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8j8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45umo")
+}],
+"loop": true,
+"name": &"flame",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxlak"]
+radius = 79.0
+
+[node name="Flame" type="Area2D" unique_id=997277968]
+script = ExtResource("1_sydcw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=510630589]
+scale = Vector2(5, 4.65)
+sprite_frames = SubResource("SpriteFrames_7idk7")
+animation = &"flame"
+autoplay = "flame"
+frame_progress = 0.038746197
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=29109003]
+shape = SubResource("CircleShape2D_jxlak")

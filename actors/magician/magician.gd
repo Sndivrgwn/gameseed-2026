@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var speed = 200
 @onready var anim = $AnimatedSprite2D
 @onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
 @onready var hud: CanvasLayer = $"../Hud"
 @onready var magic_circle: AnimatedSprite2D = $MagicCircle
+@onready var stats: StatsComponent = $StatsComponent
 
 enum State {
 	NORMAL,
@@ -12,18 +12,11 @@ enum State {
 }
 
 var current_state = State.NORMAL
-var hp := 100
-var max_hp := 100
-var mana := 100
-var max_mana := 100
+var last_direction = Vector2.RIGHT
+var is_casting := false
 
 func _ready():
-	hud.update_hp(hp, max_hp)
-	hud.update_mana(mana, max_mana)
-
-func update_hud():
-	hud.update_hp(hp, max_hp)
-	hud.update_mana(mana, max_mana)
+	hud.setup(self)
 	
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)
@@ -35,19 +28,32 @@ func _physics_process(delta: float) -> void:
 		direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		
 	direction = direction.normalized()
-	velocity = direction * speed
+	velocity = direction * stats.base_stats.move_speed
 	move_and_slide()
 	handle_animation(direction)
 
 func handle_animation(direction):
-	if direction.y < 0:
-		anim.play("magician_up")
-	elif direction.y > 0:
-		anim.play("magician_down")
-	elif  direction.x < 0:
-		anim.play("magician_left")
-	elif direction.x > 0:
-		anim.play("magician_right")
+	if direction != Vector2.ZERO:
+		last_direction = direction
+
+	if direction == Vector2.ZERO:
+		if last_direction.y < 0:
+			anim.play("magician_idle_up")
+		elif last_direction.y > 0:
+			anim.play("magician_idle_down")
+		elif last_direction.x < 0:
+			anim.play("magician_idle_left")
+		elif last_direction.x > 0:
+			anim.play("magician_idle_right")
+	else:
+		if direction.y < 0:
+			anim.play("magician_up")
+		elif direction.y > 0:
+			anim.play("magician_down")
+		elif direction.x < 0:
+			anim.play("magician_left")
+		elif direction.x > 0:
+			anim.play("magician_right")
 
 func enter_spell_mode():
 	current_state = State.SPELL_INPUT
@@ -74,8 +80,6 @@ func submit_spell():
 	spell_input.text = ""
 	exit_spell_mode()
 
-
-
 func _input(event):
 	if event.is_action_pressed("state_magic"):
 		if current_state == State.NORMAL:
@@ -83,7 +87,9 @@ func _input(event):
 		else:
 			exit_spell_mode()
 
+func get_cast_position() -> Vector2:
+	return global_position
 
 func _on_spell_line_edit_text_submitted(new_text: String) -> void:
 	submit_spell()
-	print("mana left: ", mana)
+	print("mana left: ", stats.mana)

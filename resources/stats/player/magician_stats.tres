@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatData" format=3 uid="uid://bpa4vuisoqi5s"]
+
+[ext_resource type="Script" uid="uid://cwjjeqd3a16bt" path="res://systems/stats/StatData.gd" id="1_u20l6"]
+
+[resource]
+script = ExtResource("1_u20l6")
+magic_attack = 25
+magic_defense = 12
+move_speed = 500.0
+metadata/_custom_type_script = "uid://cwjjeqd3a16bt"
