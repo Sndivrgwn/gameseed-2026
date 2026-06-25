@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var hud: CanvasLayer = $"../Hud"
 @onready var magic_circle: AnimatedSprite2D = $MagicCircle
 @onready var stats: StatsComponent = $StatsComponent
+@onready var stats_ui: CanvasLayer = $"../StatsUi"
 
 enum State {
 	NORMAL,
@@ -17,6 +18,7 @@ var is_casting := false
 
 func _ready():
 	hud.setup(self)
+	stats_ui.setup(self)
 	
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)
