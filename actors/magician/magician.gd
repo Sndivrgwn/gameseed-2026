@@ -1,27 +1,25 @@
 extends BaseCharacter
 
 @onready var anim = $AnimatedSprite2D
-@onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
 @onready var hud: CanvasLayer = $"../Hud"
-@onready var magic_circle: AnimatedSprite2D = $MagicCircle
 @onready var stats_ui: CanvasLayer = $"../StatsUi"
+@onready var movement: MovementComponent = $MovementComponent
+@onready var animation: AnimationComponent = $AnimationComponent
+@onready var spell_caster: SpellCasterComponent = $SpellCasterComponent
+@onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
 
-enum State {
-	NORMAL,
-	SPELL_INPUT
-}
-
-var current_state = State.NORMAL
 var last_direction = Vector2.RIGHT
-var is_casting := false
 var is_invincible := false
+var is_casting := false
 
 func _ready():
 	hud.setup(self)
 	stats_ui.setup(self)
 	stats.died.connect(_on_died)
+
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)
+
 	
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -31,67 +29,25 @@ func _physics_process(delta: float) -> void:
 		
 	
 	direction = direction.normalized()
-	velocity = direction * stats.base_stats.move_speed
-	move_and_slide()
-	handle_animation(direction)
+	movement.move(direction)
+	animation.handle_animation(direction)
 
 func can_move() -> bool:
-	return current_state == State.NORMAL and !is_casting
+	return spell_caster.current_state == spell_caster.State.NORMAL and !is_casting
 
-func handle_animation(direction):
-	if direction != Vector2.ZERO:
-		last_direction = direction
-
-	if direction == Vector2.ZERO:
-		if last_direction.y < 0:
-			anim.play("magician_idle_up")
-		elif last_direction.y > 0:
-			anim.play("magician_idle_down")
-		elif last_direction.x < 0:
-			anim.play("magician_idle_left")
-		elif last_direction.x > 0:
-			anim.play("magician_idle_right")
-	else:
-		if direction.y < 0:
-			anim.play("magician_up")
-		elif direction.y > 0:
-			anim.play("magician_down")
-		elif direction.x < 0:
-			anim.play("magician_left")
-		elif direction.x > 0:
-			anim.play("magician_right")
-
-func enter_spell_mode():
-	current_state = State.SPELL_INPUT
-	print("enter spell mode")
-	magic_circle.visible = true
-	magic_circle.play("circle_start")
-	spell_input.visible = true
-	spell_input.grab_focus()
-
-func exit_spell_mode():
-	current_state = State.NORMAL
-	magic_circle.play("circle_stop")
-	print("exit spell mode")
-	spell_input.visible = false
-	await self.get_tree().create_timer(
-			4
-		).timeout
-	magic_circle.visible = false
-	
 func submit_spell():
 	var spell_name = spell_input.text.to_lower()
 	print("submit spell")
 	SpellManager.cast(self, spell_name)
 	spell_input.text = ""
-	exit_spell_mode()
-
+	spell_caster.exit_spell_mode(spell_input)
+	
 func _input(event):
 	if event.is_action_pressed("state_magic"):
-		if current_state == State.NORMAL:
-			enter_spell_mode()
+		if spell_caster.current_state == spell_caster.State.NORMAL:
+			spell_caster.enter_spell_mode(spell_input)
 		else:
-			exit_spell_mode()
+			spell_caster.exit_spell_mode(spell_input)
 
 func get_cast_position() -> Vector2:
 	return global_position

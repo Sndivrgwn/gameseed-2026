@@ -745,6 +745,7 @@ animations = [{
 scale = Vector2(5, 5)
 collision_layer = 2
 script = ExtResource("1_dovo2")
+knockback_friction = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837991875]
 z_index = 4
