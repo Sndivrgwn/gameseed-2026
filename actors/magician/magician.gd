@@ -25,14 +25,18 @@ func show_cast_time(duration)  :
 	
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
-	if current_state == State.NORMAL:
+	if can_move():
 		direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		
+	
 	direction = direction.normalized()
 	velocity = direction * stats.base_stats.move_speed
 	move_and_slide()
 	handle_animation(direction)
+
+func can_move() -> bool:
+	return current_state == State.NORMAL and !is_casting
 
 func handle_animation(direction):
 	if direction != Vector2.ZERO:
