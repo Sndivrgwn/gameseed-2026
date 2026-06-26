@@ -3,6 +3,7 @@ class_name Enemy
 @export var detection_range := 300.0
 @export var attack_range := 40.0
 @export var attack_cooldown := 1.0
+@export var exp_reward := 20
 @onready var player = get_tree().get_first_node_in_group("player")
 
 enum State {
@@ -96,6 +97,10 @@ func attack_state():
 
 func _on_died():
 	current_state = State.DEAD
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.level.add_exp(exp_reward)
+		print("LEVEL UP: ", )
 	queue_free()
 
 func update_animation(direction):

@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c4qjxrs4y6m2n" path="res://components/MovementComponent.gd" id="7_str5l"]
 [ext_resource type="Script" uid="uid://dbpvb1yh2glls" path="res://components/AnimationComponent.gd" id="8_3jbaj"]
 [ext_resource type="Script" uid="uid://80x7n7nmgmjy" path="res://components/SpellCasterComponent.gd" id="9_v2tsv"]
+[ext_resource type="Script" uid="uid://daqs67ul1w5ki" path="res://components/LevelComponent.gd" id="10_0vfku"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj7f8"]
 atlas = ExtResource("2_f0n2r")
@@ -790,3 +791,7 @@ script = ExtResource("9_v2tsv")
 magic_circle = NodePath("../MagicCircle")
 stats = NodePath("../StatsComponent")
 metadata/_custom_type_script = "uid://80x7n7nmgmjy"
+
+[node name="LevelComponent" type="Node" parent="." unique_id=1058412462]
+script = ExtResource("10_0vfku")
+metadata/_custom_type_script = "uid://daqs67ul1w5ki"

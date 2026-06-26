@@ -7,6 +7,7 @@ extends BaseCharacter
 @onready var animation: AnimationComponent = $AnimationComponent
 @onready var spell_caster: SpellCasterComponent = $SpellCasterComponent
 @onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
+@onready var level: LevelComponent = $LevelComponent
 
 var last_direction = Vector2.RIGHT
 var is_invincible := false
@@ -16,6 +17,7 @@ func _ready():
 	hud.setup(self)
 	stats_ui.setup(self)
 	stats.died.connect(_on_died)
+	level.level_changed.connect(_on_level_up)
 
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)
@@ -43,6 +45,9 @@ func submit_spell():
 	spell_caster.exit_spell_mode(spell_input)
 	
 func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		level.add_exp(40)
+
 	if event.is_action_pressed("state_magic"):
 		if spell_caster.current_state == spell_caster.State.NORMAL:
 			spell_caster.enter_spell_mode(spell_input)
@@ -55,6 +60,14 @@ func get_cast_position() -> Vector2:
 func _on_spell_line_edit_text_submitted(new_text: String) -> void:
 	submit_spell()
 	print("mana left: ", stats.mana)
+
+func _on_level_up(new_level):
+	stats.base_stats.max_hp += 10
+	stats.base_stats.max_mana += 5
+	stats.base_stats.magic_attack += 3
+	stats.base_stats.defense += 1
+	print("LEVEL UP :", new_level)
+	print(stats.base_stats.defense)
 
 func _on_died():
 	print("Player Mati")

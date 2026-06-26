@@ -6,10 +6,13 @@
 script = ExtResource("1_daw2e")
 
 [node name="stats" type="VBoxContainer" parent="." unique_id=769796121]
-anchors_preset = 15
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -1.0
+grow_horizontal = 0
 grow_vertical = 2
 
 [node name="hp" type="Label" parent="stats" unique_id=1672456299]

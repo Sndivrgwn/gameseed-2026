@@ -48,8 +48,17 @@ nine_patch_stretch = true
 texture_progress = SubResource("GradientTexture1D_by07e")
 script = ExtResource("3_by07e")
 
-[node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1074142626]
+[node name="ToNext" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1023404585]
 layout_mode = 2
+text = "to next level: 0"
+
+[node name="Exp" type="Label" parent="MarginContainer/VBoxContainer" unique_id=726169076]
+layout_mode = 2
+text = "exp: 0"
+
+[node name="Level" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1074142626]
+layout_mode = 2
+text = "level: 1"
 
 [node name="CastingBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=93831371]
 custom_minimum_size = Vector2(300, 30)
