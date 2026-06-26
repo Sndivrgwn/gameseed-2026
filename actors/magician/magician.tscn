@@ -738,7 +738,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Magician" type="CharacterBody2D" unique_id=1463276590]
+[node name="Magician" type="CharacterBody2D" unique_id=1463276590 groups=["player"]]
 scale = Vector2(5, 5)
 collision_layer = 2
 script = ExtResource("1_dovo2")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="StatData" format=3 uid="uid://cpvdkhcnjhbps"]
+
+[ext_resource type="Script" uid="uid://cwjjeqd3a16bt" path="res://systems/stats/StatData.gd" id="1_asysg"]
+
+[resource]
+script = ExtResource("1_asysg")
+max_hp = 50
+max_mana = 0
+magic_attack = 0
+defense = 10
+magic_defense = 0
+move_speed = 100.0
+metadata/_custom_type_script = "uid://cwjjeqd3a16bt"

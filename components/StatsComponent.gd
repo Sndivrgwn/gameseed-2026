@@ -29,11 +29,12 @@ func get_magic_defense():
 func get_speed():
 	return base_stats.move_speed
 
-func take_damage(amount : int):
+func take_damage(amount):
 	hp -= amount
+	print(owner.name, " HP :", hp)
 	hp_changed.emit(hp)
 	if hp <= 0:
-		die()
+		died.emit()
 
 func spend_mana(amount):
 	if mana < amount:

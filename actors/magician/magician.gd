@@ -15,11 +15,12 @@ enum State {
 var current_state = State.NORMAL
 var last_direction = Vector2.RIGHT
 var is_casting := false
+var is_invincible := false
 
 func _ready():
 	hud.setup(self)
 	stats_ui.setup(self)
-	
+	stats.died.connect(_on_died)
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)
 	
@@ -99,3 +100,20 @@ func get_cast_position() -> Vector2:
 func _on_spell_line_edit_text_submitted(new_text: String) -> void:
 	submit_spell()
 	print("mana left: ", stats.mana)
+
+func take_damage(amount: int):
+	if is_invincible:
+		return
+	is_invincible = true
+	stats.take_damage(amount)
+	await get_tree().create_timer(0.5).timeout
+	is_invincible = false
+	modulate.a = 0.5
+	await get_tree().create_timer(0.1).timeout
+	modulate.a = 1.0
+
+func _on_died():
+	print("Player Mati")
+	set_physics_process(false)
+	set_process_input(false)
+	velocity = Vector2.ZERO

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bbt0gp4jd52bd"]
+
+[ext_resource type="Script" uid="uid://dtqws3vu0jh6w" path="res://actors/enemy/goblin/goblin.gd" id="1_xcqix"]
+[ext_resource type="Texture2D" uid="uid://cpvntwr6b2dho" path="res://assets/sprites/Enemy/goblin/PNG/Orc1/With_shadow/orc1_idle_with_shadow.png" id="2_cmr6w"]
+[ext_resource type="Script" uid="uid://bouqg2kx7oy65" path="res://components/StatsComponent.gd" id="3_mljs2"]
+[ext_resource type="Resource" uid="uid://cpvdkhcnjhbps" path="res://resources/stats/enemy/goblin_stats.tres" id="4_cmr6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mljs2"]
+atlas = ExtResource("2_cmr6w")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1sy1"]
+atlas = ExtResource("2_cmr6w")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o35i"]
+atlas = ExtResource("2_cmr6w")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irxnv"]
+atlas = ExtResource("2_cmr6w")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jth41"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mljs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1sy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o35i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irxnv")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5oujx"]
+radius = 5.706356
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mp5hi"]
+radius = 15.502016
+
+[node name="Goblin" type="CharacterBody2D" unique_id=439640717 groups=["enemy"]]
+scale = Vector2(4, 4)
+collision_layer = 8
+script = ExtResource("1_xcqix")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1879592294]
+sprite_frames = SubResource("SpriteFrames_jth41")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.98635113
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840308195]
+shape = SubResource("CircleShape2D_5oujx")
+
+[node name="StatsComponent" type="Node" parent="." unique_id=807054544]
+script = ExtResource("3_mljs2")
+base_stats = ExtResource("4_cmr6w")
+metadata/_custom_type_script = "uid://bouqg2kx7oy65"
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=539405351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1159689234]
+shape = SubResource("CircleShape2D_mp5hi")
