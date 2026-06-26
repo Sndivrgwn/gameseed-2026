@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://d22ioy8ni3ugx"]
+
+[ext_resource type="Script" uid="uid://d0guseehm2e4t" path="res://actors/enemy/Enemy.gd" id="1_ytcqf"]
+[ext_resource type="Texture2D" uid="uid://c4ortnhybm2mk" path="res://assets/sprites/Enemy/setengah hewan/Minotaur_1/Idle.png" id="2_hejod"]
+[ext_resource type="Script" uid="uid://bouqg2kx7oy65" path="res://components/StatsComponent.gd" id="3_wtetw"]
+[ext_resource type="Resource" uid="uid://b2oll5s1bju5r" path="res://resources/stats/enemy/minotaur_stats.tres" id="4_wgcwt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai3sg"]
+atlas = ExtResource("2_hejod")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtetw"]
+atlas = ExtResource("2_hejod")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgcwt"]
+atlas = ExtResource("2_hejod")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh4tb"]
+atlas = ExtResource("2_hejod")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6qei"]
+atlas = ExtResource("2_hejod")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hdmn"]
+atlas = ExtResource("2_hejod")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tg0m"]
+atlas = ExtResource("2_hejod")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws8fe"]
+atlas = ExtResource("2_hejod")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5sdu"]
+atlas = ExtResource("2_hejod")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aiib"]
+atlas = ExtResource("2_hejod")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i46s0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai3sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtetw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgcwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh4tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6qei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hdmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tg0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws8fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5sdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aiib")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dvehr"]
+radius = 15.799999
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtetw"]
+size = Vector2(58.000008, 91.600006)
+
+[node name="Minotaur" type="CharacterBody2D" unique_id=1405161105 groups=["enemy"]]
+scale = Vector2(5, 5)
+collision_layer = 8
+script = ExtResource("1_ytcqf")
+detection_range = 800.0
+attack_range = 100.0
+attack_cooldown = 4.0
+knockback_friction = 2000.0
+metadata/_custom_type_script = "uid://d0guseehm2e4t"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1193271748]
+sprite_frames = SubResource("SpriteFrames_i46s0")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.6032067
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1782331370]
+position = Vector2(-11.4, 43.6)
+shape = SubResource("CircleShape2D_dvehr")
+
+[node name="StatsComponent" type="Node" parent="." unique_id=1848767637]
+script = ExtResource("3_wtetw")
+base_stats = ExtResource("4_wgcwt")
+metadata/_custom_type_script = "uid://bouqg2kx7oy65"
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1390434442]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=2108939711]
+position = Vector2(-7.799998, 17.8)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_wtetw")

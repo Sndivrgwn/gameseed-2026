@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5oujx"]
-radius = 5.706356
+radius = 14.008925
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mp5hi"]
 radius = 15.502016
@@ -56,7 +56,7 @@ script = ExtResource("1_xcqix")
 sprite_frames = SubResource("SpriteFrames_jth41")
 animation = &"idle_down"
 autoplay = "idle_down"
-frame_progress = 0.98635113
+frame_progress = 0.18736371
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840308195]
 shape = SubResource("CircleShape2D_5oujx")

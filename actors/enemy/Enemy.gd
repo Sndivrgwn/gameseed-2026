@@ -1,0 +1,102 @@
+extends BaseCharacter
+class_name Enemy
+@export var detection_range := 300.0
+@export var attack_range := 40.0
+@export var attack_cooldown := 1.0
+@onready var player = get_tree().get_first_node_in_group("player")
+
+enum State {
+	IDLE,
+	CHASE,
+	ATTACK,
+	DEAD
+}
+
+var current_state = State.IDLE
+
+var can_attack := true
+var is_hit := false
+
+func _ready():
+	print("HP: ", stats.hp)
+	stats.died.connect(_on_died)
+
+func _physics_process(delta):
+	match current_state:
+		State.IDLE:
+			idle_state(delta)
+		State.CHASE:
+			chase_state(delta)
+		State.ATTACK:
+			attack_state()
+		State.DEAD:
+			pass
+
+func idle_state(delta):
+	velocity = Vector2.ZERO
+	move_and_slide()
+
+	if player == null:
+		return
+
+	if global_position.distance_to(player.global_position) <= detection_range:
+		current_state = State.CHASE
+
+func chase_state(delta):
+	if player == null:
+		current_state = State.IDLE
+		return
+	if is_hit:
+		velocity = knockback_velocity
+		move_and_slide()
+		knockback_velocity = knockback_velocity.move_toward(
+			Vector2.ZERO,
+			knockback_friction * delta
+		)
+		return
+	var distance = global_position.distance_to(player.global_position)
+	if distance > detection_range:
+		current_state = State.IDLE
+		return
+	if distance <= attack_range:
+		current_state = State.ATTACK
+		return
+	var direction = (player.global_position - global_position).normalized()
+	update_animation(direction)
+	var move_velocity = direction * stats.base_stats.move_speed
+	velocity = move_velocity + knockback_velocity
+	move_and_slide()
+	knockback_velocity = knockback_velocity.move_toward(
+		Vector2.ZERO,
+		knockback_friction * delta
+	)
+
+func attack_state():
+	velocity = Vector2.ZERO
+	move_and_slide()
+	if !can_attack:
+		current_state = State.CHASE
+		return
+	can_attack = false
+	if is_instance_valid(player):
+		if global_position.distance_to(player.global_position) <= attack_range:
+			player.take_damage(stats.base_stats.attack, global_position)
+	await get_tree().create_timer(attack_cooldown).timeout
+	can_attack = true
+	if !is_instance_valid(player):
+		current_state = State.IDLE
+		return
+	var distance = global_position.distance_to(player.global_position)
+	if distance <= attack_range:
+		current_state = State.ATTACK
+	elif distance <= detection_range:
+		current_state = State.CHASE
+	else:
+		current_state = State.IDLE
+
+func _on_died():
+	current_state = State.DEAD
+	queue_free()
+
+func update_animation(direction):
+	pass

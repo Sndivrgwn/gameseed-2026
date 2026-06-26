@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c4yy0wj5vyunq" path="res://ui/SpellInputUI.tscn" id="9_6xffr"]
 [ext_resource type="PackedScene" uid="uid://dnukjf7em0khy" path="res://ui/hud/Hud.tscn" id="10_8uxgk"]
 [ext_resource type="PackedScene" uid="uid://bbt0gp4jd52bd" path="res://actors/enemy/goblin/goblin.tscn" id="11_n7ryp"]
+[ext_resource type="PackedScene" uid="uid://d22ioy8ni3ugx" path="res://actors/enemy/minotaur/minotaur.tscn" id="12_gl4wb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6xffr"]
 distance = -216.0
@@ -28,6 +29,9 @@ position = Vector2(-2879.9998, 233.99998)
 
 [node name="Goblin" parent="." unique_id=439640717 instance=ExtResource("11_n7ryp")]
 position = Vector2(2279, 297)
+
+[node name="Minotaur" parent="." unique_id=1405161105 instance=ExtResource("12_gl4wb")]
+position = Vector2(944, 147)
 
 [node name="topwall" type="StaticBody2D" parent="." unique_id=1149215218]
 position = Vector2(579, 590)

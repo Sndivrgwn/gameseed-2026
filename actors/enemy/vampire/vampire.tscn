@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://jg888mo2ks5"]
+
+[ext_resource type="Script" uid="uid://dhigbuq6mblng" path="res://actors/enemy/vampire/vampire.gd" id="1_u6ssr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdya4"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle_down",
+"speed": 7.0
+}]
+
+[node name="Vampire" type="CharacterBody2D" unique_id=1332943687 groups=["enemy"]]
+script = ExtResource("1_u6ssr")
+metadata/_custom_type_script = "uid://d0guseehm2e4t"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=242045918]
+sprite_frames = SubResource("SpriteFrames_kdya4")
+animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1076843059]

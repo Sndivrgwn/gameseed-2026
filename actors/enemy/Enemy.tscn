@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dd6ttydvy8y3"]
+
+[ext_resource type="Script" uid="uid://bouqg2kx7oy65" path="res://components/StatsComponent.gd" id="1_1fqe1"]
+[ext_resource type="Resource" uid="uid://cpvdkhcnjhbps" path="res://resources/stats/enemy/goblin_stats.tres" id="2_h8hrn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8d7sx"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle_down",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqrjo"]
+radius = 12.0415945
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5c534"]
+radius = 15.502016
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1098126324 groups=["enemy"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=7283865]
+sprite_frames = SubResource("SpriteFrames_8d7sx")
+animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1838764476]
+shape = SubResource("CircleShape2D_qqrjo")
+
+[node name="StatsComponent" type="Node" parent="." unique_id=421371648]
+script = ExtResource("1_1fqe1")
+base_stats = ExtResource("2_h8hrn")
+metadata/_custom_type_script = "uid://bouqg2kx7oy65"
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1992976960]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=171553189]
+shape = SubResource("CircleShape2D_5c534")

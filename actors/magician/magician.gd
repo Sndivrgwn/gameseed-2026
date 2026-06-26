@@ -1,10 +1,9 @@
-extends CharacterBody2D
+extends BaseCharacter
 
 @onready var anim = $AnimatedSprite2D
 @onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
 @onready var hud: CanvasLayer = $"../Hud"
 @onready var magic_circle: AnimatedSprite2D = $MagicCircle
-@onready var stats: StatsComponent = $StatsComponent
 @onready var stats_ui: CanvasLayer = $"../StatsUi"
 
 enum State {
@@ -100,17 +99,6 @@ func get_cast_position() -> Vector2:
 func _on_spell_line_edit_text_submitted(new_text: String) -> void:
 	submit_spell()
 	print("mana left: ", stats.mana)
-
-func take_damage(amount: int):
-	if is_invincible:
-		return
-	is_invincible = true
-	stats.take_damage(amount)
-	await get_tree().create_timer(0.5).timeout
-	is_invincible = false
-	modulate.a = 0.5
-	await get_tree().create_timer(0.1).timeout
-	modulate.a = 1.0
 
 func _on_died():
 	print("Player Mati")
