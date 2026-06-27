@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SkillDatabase="*uid://cwp6fvqb64iyk"
 SpellManager="*uid://c0mur0wq8mf"
+PopupManager="*uid://b8bwa3ablea2p"
 
 [input]
 

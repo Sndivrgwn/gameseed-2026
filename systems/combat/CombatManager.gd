@@ -13,3 +13,16 @@ static func calculate_spell_damage(
 	damage = max(1, damage)
 	result.amount = damage
 	return result
+
+static func calculate_physical_damage(
+	caster_stats: StatsComponent,
+	target_stats: StatsComponent
+) -> DamageData:
+	var result = DamageData.new()
+	result.damage_type = DamageData.DamageType.PHYSICAL
+	result.base_damage = caster_stats.get_attack()
+	var damage = result.base_damage
+	damage -= target_stats.get_defense()
+	damage = max(1, damage)
+	result.amount = damage
+	return result

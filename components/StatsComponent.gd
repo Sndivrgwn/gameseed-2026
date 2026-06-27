@@ -11,9 +11,9 @@ signal mana_changed
 signal died
 
 func _ready():
-	hp = base_stats.max_hp
-	mana = base_stats.max_mana
-	
+	hp = get_max_hp()
+	mana = get_max_mana()
+
 func get_attack():
 	return base_stats.attack
 
@@ -29,25 +29,42 @@ func get_magic_defense():
 func get_speed():
 	return base_stats.move_speed
 
-func take_damage(amount):
-	hp -= amount
-	print(owner.name, " HP :", hp)
+func get_max_hp():
+	return base_stats.max_hp
+
+func get_max_mana():
+	return base_stats.max_mana
+
+func take_damage(damage : DamageData):
+	hp -= damage.amount
+	hp = max(0, hp)
 	hp_changed.emit(hp)
 	if hp <= 0:
 		died.emit()
 
-func spend_mana(amount):
-	if mana < amount:
-		return false
-	mana -= amount
-	mana_changed.emit(mana)
-	return true
-
-func die():
-	get_parent().queue_free()
-	
 func heal(amount : int):
+
 	hp += amount
 
-	if hp > base_stats.max_hp:
-		hp = base_stats.max_hp
+	hp = min(hp, get_max_hp())
+
+	hp_changed.emit(hp)
+
+func spend_mana(amount : int):
+
+	if mana < amount:
+		return false
+
+	mana -= amount
+
+	mana_changed.emit(mana)
+
+	return true
+
+func restore_mana(amount : int):
+
+	mana += amount
+
+	mana = min(mana, get_max_mana())
+
+	mana_changed.emit(mana)

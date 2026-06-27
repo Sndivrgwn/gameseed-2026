@@ -19,7 +19,11 @@ func _ready():
 func take_damage(damage: DamageData):
 	if is_dead:
 		return
-	stats.take_damage(damage.amount)
+	stats.take_damage(damage)
+	PopupManager.spawn_damage(
+	damage,
+	global_position
+	)
 	flash()
 	#var direction = (
 		#global_position - source_position

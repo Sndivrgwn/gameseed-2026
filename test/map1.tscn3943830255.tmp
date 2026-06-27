@@ -26,6 +26,8 @@ distance = -216.0
 
 [node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("1_c6uj4")]
 position = Vector2(-2879.9998, 233.99998)
+knockback_friction = null
+team = null
 
 [node name="Goblin" parent="." unique_id=439640717 instance=ExtResource("11_n7ryp")]
 position = Vector2(2279, 297)
