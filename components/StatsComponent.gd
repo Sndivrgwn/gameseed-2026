@@ -42,9 +42,11 @@ func get_max_mana():
 	return base_stats.max_mana
 
 func take_damage(hit : HitResult):
+	print("damage: ", hit.damage_data.amount)
 	hp -= hit.damage_data.amount
 	hp = max(0, hp)
 	hp_changed.emit(hp)
+	print("hp: ", hp)
 	if hp <= 0:
 		died.emit()
 

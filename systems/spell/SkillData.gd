@@ -21,3 +21,4 @@ enum ElementType {
 @export var lifetime: float = 0
 @export var element: ElementType
 @export var spell_scene: PackedScene
+@export var damage_type := CombatTypes.DamageType.MAGICAL

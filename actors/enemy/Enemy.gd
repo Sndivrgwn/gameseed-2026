@@ -73,7 +73,6 @@ func chase_state(delta):
 	)
 
 func attack_state():
-	
 	velocity = Vector2.ZERO
 	move_and_slide()
 	if !can_attack:
@@ -82,14 +81,12 @@ func attack_state():
 	can_attack = false
 	if is_instance_valid(player):
 		if global_position.distance_to(player.global_position) <= attack_range:
-			var hit = CombatCalculator.calculate_physical_damage(
+			var hit = CombatCalculator.calculate_basic_attack(
 				self,
 				player
 			)
-
 			hit.damage_data.attacker = self
 			hit.damage_data.target = player
-
 			player.take_damage(hit)
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true

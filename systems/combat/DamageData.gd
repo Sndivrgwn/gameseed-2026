@@ -1,12 +1,6 @@
 extends Node
 class_name DamageData
 
-enum DamageType {
-	PHYSICAL,
-	MAGICAL,
-	PURE
-}
-
 var attacker
 var target
 var skill : SkillData
@@ -19,4 +13,4 @@ var is_heal := false
 var is_missed := false
 var is_blocked := false
 
-var damage_type := DamageType.MAGICAL
+var damage_type := CombatTypes.DamageType.MAGICAL

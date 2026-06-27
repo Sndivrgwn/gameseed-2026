@@ -19,16 +19,16 @@ func _ready():
 func take_damage(hit: HitResult):
 	if is_dead:
 		return
+	match hit.damage_data.damage_type:
+		CombatTypes.DamageType.HEAL:
+			stats.heal(hit.damage_data.amount)
+	print("Receive damage:", hit.damage_data.amount)
 	stats.take_damage(hit)
 	PopupManager.spawn_damage(
 	hit,
 	global_position
 	)
 	flash()
-	#var direction = (
-		#global_position - source_position
-	#).normalized()
-	#apply_knockback(direction,250)
 
 func _on_died():
 	is_dead = true

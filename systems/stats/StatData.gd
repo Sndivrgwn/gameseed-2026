@@ -15,3 +15,4 @@ class_name StatData
 @export_range(0.0, 1.0) var critical_rate := 0.05
 
 @export var critical_multiplier := 1.5
+@export var damage_type := CombatTypes.DamageType.MAGICAL
