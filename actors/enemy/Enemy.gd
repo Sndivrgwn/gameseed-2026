@@ -82,15 +82,15 @@ func attack_state():
 	can_attack = false
 	if is_instance_valid(player):
 		if global_position.distance_to(player.global_position) <= attack_range:
-			var damage = CombatCalculator.calculate_physical_damage(
-			stats,
-			player.stats
-		)
+			var hit = CombatCalculator.calculate_physical_damage(
+				self,
+				player
+			)
 
-			damage.attacker = self
-			damage.target = player
+			hit.damage_data.attacker = self
+			hit.damage_data.target = player
 
-			player.take_damage(damage)
+			player.take_damage(hit)
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 	if !is_instance_valid(player):

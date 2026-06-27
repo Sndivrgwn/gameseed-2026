@@ -11,3 +11,7 @@ class_name StatData
 @export var magic_defense := 5
 
 @export var move_speed := 200.0
+
+@export_range(0.0, 1.0) var critical_rate := 0.05
+
+@export var critical_multiplier := 1.5

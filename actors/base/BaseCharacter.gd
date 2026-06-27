@@ -16,12 +16,12 @@ var is_dead := false
 func _ready():
 	stats.died.connect(_on_died)
 
-func take_damage(damage: DamageData):
+func take_damage(hit: HitResult):
 	if is_dead:
 		return
-	stats.take_damage(damage)
+	stats.take_damage(hit)
 	PopupManager.spawn_damage(
-	damage,
+	hit,
 	global_position
 	)
 	flash()

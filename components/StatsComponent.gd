@@ -14,6 +14,12 @@ func _ready():
 	hp = get_max_hp()
 	mana = get_max_mana()
 
+func get_critical_rate() -> float:
+	return base_stats.critical_rate
+
+func get_critical_multiplier() -> float:
+	return base_stats.critical_multiplier
+	
 func get_attack():
 	return base_stats.attack
 
@@ -35,8 +41,8 @@ func get_max_hp():
 func get_max_mana():
 	return base_stats.max_mana
 
-func take_damage(damage : DamageData):
-	hp -= damage.amount
+func take_damage(hit : HitResult):
+	hp -= hit.damage_data.amount
 	hp = max(0, hp)
 	hp_changed.emit(hp)
 	if hp <= 0:

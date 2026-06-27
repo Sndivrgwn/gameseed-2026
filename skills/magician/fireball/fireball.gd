@@ -9,12 +9,10 @@ func _on_body_entered(body):
 	if !can_hit(body):
 		return
 
-	var damage = CombatCalculator.calculate_spell_damage(
+	var hit = CombatCalculator.calculate_spell_damage(
 		caster,
 		body,
 		skill_data
 	)
-
-	body.take_damage(damage)
-
+	body.take_damage(hit)
 	queue_free()
