@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var hp_bar: TextureProgressBar = $MarginContainer/VBoxContainer/HpBar
 @onready var mana_bar: TextureProgressBar = $MarginContainer/VBoxContainer/ManaBar
-@onready var status_label: Label = $MarginContainer/VBoxContainer/StatusLabel
 @onready var casting_bar: ProgressBar = $MarginContainer/VBoxContainer/CastingBar
 @onready var level_ui: Label = $MarginContainer/VBoxContainer/Level
 @onready var exp: Label = $MarginContainer/VBoxContainer/Exp
@@ -34,9 +33,6 @@ func _on_hp_changed(current_hp):
 
 func _on_mana_changed(current_mana):
 	mana_bar.update_mana_smooth(current_mana)
-
-func set_status(text):
-	status_label.text = text
 
 func show_cast_bar(duration):
 	casting_bar.visible = true

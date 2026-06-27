@@ -24,6 +24,7 @@ func cast(caster, spell_name):
 
 	if skill.spell_scene:
 		var spell = skill.spell_scene.instantiate()
+		spell.caster = caster
 		spell.skill_data = skill
-		caster.get_tree().current_scene.add_child(spell)
 		spell.global_position = caster.get_cast_position()
+		caster.get_tree().current_scene.add_child(spell)

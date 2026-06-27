@@ -1,33 +1,20 @@
-extends Area2D
-
-var skill_data : SkillData
-
-@export var speed := 500
+extends BaseProjectile
 
 func _ready():
-	print("display name: ",skill_data.display_name)
-	print("damage: ", skill_data.damage)
-	print("element: ", skill_data.element)
-	
-	body_entered.connect(_on_body_entered)
-	await get_tree().create_timer(skill_data.lifetime).timeout
-	queue_free()
+	super()
 
-func _process(delta):
-	position += Vector2.RIGHT * speed * delta
+	print(skill_data.display_name)
 
 func _on_body_entered(body):
-	if !body.is_in_group("enemy"):
+	if !can_hit(body):
 		return
-	
-	var direction = (
-	body.global_position - global_position
-	).normalized()
-	
-	body.take_damage(
-	skill_data.damage,
-	global_position
+
+	var damage = CombatCalculator.calculate_spell_damage(
+		caster,
+		body,
+		skill_data
 	)
 
-	print("Hit Enemy")
+	body.take_damage(damage)
+
 	queue_free()

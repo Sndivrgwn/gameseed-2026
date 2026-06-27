@@ -3,6 +3,12 @@ class_name BaseCharacter
 
 @onready var stats: StatsComponent = $StatsComponent
 @export var knockback_friction := 1200.0
+enum Team {
+	PLAYER,
+	ENEMY
+}
+
+@export var team: Team
 
 var knockback_velocity := Vector2.ZERO
 var is_dead := false
@@ -10,15 +16,15 @@ var is_dead := false
 func _ready():
 	stats.died.connect(_on_died)
 
-func take_damage(amount, source_position):
+func take_damage(damage: DamageData):
 	if is_dead:
 		return
-	stats.take_damage(amount)
+	stats.take_damage(damage.amount)
 	flash()
-	var direction = (
-		global_position - source_position
-	).normalized()
-	apply_knockback(direction,250)
+	#var direction = (
+		#global_position - source_position
+	#).normalized()
+	#apply_knockback(direction,250)
 
 func _on_died():
 	is_dead = true
