@@ -22,3 +22,9 @@ static func cast(
 		effect.source = caster
 
 		target.status.add_effect(effect)
+
+	if skill.spell_scene != null:
+		var visual = skill.spell_scene.instantiate()
+		visual.skill_data = skill
+		caster.get_tree().current_scene.add_child(visual)
+		visual.global_position = target.global_position

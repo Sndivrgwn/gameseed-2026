@@ -1,18 +1,10 @@
-extends Area2D
+extends BaseSkillVisual
 class_name BaseProjectile
 
 var caster: BaseCharacter
-var skill_data: SkillData
 var target : BaseCharacter
 
 @export var speed := 500.0
-
-func _ready():
-	body_entered.connect(_on_body_entered)
-
-	await get_tree().create_timer(skill_data.lifetime).timeout
-
-	queue_free()
 
 func _physics_process(delta):
 	if !is_instance_valid(target):

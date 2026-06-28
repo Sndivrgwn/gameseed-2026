@@ -26,7 +26,7 @@ func take_damage(hit: HitResult):
 	print("Before:", stats.hp)
 	stats.take_damage(hit)
 	print("After:", stats.hp)
-	print("stack: ", self.status.get_stack(BurnEffect))
+	print("stack:  ", self.status.get_stack(BurnEffect))
 	PopupManager.spawn_damage(
 		hit,
 		global_position
