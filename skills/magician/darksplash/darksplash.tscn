@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dtdyejaoi88nm"]
+
+[ext_resource type="Texture2D" uid="uid://qmtjxla4kdra" path="res://assets/Skill/Magic/Magic/1 Magic/DarkBeam.png" id="1_qa5nj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fwdq"]
+atlas = ExtResource("1_qa5nj")
+region = Rect2(72, 0, 36, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdo80"]
+atlas = ExtResource("1_qa5nj")
+region = Rect2(144, 0, 36, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxho6"]
+atlas = ExtResource("1_qa5nj")
+region = Rect2(216, 0, 36, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04q2s"]
+atlas = ExtResource("1_qa5nj")
+region = Rect2(288, 0, 36, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxk5j"]
+atlas = ExtResource("1_qa5nj")
+region = Rect2(360, 0, 36, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tldp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fwdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdo80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxho6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04q2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxk5j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t0ngo"]
+radius = 25.492485
+height = 83.79759
+
+[node name="darksplash" type="Area2D" unique_id=851645030]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=751730305]
+position = Vector2(9.330144, -5.30122)
+rotation = 2.86234
+scale = Vector2(1.5794402, 1.7692087)
+sprite_frames = SubResource("SpriteFrames_tldp6")
+frame_progress = 0.050004702
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066067593]
+position = Vector2(4, -32.000004)
+rotation = -3.4382987
+skew = 0.08726646
+shape = SubResource("CapsuleShape2D_t0ngo")

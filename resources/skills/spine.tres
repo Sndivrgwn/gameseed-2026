@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://dwiq4wn3ddi0a"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_d5t86"]
+[ext_resource type="PackedScene" uid="uid://h3rdx7uvl5pt" path="res://skills/magician/spine/spine.tscn" id="2_3jpq0"]
+
+[resource]
+script = ExtResource("1_d5t86")
+skill_name = "spine"
+display_name = "spine"
+spell_scene = ExtResource("2_3jpq0")
+mana_cost = 10
+damage = 15
+element = 5
+cast_time = 1.0
+lifetime = 3.0
+delivery_type = 0
+hit_count = 3
+cooldown = 5.0
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

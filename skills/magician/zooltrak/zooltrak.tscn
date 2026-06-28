@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnkdj2rehuh4d"]
 
 [ext_resource type="Script" uid="uid://c84uu3f0or5jr" path="res://skills/magician/zooltrak/zooltrak.gd" id="1_78ctx"]
-[ext_resource type="Texture2D" uid="uid://cl5q0g2rqouvd" path="res://assets/Skill/Magic/Magic/1 Magic/3_2.png" id="2_0bkc7"]
+[ext_resource type="Texture2D" uid="uid://bncnaj6c7sbfa" path="res://assets/Skill/Magic/Magic/1 Magic/zooltrak.png" id="2_0bkc7"]
 [ext_resource type="Texture2D" uid="uid://cfbtd7k0ket66" path="res://assets/Skill/Magic Circle/2/192x192/pipo-btleffect210_192.png" id="3_0bkc7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjw52"]
@@ -163,7 +163,7 @@ script = ExtResource("1_78ctx")
 sprite_frames = SubResource("SpriteFrames_5fvyk")
 animation = &"zooltrak"
 autoplay = "zooltrak"
-frame_progress = 0.75768614
+frame_progress = 0.5234022
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=232917253]
 position = Vector2(2, 2)

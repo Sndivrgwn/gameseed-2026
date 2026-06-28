@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c481bytcdjft6"
-path="res://.godot/imported/1.png-d03654fafe60b2c737cc4ea0a656b591.ctex"
+uid="uid://bpae5oay7ejhr"
+path="res://.godot/imported/healPool.png-1a5717c063ccec3391e4afac1892910d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/1 Magic/1.png"
-dest_files=["res://.godot/imported/1.png-d03654fafe60b2c737cc4ea0a656b591.ctex"]
+source_file="res://assets/Skill/Magic/Magic/1 Magic/healPool.png"
+dest_files=["res://.godot/imported/healPool.png-1a5717c063ccec3391e4afac1892910d.ctex"]
 
 [params]
 

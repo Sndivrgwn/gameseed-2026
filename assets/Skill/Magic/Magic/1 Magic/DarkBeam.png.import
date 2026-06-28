@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2luj56uwbld6"
-path="res://.godot/imported/5.png-e5494e044e1be3cc5292724c98c9b508.ctex"
+uid="uid://qmtjxla4kdra"
+path="res://.godot/imported/DarkBeam.png-3b7d4b3bfc1fffc918c572e43c719ebf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/1 Magic/5.png"
-dest_files=["res://.godot/imported/5.png-e5494e044e1be3cc5292724c98c9b508.ctex"]
+source_file="res://assets/Skill/Magic/Magic/1 Magic/DarkBeam.png"
+dest_files=["res://.godot/imported/DarkBeam.png-3b7d4b3bfc1fffc918c572e43c719ebf.ctex"]
 
 [params]
 

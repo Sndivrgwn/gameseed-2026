@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ou1akdmus1x1"
-path="res://.godot/imported/7.png-c907e3e541dc0ea0cefe6887267f3f40.ctex"
+uid="uid://f3sn61feeu4i"
+path="res://.godot/imported/earthSpine.png-a5162d2cb1462f49d016c6713e9765b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/1 Magic/7.png"
-dest_files=["res://.godot/imported/7.png-c907e3e541dc0ea0cefe6887267f3f40.ctex"]
+source_file="res://assets/Skill/Magic/Magic/1 Magic/earthSpine.png"
+dest_files=["res://.godot/imported/earthSpine.png-a5162d2cb1462f49d016c6713e9765b3.ctex"]
 
 [params]
 

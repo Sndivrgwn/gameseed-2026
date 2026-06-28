@@ -1,38 +1,38 @@
 [gd_scene format=3 uid="uid://bju8q8dvw20t8"]
 
 [ext_resource type="Script" uid="uid://d3diso3t8tta5" path="res://skills/magician/fireball/fireball.gd" id="1_rf0ts"]
-[ext_resource type="Texture2D" uid="uid://cigm4m00pxtjt" path="res://assets/Skill/Magic/Magic/1 Magic/4.png" id="2_h5qv1"]
+[ext_resource type="Texture2D" uid="uid://1ioflg2btsrb" path="res://assets/Skill/Magic/Magic/1 Magic/fireball.png" id="2_2o03v"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_87llj"]
-atlas = ExtResource("2_h5qv1")
-region = Rect2(0, 0, 72, 72)
+[sub_resource type="AtlasTexture" id="AtlasTexture_317eq"]
+atlas = ExtResource("2_2o03v")
+region = Rect2(0, 24, 72, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_arpaa"]
-atlas = ExtResource("2_h5qv1")
-region = Rect2(72, 0, 72, 72)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nphr0"]
+atlas = ExtResource("2_2o03v")
+region = Rect2(72, 24, 72, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fd8uq"]
-atlas = ExtResource("2_h5qv1")
-region = Rect2(144, 0, 72, 72)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsjtw"]
+atlas = ExtResource("2_2o03v")
+region = Rect2(144, 24, 72, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_blbbo"]
-atlas = ExtResource("2_h5qv1")
-region = Rect2(216, 0, 72, 72)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3am1"]
+atlas = ExtResource("2_2o03v")
+region = Rect2(216, 24, 72, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o1b6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_87llj")
+"texture": SubResource("AtlasTexture_317eq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_arpaa")
+"texture": SubResource("AtlasTexture_nphr0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fd8uq")
+"texture": SubResource("AtlasTexture_wsjtw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_blbbo")
+"texture": SubResource("AtlasTexture_h3am1")
 }],
 "loop": true,
 "name": &"fireball",
@@ -52,7 +52,7 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_8o1b6")
 animation = &"fireball"
 autoplay = "fireball"
-frame_progress = 0.45779568
+frame_progress = 0.28696176
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=8243923]
 position = Vector2(-1, 0)

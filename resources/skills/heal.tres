@@ -8,6 +8,7 @@
 script = ExtResource("1_m8vy4")
 skill_name = "heal"
 display_name = "heal"
+description = "an healing magic that heal group \"player\""
 spell_scene = SubResource("PackedScene_m8vy4")
 mana_cost = 30
 element = 6

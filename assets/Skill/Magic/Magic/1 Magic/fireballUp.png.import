@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kdbnk63vg6tx"
-path="res://.godot/imported/6.png-81d7e906548716624aa1aad787f4c5e9.ctex"
+uid="uid://b2mmhrq4talx1"
+path="res://.godot/imported/fireballUp.png-d570209eef6570fd5e66f3e81d08c998.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/1 Magic/6.png"
-dest_files=["res://.godot/imported/6.png-81d7e906548716624aa1aad787f4c5e9.ctex"]
+source_file="res://assets/Skill/Magic/Magic/1 Magic/fireballUp.png"
+dest_files=["res://.godot/imported/fireballUp.png-d570209eef6570fd5e66f3e81d08c998.ctex"]
 
 [params]
 

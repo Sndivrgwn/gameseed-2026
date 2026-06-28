@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3 uid="uid://bxjdsu0wlwgyw"]
+
+[ext_resource type="Script" uid="uid://cmin03uwv3poc" path="res://systems/status/StatusEffectData.gd" id="1_aqik2"]
+[ext_resource type="Texture2D" uid="uid://byk8tf5ewyu53" path="res://assets/Skill/Magic/Magic/2 Icons/Icon_01.png" id="1_yq5x4"]
+
+[sub_resource type="GDScript" id="GDScript_rlrnu"]
+
+[resource]
+script = ExtResource("1_aqik2")
+display_name = "slowness"
+description = "reduce speed of enemy, if weakness times 1.5, lasting for 3 second"
+duration = 3.0
+max_stacks = 3
+icon = ExtResource("1_yq5x4")
+effect_script = SubResource("GDScript_rlrnu")
+is_negative = true
+metadata/_custom_type_script = "uid://cmin03uwv3poc"

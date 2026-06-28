@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://h3rdx7uvl5pt"]
+
+[ext_resource type="Texture2D" uid="uid://f3sn61feeu4i" path="res://assets/Skill/Magic/Magic/1 Magic/earthSpine.png" id="1_1yomh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr5fk"]
+atlas = ExtResource("1_1yomh")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n25b5"]
+atlas = ExtResource("1_1yomh")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7ypw"]
+atlas = ExtResource("1_1yomh")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k88ga"]
+atlas = ExtResource("1_1yomh")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07778"]
+atlas = ExtResource("1_1yomh")
+region = Rect2(288, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6hdx"]
+atlas = ExtResource("1_1yomh")
+region = Rect2(360, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0uv2"]
+atlas = ExtResource("1_1yomh")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm0gq"]
+atlas = ExtResource("1_1yomh")
+region = Rect2(504, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7gbv4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr5fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n25b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7ypw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k88ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07778")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6hdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0uv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm0gq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76lnt"]
+size = Vector2(49, 21)
+
+[node name="Spine" type="Area2D" unique_id=510896768]
+collision_mask = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=729166844]
+sprite_frames = SubResource("SpriteFrames_7gbv4")
+frame = 7
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721921525]
+position = Vector2(1.5, 25.5)
+shape = SubResource("RectangleShape2D_76lnt")

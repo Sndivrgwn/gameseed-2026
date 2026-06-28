@@ -6,6 +6,7 @@ class_name SkillData
 @export_group("General Information")
 @export var skill_name: String
 @export var display_name: String
+@export_multiline var description := ""
 @export var spell_scene: PackedScene
 
 @export_group("Combat Stats")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgdslt5gcgd58"
-path="res://.godot/imported/2.png-dc67c1bed19c1b7a3e0c83cef782a217.ctex"
+uid="uid://6g614tejwmde"
+path="res://.godot/imported/iceSpike.png-a4d6c1a6c54e97855f219777f46387a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/1 Magic/2.png"
-dest_files=["res://.godot/imported/2.png-dc67c1bed19c1b7a3e0c83cef782a217.ctex"]
+source_file="res://assets/Skill/Magic/Magic/1 Magic/iceSpike.png"
+dest_files=["res://.godot/imported/iceSpike.png-a4d6c1a6c54e97855f219777f46387a4.ctex"]
 
 [params]
 

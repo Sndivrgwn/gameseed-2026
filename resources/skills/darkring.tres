@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://e41xl1nx31w2"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_pkvan"]
+[ext_resource type="PackedScene" uid="uid://0mcle34lr48q" path="res://skills/magician/darkring/darkring.tscn" id="2_47m3d"]
+
+[resource]
+script = ExtResource("1_pkvan")
+skill_name = "ring"
+display_name = "darkring"
+description = "dark ring that pull enemy to the center of the magic"
+spell_scene = ExtResource("2_47m3d")
+mana_cost = 50
+damage = 90
+element = 7
+cast_time = 7.0
+lifetime = 3.0
+target_type = 2
+delivery_type = 2
+apply_status = false
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

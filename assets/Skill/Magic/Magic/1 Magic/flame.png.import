@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4t7qyvyfb2ip"
-path="res://.godot/imported/3.png-a5072907246b19414c1892e6a9c4b550.ctex"
+uid="uid://jha6heohosub"
+path="res://.godot/imported/flame.png-565fd541c7ac5afff20d21dc147b0b17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/1 Magic/3.png"
-dest_files=["res://.godot/imported/3.png-a5072907246b19414c1892e6a9c4b550.ctex"]
+source_file="res://assets/Skill/Magic/Magic/1 Magic/flame.png"
+dest_files=["res://.godot/imported/flame.png-565fd541c7ac5afff20d21dc147b0b17.ctex"]
 
 [params]
 

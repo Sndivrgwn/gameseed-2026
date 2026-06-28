@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://0mcle34lr48q"]
+
+[ext_resource type="Texture2D" uid="uid://bpxfkswetxqso" path="res://assets/Skill/Magic/Magic/1 Magic/blackRing.png" id="1_kajpc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t1ej"]
+atlas = ExtResource("1_kajpc")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyvfa"]
+atlas = ExtResource("1_kajpc")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sy6v"]
+atlas = ExtResource("1_kajpc")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no353"]
+atlas = ExtResource("1_kajpc")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t7or"]
+atlas = ExtResource("1_kajpc")
+region = Rect2(288, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iycq8"]
+atlas = ExtResource("1_kajpc")
+region = Rect2(360, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtucq"]
+atlas = ExtResource("1_kajpc")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnnpv"]
+atlas = ExtResource("1_kajpc")
+region = Rect2(504, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qjaw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t1ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyvfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sy6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no353")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t7or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iycq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtucq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnnpv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxkqu"]
+radius = 68.570175
+
+[node name="Darkring" type="Area2D" unique_id=1845152996]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=708372418]
+position = Vector2(0.71967506, 0.72415483)
+rotation = -2.7925267
+scale = Vector2(1.8902912, 1.9830512)
+skew = 0.9005899
+sprite_frames = SubResource("SpriteFrames_0qjaw")
+frame_progress = 0.00915666
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1549585042]
+rotation = -3.3335788
+skew = -1.1571532
+shape = SubResource("CircleShape2D_lxkqu")

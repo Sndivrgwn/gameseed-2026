@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://cj122t3r55et7"]
+
+[ext_resource type="Texture2D" uid="uid://ifrvdn6afrnd" path="res://assets/Skill/Magic/Magic/1 Magic/meteor.png" id="1_5kyvh"]
+[ext_resource type="Texture2D" uid="uid://cm6ghcc8kf6jl" path="res://assets/Skill/Magic/Magic/1 Magic/meteor2.png" id="2_w66rq"]
+[ext_resource type="Texture2D" uid="uid://1ust20pavxa0" path="res://assets/Skill/Magic/Explosion/Explosion_1/Explosion_1.png" id="3_nl23m"]
+[ext_resource type="Texture2D" uid="uid://b4dtd6o7o37w3" path="res://assets/Skill/Magic/Explosion/Explosion_1/Explosion_2.png" id="4_oyo44"]
+[ext_resource type="Texture2D" uid="uid://rki1nvjlqruk" path="res://assets/Skill/Magic/Explosion/Explosion_1/Explosion_3.png" id="5_il3xw"]
+[ext_resource type="Texture2D" uid="uid://cd7uoud4rspwq" path="res://assets/Skill/Magic/Explosion/Explosion_1/Explosion_4.png" id="6_gp4hb"]
+[ext_resource type="Texture2D" uid="uid://dwx14p3nppipn" path="res://assets/Skill/Magic/Explosion/Explosion_1/Explosion_5.png" id="7_lcb5p"]
+[ext_resource type="Texture2D" uid="uid://dectbequvg61t" path="res://assets/Skill/Magic/Explosion/Explosion_1/Explosion_6.png" id="8_gk7q5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_673ow"]
+atlas = ExtResource("1_5kyvh")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyppo"]
+atlas = ExtResource("1_5kyvh")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mweyv"]
+atlas = ExtResource("1_5kyvh")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0rbx"]
+atlas = ExtResource("1_5kyvh")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvi3o"]
+atlas = ExtResource("2_w66rq")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqxx5"]
+atlas = ExtResource("2_w66rq")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xk3s"]
+atlas = ExtResource("2_w66rq")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1u2n"]
+atlas = ExtResource("2_w66rq")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qj8yk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_673ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyppo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mweyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0rbx")
+}],
+"loop": true,
+"name": &"meteor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvi3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqxx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xk3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1u2n")
+}],
+"loop": false,
+"name": &"meteor_fall",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ukavk"]
+radius = 132.03409
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iuj0"]
+atlas = ExtResource("3_nl23m")
+region = Rect2(183, 183, 183, 183)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6oei"]
+atlas = ExtResource("4_oyo44")
+region = Rect2(183, 183, 183, 183)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgr3i"]
+atlas = ExtResource("5_il3xw")
+region = Rect2(0, 0, 550, 550)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtoal"]
+atlas = ExtResource("6_gp4hb")
+region = Rect2(0, 0, 550, 550)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5d3b"]
+atlas = ExtResource("7_lcb5p")
+region = Rect2(0, 0, 550, 550)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx32r"]
+atlas = ExtResource("8_gk7q5")
+region = Rect2(0, 0, 550, 550)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjs4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iuj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6oei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgr3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtoal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5d3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx32r")
+}],
+"loop": false,
+"name": &"meteor_explosion",
+"speed": 5.0
+}]
+
+[node name="Meteor" type="Area2D" unique_id=160896827]
+
+[node name="meteor" type="AnimatedSprite2D" parent="." unique_id=485226827]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_qj8yk")
+animation = &"meteor"
+frame_progress = 0.6321051
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=473562482]
+shape = SubResource("CircleShape2D_ukavk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1562372414]
+sprite_frames = SubResource("SpriteFrames_yjs4m")
+animation = &"meteor_explosion"
+frame = 5
+frame_progress = 1.0

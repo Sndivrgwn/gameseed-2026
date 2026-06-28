@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://da5rmg5at8n3a"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_vfgci"]
+[ext_resource type="PackedScene" uid="uid://de7gpxiirn1r6" path="res://skills/magician/spike/spike.tscn" id="2_qgvo4"]
+
+[resource]
+script = ExtResource("1_vfgci")
+skill_name = "spike"
+display_name = "spike"
+spell_scene = ExtResource("2_qgvo4")
+mana_cost = 10
+damage = 25
+element = 1
+cast_time = 3.0
+lifetime = 3.0
+delivery_type = 0
+hit_count = 3
+cooldown = 15.0
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

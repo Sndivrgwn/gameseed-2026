@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://c3chqvaglck6i"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_1ryq0"]
+[ext_resource type="PackedScene" uid="uid://cj122t3r55et7" path="res://skills/magician/meteor/meteor.tscn" id="2_ewkif"]
+[ext_resource type="Resource" uid="uid://ds3cthckibkdf" path="res://resources/status_effect/BurnEffectData.tres" id="3_r5723"]
+
+[resource]
+script = ExtResource("1_1ryq0")
+skill_name = "meteor"
+display_name = "meteor"
+spell_scene = ExtResource("2_ewkif")
+mana_cost = 25
+damage = 75
+element = 0
+cast_time = 5.0
+lifetime = 5.0
+delivery_type = 2
+hit_count = 5
+apply_status_effect = true
+status_effect = ExtResource("3_r5723")
+cooldown = 25.0
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

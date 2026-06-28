@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cigm4m00pxtjt"
-path="res://.godot/imported/4.png-675f97a2ad93162e05585bd855176e41.ctex"
+uid="uid://bncnaj6c7sbfa"
+path="res://.godot/imported/zooltrak.png-3d20635471713dc7baaf34c381de92d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/1 Magic/4.png"
-dest_files=["res://.godot/imported/4.png-675f97a2ad93162e05585bd855176e41.ctex"]
+source_file="res://assets/Skill/Magic/Magic/1 Magic/zooltrak.png"
+dest_files=["res://.godot/imported/zooltrak.png-3d20635471713dc7baaf34c381de92d1.ctex"]
 
 [params]
 

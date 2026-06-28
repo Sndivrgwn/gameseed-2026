@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://dewv14vo584vd"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_yq4v4"]
+[ext_resource type="PackedScene" uid="uid://dtdyejaoi88nm" path="res://skills/magician/darksplash/darksplash.tscn" id="2_qsb2f"]
+
+[resource]
+script = ExtResource("1_yq4v4")
+skill_name = "splash"
+display_name = "dark splash"
+description = "self-around area that give knockback and poison to enemy"
+spell_scene = ExtResource("2_qsb2f")
+mana_cost = 15
+damage = 25
+element = 7
+cast_time = 3.0
+delivery_type = 0
+apply_status_effect = true
+cooldown = 15.0
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"
