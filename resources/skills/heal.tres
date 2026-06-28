@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://bphyfcd7nxm7f"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_m8vy4"]
+
+[sub_resource type="PackedScene" id="PackedScene_m8vy4"]
+
+[resource]
+script = ExtResource("1_m8vy4")
+skill_name = "heal"
+display_name = "heal"
+spell_scene = SubResource("PackedScene_m8vy4")
+mana_cost = 30
+element = 6
+cast_time = 2.0
+lifetime = 2.0
+target_type = 0
+delivery_type = 0
+hit_count = 3
+deal_damage = false
+heal_amount = 10
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_dy7j7"]
 [ext_resource type="PackedScene" uid="uid://ca3gnhj6wie8e" path="res://skills/magician/flame/flame.tscn" id="2_7mbmf"]
+[ext_resource type="Resource" uid="uid://ds3cthckibkdf" path="res://resources/status_effect/BurnEffectData.tres" id="3_lt5mb"]
 
 [resource]
 script = ExtResource("1_dy7j7")
@@ -11,5 +12,9 @@ mana_cost = 10
 damage = 25
 cast_time = 2.0
 lifetime = 5.0
+element = 0
 spell_scene = ExtResource("2_7mbmf")
+apply_status_effect = true
+status_effect = ExtResource("3_lt5mb")
+target_type = 2
 metadata/_custom_type_script = "uid://cqev7m7q7tonm"

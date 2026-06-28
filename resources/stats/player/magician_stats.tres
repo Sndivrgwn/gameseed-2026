@@ -7,4 +7,5 @@ script = ExtResource("1_u20l6")
 magic_attack = 25
 magic_defense = 12
 move_speed = 1000.0
+critical_rate = 0.51
 metadata/_custom_type_script = "uid://cwjjeqd3a16bt"

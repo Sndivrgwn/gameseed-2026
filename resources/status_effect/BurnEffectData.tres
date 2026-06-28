@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="StatusEffectData" format=3 uid="uid://ds3cthckibkdf"]
 
 [ext_resource type="Script" uid="uid://deff2bjkm83hh" path="res://systems/status/effects/BurnEffect.gd" id="1_f5865"]
-[ext_resource type="Script" uid="uid://cmin03uwv3poc" path="res://systems/status/effects/StatusEffectData.gd.gd" id="1_hnbgf"]
+[ext_resource type="Script" uid="uid://cmin03uwv3poc" path="res://systems/status/StatusEffectData.gd" id="2_f5865"]
 
 [resource]
-script = ExtResource("1_hnbgf")
+script = ExtResource("2_f5865")
 display_name = "Burn"
 description = "burning glow"
-tick_rate = 2.0
+duration = 10.0
+max_stacks = 10
 effect_script = ExtResource("1_f5865")
 metadata/_custom_type_script = "uid://cmin03uwv3poc"

@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://daqs67ul1w5ki" path="res://components/LevelComponent.gd" id="10_0vfku"]
 [ext_resource type="Script" uid="uid://ccos28ldja0k0" path="res://systems/status/StatusComponent.gd" id="11_g4noo"]
 [ext_resource type="Script" uid="uid://m1obqaeytkmq" path="res://systems/combat/ResistanceComponent.gd" id="11_ps0bv"]
+[ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="13_mvv8q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj7f8"]
 atlas = ExtResource("2_f0n2r")
@@ -805,3 +806,7 @@ metadata/_custom_type_script = "uid://m1obqaeytkmq"
 [node name="StatusComponent" type="Node" parent="." unique_id=903598157]
 script = ExtResource("11_g4noo")
 metadata/_custom_type_script = "uid://ccos28ldja0k0"
+
+[node name="CooldownComponent" type="Node" parent="." unique_id=209229772]
+script = ExtResource("13_mvv8q")
+metadata/_custom_type_script = "uid://c7otefy1qs7jg"
