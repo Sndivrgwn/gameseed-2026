@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bkpoixtb35obj"]
+
+[ext_resource type="PackedScene" uid="uid://dnukjf7em0khy" path="res://ui/hud/Hud.tscn" id="1_iq1x1"]
+[ext_resource type="PackedScene" uid="uid://drxq822htgf4i" path="res://ui/StatsUI/StatsUi.tscn" id="2_cppmd"]
+[ext_resource type="PackedScene" uid="uid://c4yy0wj5vyunq" path="res://ui/SpellInputUI.tscn" id="3_e77lw"]
+[ext_resource type="PackedScene" uid="uid://cs1wr6nqaokic" path="res://actors/magician/magician.tscn" id="4_iditr"]
+[ext_resource type="Texture2D" uid="uid://b1vrdbe52gvah" path="res://assets/Background/Jungle/Bright/sky.png" id="5_bv85h"]
+[ext_resource type="Texture2D" uid="uid://b1wr1cs1pywty" path="res://assets/Background/Jungle/Bright/trees&bushes.png" id="6_iq1x1"]
+[ext_resource type="Texture2D" uid="uid://qya0sblxlm4y" path="res://assets/Background/Jungle/Bright/grasses.png" id="7_cppmd"]
+[ext_resource type="Texture2D" uid="uid://p7scusepqpce" path="res://assets/Background/Jungle/Bright/tree_face.png" id="8_e77lw"]
+[ext_resource type="Texture2D" uid="uid://dnwjo0k53ty52" path="res://assets/Background/Jungle/Bright/grass&road.png" id="9_iditr"]
+
+[node name="Cutscene" type="Node2D" unique_id=1205190803]
+
+[node name="Hud" parent="." unique_id=1562880650 instance=ExtResource("1_iq1x1")]
+visible = false
+
+[node name="StatsUi" parent="." unique_id=2101833981 instance=ExtResource("2_cppmd")]
+visible = false
+
+[node name="SpellInputUi" parent="." unique_id=633345769 instance=ExtResource("3_e77lw")]
+visible = false
+
+[node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("4_iditr")]
+position = Vector2(-767, 482)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=51788802]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=42542389]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="bg-sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1725585336]
+texture = ExtResource("5_bv85h")
+
+[node name="bg-sky2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=915009352]
+position = Vector2(3833, -1)
+texture = ExtResource("5_bv85h")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1711463317]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="bg-tree1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1710076704]
+position = Vector2(1, 107)
+texture = ExtResource("6_iq1x1")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 567.15247)
+
+[node name="bg-tree2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1760169468]
+position = Vector2(3840, 105)
+texture = ExtResource("6_iq1x1")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 567.15247)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1255804684]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="bg-grass1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1760669776]
+position = Vector2(1, 328)
+texture = ExtResource("7_cppmd")
+
+[node name="bg-grass2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3/bg-grass1" unique_id=1342100283]
+position = Vector2(3841, 0)
+texture = ExtResource("7_cppmd")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=828307110]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="obj-tree" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=793194018]
+position = Vector2(583, 342)
+texture = ExtResource("8_e77lw")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1798958956]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="floor1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" unique_id=514070855]
+position = Vector2(0, 335)
+texture = ExtResource("9_iditr")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="floor2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" unique_id=1625504827]
+position = Vector2(3839, 338)
+texture = ExtResource("9_iditr")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[editable path="SpellInputUi"]
