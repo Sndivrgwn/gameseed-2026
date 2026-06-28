@@ -10,7 +10,10 @@ func cast(caster, spell_name):
 	if caster.is_casting:
 		print("still casting")
 		return
-
+	if caster.cooldowns.is_on_cooldown(skill.skill_name):
+		print("Skill cooldown")
+		return
+	
 	if !caster.stats.spend_mana(skill.mana_cost):
 		print("not enough mana")
 		return
@@ -21,10 +24,18 @@ func cast(caster, spell_name):
 		skill.cast_time
 	).timeout
 	caster.is_casting = false
-
+	caster.cooldowns.start_cooldown(
+	skill.skill_name,
+	skill.cooldown
+	)
 	if skill.spell_scene:
-		var spell = skill.spell_scene.instantiate()
-		spell.caster = caster
-		spell.skill_data = skill
-		spell.global_position = caster.get_cast_position()
-		caster.get_tree().current_scene.add_child(spell)
+		var target = TargetingManager.get_target(caster, skill.target_type)
+		if target == null:
+			return
+		print(target)
+		print(skill.delivery_type)
+		DeliveryManager.cast(
+			caster,
+			target,
+			skill
+		)

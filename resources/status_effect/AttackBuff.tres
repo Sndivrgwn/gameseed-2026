@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3 uid="uid://dcervs6wqif2f"]
+
+[ext_resource type="Script" uid="uid://cmin03uwv3poc" path="res://systems/status/StatusEffectData.gd" id="1_1hjcg"]
+[ext_resource type="Script" uid="uid://bb6yrpc11qf0u" path="res://systems/status/effects/AttackBuff.gd" id="1_l0y5t"]
+
+[resource]
+script = ExtResource("1_1hjcg")
+display_name = "attack buff"
+description = "buf attack 10%"
+effect_script = ExtResource("1_l0y5t")
+metadata/_custom_type_script = "uid://cmin03uwv3poc"

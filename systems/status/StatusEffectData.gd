@@ -9,3 +9,5 @@ var description := ""
 @export var max_stacks := 1
 @export var icon : Texture2D
 @export var effect_script : Script
+@export_group("Flags")
+@export var is_negative := false

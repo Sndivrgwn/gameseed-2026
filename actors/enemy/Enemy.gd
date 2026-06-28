@@ -93,9 +93,10 @@ func attack_state():
 			)
 			hit.damage_data.attacker = self
 			hit.damage_data.target = player
-			print("Before:", stats.hp)
+			print("Enemy hp Before:", stats.hp)
 			player.take_damage(hit)
-			print("After:", stats.hp)
+			print("Enemy hp After:", stats.hp)
+			print("stack", player.status.get_stack(BurnEffect))
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 	if !is_instance_valid(player):

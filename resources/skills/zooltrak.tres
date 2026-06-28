@@ -7,10 +7,14 @@
 script = ExtResource("1_5tq7y")
 skill_name = "zooltrak"
 display_name = "Zooltrak"
+spell_scene = ExtResource("2_8imgu")
 mana_cost = 20
-damage = 50
+damage = 20
+element = 2
 cast_time = 1.0
 lifetime = 3.0
-element = 6
-spell_scene = ExtResource("2_8imgu")
+delivery_type = 2
+area_radius = 2000.0
+hit_count = 3
+apply_status = false
 metadata/_custom_type_script = "uid://cqev7m7q7tonm"

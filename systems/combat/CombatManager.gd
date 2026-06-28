@@ -28,7 +28,6 @@ static func calculate_spell_damage(
 		effect.data = skill.status_effect
 		effect.source = caster
 		target.status.add_effect(effect)
-
 	return hit
 
 
@@ -89,38 +88,24 @@ static func calculate_damage(
 		CombatTypes.DamageType.HEAL:
 			final_damage += caster.stats.get_magic_attack()
 
-
-	# Resistance
 	if damage_data.damage_type != CombatTypes.DamageType.HEAL:
 		final_damage = apply_resistance(
 			final_damage,
 			target,
 			damage_data.element_type
 		)
-
-
 	# Critical
 	var is_critical := false
-
 	if damage_data.damage_type != CombatTypes.DamageType.HEAL:
 		is_critical = randf() < caster.stats.get_critical_rate()
-
 		if is_critical:
 			final_damage *= caster.stats.get_critical_multiplier()
-
-
-	# Clamp
 	if damage_data.damage_type != CombatTypes.DamageType.HEAL:
 		final_damage = max(0.0, final_damage)
-
-
 	damage_data.amount = int(round(final_damage))
 	damage_data.is_critical = is_critical
-
-
 	var hit := HitResult.new()
 	hit.damage_data = damage_data
-
 	if is_critical:
 		hit.result_type = HitResult.ResultType.CRITICAL
 	else:

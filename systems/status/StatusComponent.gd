@@ -10,9 +10,24 @@ func _process(delta):
 			remove_effect(effect)
 
 func add_effect(effect: StatusEffect):
+	var existing = get_effect(
+		effect.get_script()
+	)
+	print("Incoming:", effect.get_script())
+
+	for e in active_effects:
+		print("Existing:", e.get_script())
+		
+	if existing:
+		if existing.stacks < existing.max_stacks:
+			existing.stacks += 1
+		existing.elapsed = 0
+		existing.duration = effect.data.duration
+		existing.on_stack_added()
+		return
+
 	effect.owner = get_parent()
 	effect.duration = effect.data.duration
-	effect.tick_rate = effect.data.tick_rate
 	effect.max_stacks = effect.data.max_stacks
 	active_effects.append(effect)
 	effect.on_apply()
@@ -37,3 +52,20 @@ func refresh_effect(effect_type: Script) -> void:
 		
 		# Optional: If your StatusEffect class has a specific refresh callback, 
 		# you could call something like effect.on_refresh() here.
+
+func get_stack(
+	effect_type: Script
+) -> int:
+	var effect = get_effect(effect_type)
+	if effect:
+		return effect.stacks
+	return 0
+
+func remove_all_effects():
+	for effect in active_effects.duplicate():
+		remove_effect(effect)
+
+func clear_negative_effects():
+	for effect in active_effects.duplicate():
+		if effect.data.is_negative:
+			remove_effect(effect)

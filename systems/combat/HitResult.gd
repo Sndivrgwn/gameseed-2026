@@ -7,7 +7,8 @@ enum ResultType {
 	CRITICAL,
 	MISS,
 	BLOCK,
-	IMMUNE
+	IMMUNE,
+	HEAL
 }
 
 var result_type := ResultType.HIT

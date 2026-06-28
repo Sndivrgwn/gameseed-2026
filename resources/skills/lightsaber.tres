@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://0ynkq1bivdks"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_r06v1"]
+[ext_resource type="PackedScene" uid="uid://7bjl2k8oeey2" path="res://skills/magician/lightsaber/lightsaber.tscn" id="2_imjiy"]
+
+[resource]
+script = ExtResource("1_r06v1")
+skill_name = "lightsaber"
+display_name = "lightsaber"
+spell_scene = ExtResource("2_imjiy")
+mana_cost = 10
+damage = 20
+element = 6
+cast_time = 1.0
+lifetime = 2.0
+delivery_type = 0
+hit_count = 10
+apply_status = false
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

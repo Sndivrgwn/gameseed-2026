@@ -7,7 +7,7 @@ func on_apply():
 	print(owner.name, " burned!")
 
 func on_tick():
-	damage_per_tick = owner.stats.get_max_hp() * 0.02
+	damage_per_tick = owner.stats.get_max_hp() * 0.01
 	var hit = CombatCalculator.calculate_effect_damage(
 		source,
 		owner,
@@ -15,7 +15,6 @@ func on_tick():
 		CombatTypes.DamageType.PURE,
 		CombatTypes.ElementType.FIRE
 	)
-
 	owner.take_damage(hit)
 
 func on_remove():

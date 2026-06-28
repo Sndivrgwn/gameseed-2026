@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://bp15a5rfmh6uq"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_3drvu"]
+[ext_resource type="Resource" uid="uid://dcervs6wqif2f" path="res://resources/status_effect/AttackBuff.tres" id="2_3vft2"]
+
+[sub_resource type="PackedScene" id="PackedScene_8ui6u"]
+
+[resource]
+script = ExtResource("1_3drvu")
+skill_name = "rage"
+display_name = "rage"
+spell_scene = SubResource("PackedScene_8ui6u")
+mana_cost = 20
+cast_time = 1.0
+lifetime = 10.0
+target_type = 0
+delivery_type = 0
+apply_status_effect = true
+status_effect = ExtResource("2_3vft2")
+deal_damage = false
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

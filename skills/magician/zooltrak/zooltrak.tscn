@@ -130,7 +130,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7qm6w")
 }],
-"loop": true,
+"loop": false,
 "name": &"circle_end",
 "speed": 7.0
 }, {
@@ -158,11 +158,11 @@ animations = [{
 [node name="Zooltrak" type="Area2D" unique_id=1702734907]
 scale = Vector2(5, 5)
 script = ExtResource("1_78ctx")
-lifetime = 3
 
 [node name="zooltrak" type="AnimatedSprite2D" parent="." unique_id=1360409479]
 sprite_frames = SubResource("SpriteFrames_5fvyk")
 animation = &"zooltrak"
+autoplay = "zooltrak"
 frame_progress = 0.75768614
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=232917253]
@@ -177,3 +177,4 @@ scale = Vector2(0.7, 0.7)
 skew = 1.1082841
 sprite_frames = SubResource("SpriteFrames_i4shl")
 animation = &"circle_end"
+autoplay = "circle_end"
