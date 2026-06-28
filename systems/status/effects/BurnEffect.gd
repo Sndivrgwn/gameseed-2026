@@ -3,10 +3,6 @@ class_name BurnEffect
 
 var damage_per_tick = 5
 
-func _init():
-	duration = 5
-	tick_rate = 1
-
 func on_apply():
 	print(owner.name, " burned!")
 

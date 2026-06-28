@@ -23,4 +23,4 @@ enum ElementType {
 @export var spell_scene: PackedScene
 @export var damage_type := CombatTypes.DamageType.MAGICAL
 @export var apply_status_effect := false
-@export var status_effect_scene: Script
+@export var status_effect: StatusEffectData

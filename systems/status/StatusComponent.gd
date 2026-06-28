@@ -9,8 +9,11 @@ func _process(delta):
 		if effect.is_finished():
 			remove_effect(effect)
 
-func add_effect(effect : StatusEffect):
+func add_effect(effect: StatusEffect):
 	effect.owner = get_parent()
+	effect.duration = effect.data.duration
+	effect.tick_rate = effect.data.tick_rate
+	effect.max_stacks = effect.data.max_stacks
 	active_effects.append(effect)
 	effect.on_apply()
 

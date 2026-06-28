@@ -13,8 +13,9 @@ static func calculate_spell_damage(
 	damage.attacker = caster
 	damage.target = target
 	if skill.apply_status_effect:
-		print("Apply Burn")
-		var effect = skill.status_effect_scene.new()
+		var effect = skill.status_effect.effect_script.new()
+		effect.data = skill.status_effect
+		effect.source = caster
 		target.status.add_effect(effect)
 	return calculate_damage(caster, target, damage)
 
