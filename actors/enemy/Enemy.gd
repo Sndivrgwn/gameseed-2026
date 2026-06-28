@@ -5,6 +5,7 @@ class_name Enemy
 @export var attack_cooldown := 1.0
 @export var exp_reward := 20
 @onready var player = get_tree().get_first_node_in_group("player")
+@onready var status: StatusComponent = $StatusComponent
 
 enum State {
 	IDLE,

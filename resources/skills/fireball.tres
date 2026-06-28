@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_s313m"]
 [ext_resource type="PackedScene" uid="uid://bju8q8dvw20t8" path="res://skills/magician/fireball/fireball.tscn" id="2_wb8wf"]
+[ext_resource type="Script" uid="uid://deff2bjkm83hh" path="res://systems/status/effects/BurnEffect.gd" id="3_wb8wf"]
 
 [resource]
 script = ExtResource("1_s313m")
@@ -12,4 +13,6 @@ damage = 25
 cast_time = 0.5
 lifetime = 3.0
 spell_scene = ExtResource("2_wb8wf")
+apply_status_effect = true
+status_effect_scene = ExtResource("3_wb8wf")
 metadata/_custom_type_script = "uid://cqev7m7q7tonm"

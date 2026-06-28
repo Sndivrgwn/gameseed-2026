@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpvntwr6b2dho" path="res://assets/sprites/Enemy/goblin/PNG/Orc1/With_shadow/orc1_idle_with_shadow.png" id="2_cmr6w"]
 [ext_resource type="Script" uid="uid://bouqg2kx7oy65" path="res://components/StatsComponent.gd" id="3_mljs2"]
 [ext_resource type="Resource" uid="uid://cpvdkhcnjhbps" path="res://resources/stats/enemy/goblin_stats.tres" id="4_cmr6w"]
+[ext_resource type="Script" uid="uid://ccos28ldja0k0" path="res://systems/status/StatusComponent.gd" id="5_mljs2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mljs2"]
 atlas = ExtResource("2_cmr6w")
@@ -70,3 +71,7 @@ metadata/_custom_type_script = "uid://bouqg2kx7oy65"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1159689234]
 shape = SubResource("CircleShape2D_mp5hi")
+
+[node name="StatusComponent" type="Node" parent="." unique_id=1465714952]
+script = ExtResource("5_mljs2")
+metadata/_custom_type_script = "uid://ccos28ldja0k0"

@@ -12,6 +12,10 @@ static func calculate_spell_damage(
 	damage.skill = skill
 	damage.attacker = caster
 	damage.target = target
+	if skill.apply_status_effect:
+		print("Apply Burn")
+		var effect = skill.status_effect_scene.new()
+		target.status.add_effect(effect)
 	return calculate_damage(caster, target, damage)
 
 static func calculate_basic_attack(
@@ -57,3 +61,18 @@ static func calculate_damage(
 	else:
 		hit.result_type = HitResult.ResultType.HIT
 	return hit
+
+static func calculate_effect_damage(
+	source: BaseCharacter,
+	target: BaseCharacter,
+	base_damage: int,
+	damage_type: CombatTypes.DamageType,
+	element: CombatTypes.ElementType
+) -> HitResult:
+	var damage_data = DamageData.new()
+	damage_data.base_damage = base_damage
+	damage_data.damage_type = damage_type
+	damage_data.element_type = element
+	damage_data.attacker = source
+	damage_data.target = target
+	return calculate_damage(source, target, damage_data)

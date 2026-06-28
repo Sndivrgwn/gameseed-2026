@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ortnhybm2mk" path="res://assets/sprites/Enemy/setengah hewan/Minotaur_1/Idle.png" id="2_hejod"]
 [ext_resource type="Script" uid="uid://bouqg2kx7oy65" path="res://components/StatsComponent.gd" id="3_wtetw"]
 [ext_resource type="Resource" uid="uid://b2oll5s1bju5r" path="res://resources/stats/enemy/minotaur_stats.tres" id="4_wgcwt"]
+[ext_resource type="Script" uid="uid://ccos28ldja0k0" path="res://systems/status/StatusComponent.gd" id="5_wgcwt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ai3sg"]
 atlas = ExtResource("2_hejod")
@@ -121,3 +122,7 @@ metadata/_custom_type_script = "uid://bouqg2kx7oy65"
 position = Vector2(-7.799998, 17.8)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_wtetw")
+
+[node name="StatusComponent" type="Node" parent="." unique_id=914292011]
+script = ExtResource("5_wgcwt")
+metadata/_custom_type_script = "uid://ccos28ldja0k0"

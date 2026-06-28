@@ -14,5 +14,6 @@ func _on_body_entered(body):
 		body,
 		skill_data
 	)
+	
 	body.take_damage(hit)
 	queue_free()

@@ -9,6 +9,17 @@ enum DamageType {
 	HEAL
 }
 
+enum ElementType {
+	FIRE,
+	ICE,
+	LIGHTNING,
+	WATER,
+	WIND,
+	EARTH,
+	HOLY,
+	DARK
+}
+
 enum HitType {
 	HIT,
 	CRITICAL,

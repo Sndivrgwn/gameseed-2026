@@ -24,6 +24,7 @@ func take_damage(hit: HitResult):
 			stats.heal(hit.damage_data.amount)
 	print("Receive damage:", hit.damage_data.amount)
 	stats.take_damage(hit)
+	
 	PopupManager.spawn_damage(
 	hit,
 	global_position

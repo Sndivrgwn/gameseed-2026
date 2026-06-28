@@ -12,5 +12,5 @@ var is_critical := false
 var is_heal := false
 var is_missed := false
 var is_blocked := false
-
+var element_type := CombatTypes.ElementType.FIRE
 var damage_type := CombatTypes.DamageType.MAGICAL
