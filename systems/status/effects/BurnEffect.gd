@@ -9,8 +9,8 @@ func on_apply():
 func on_tick():
 	damage_per_tick = owner.stats.get_max_hp() * 0.02
 	var hit = CombatCalculator.calculate_effect_damage(
-		owner,
 		source,
+		owner,
 		damage_per_tick,
 		CombatTypes.DamageType.PURE,
 		CombatTypes.ElementType.FIRE

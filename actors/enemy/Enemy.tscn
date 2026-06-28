@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bouqg2kx7oy65" path="res://components/StatsComponent.gd" id="1_1fqe1"]
 [ext_resource type="Resource" uid="uid://cpvdkhcnjhbps" path="res://resources/stats/enemy/goblin_stats.tres" id="2_h8hrn"]
 [ext_resource type="Script" uid="uid://ccos28ldja0k0" path="res://systems/status/StatusComponent.gd" id="3_h8hrn"]
+[ext_resource type="Script" uid="uid://m1obqaeytkmq" path="res://systems/combat/ResistanceComponent.gd" id="4_8d7sx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8d7sx"]
 animations = [{
@@ -41,3 +42,7 @@ shape = SubResource("CircleShape2D_5c534")
 [node name="StatusComponent" type="Node" parent="." unique_id=97018022]
 script = ExtResource("3_h8hrn")
 metadata/_custom_type_script = "uid://ccos28ldja0k0"
+
+[node name="ResistanceComponent" type="Node" parent="." unique_id=1478924002]
+script = ExtResource("4_8d7sx")
+metadata/_custom_type_script = "uid://m1obqaeytkmq"

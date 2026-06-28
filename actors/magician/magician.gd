@@ -9,6 +9,7 @@ extends BaseCharacter
 @onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
 @onready var level: LevelComponent = $LevelComponent
 @onready var status: StatusComponent = $StatusComponent
+@onready var resistance: ResistanceComponent = $ResistanceComponent
 
 var last_direction = Vector2.RIGHT
 var is_invincible := false

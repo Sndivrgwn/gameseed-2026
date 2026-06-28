@@ -3,10 +3,11 @@ class_name Enemy
 @export var detection_range := 300.0
 @export var attack_range := 40.0
 @export var attack_cooldown := 1.0
-@export var exp_reward := 20
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var status: StatusComponent = $StatusComponent
-
+@onready var resistance: ResistanceComponent = $ResistanceComponent
+@export var enemy_data: EnemyData
+	
 enum State {
 	IDLE,
 	CHASE,
@@ -20,8 +21,12 @@ var can_attack := true
 var is_hit := false
 
 func _ready():
-	print("HP: ", stats.hp)
-	stats.died.connect(_on_died)
+	super()
+	if enemy_data.resistance_data:
+		resistance.load(enemy_data.resistance_data)
+	
+	if enemy_data == null:
+		return
 
 func _physics_process(delta):
 	match current_state:
@@ -88,7 +93,9 @@ func attack_state():
 			)
 			hit.damage_data.attacker = self
 			hit.damage_data.target = player
+			print("Before:", stats.hp)
 			player.take_damage(hit)
+			print("After:", stats.hp)
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 	if !is_instance_valid(player):
@@ -103,10 +110,11 @@ func attack_state():
 		current_state = State.IDLE
 
 func _on_died():
+	is_dead = true
 	current_state = State.DEAD
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
-		player.level.add_exp(exp_reward)
+		player.level.add_exp(enemy_data.exp_reward)
 		print("LEVEL UP: ", )
 	queue_free()
 

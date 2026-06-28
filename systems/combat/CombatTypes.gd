@@ -17,7 +17,8 @@ enum ElementType {
 	WIND,
 	EARTH,
 	HOLY,
-	DARK
+	DARK,
+	NONE
 }
 
 enum HitType {

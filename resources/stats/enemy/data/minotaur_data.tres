@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://b2ips88jo8lex"]
+
+[ext_resource type="Resource" uid="uid://b2oll5s1bju5r" path="res://resources/stats/enemy/minotaur_stats.tres" id="1_8ujvk"]
+[ext_resource type="Script" uid="uid://b5csn2d3xci6c" path="res://systems/enemy/EnemyData.gd" id="1_yxglm"]
+[ext_resource type="Script" uid="uid://b5f5dak3bsr5o" path="res://systems/combat/ResistanceData.gd" id="2_fw22j"]
+
+[sub_resource type="Resource" id="Resource_38j4d"]
+script = ExtResource("2_fw22j")
+fire = -1.0
+metadata/_custom_type_script = "uid://b5f5dak3bsr5o"
+
+[resource]
+script = ExtResource("1_yxglm")
+display_name = "Minotaur"
+base_stats = ExtResource("1_8ujvk")
+resistance_data = SubResource("Resource_38j4d")
+metadata/_custom_type_script = "uid://b5csn2d3xci6c"

@@ -48,6 +48,7 @@ func take_damage(hit : HitResult):
 	hp_changed.emit(hp)
 	print("hp: ", hp)
 	if hp <= 0:
+		print("Emit died")
 		died.emit()
 
 func heal(amount : int):

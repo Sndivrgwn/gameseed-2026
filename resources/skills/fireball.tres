@@ -12,6 +12,7 @@ mana_cost = 10
 damage = 25
 cast_time = 0.5
 lifetime = 3.0
+element = 0
 spell_scene = ExtResource("2_wb8wf")
 apply_status_effect = true
 status_effect = ExtResource("3_wb8wf")

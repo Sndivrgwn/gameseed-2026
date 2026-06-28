@@ -20,3 +20,20 @@ func add_effect(effect: StatusEffect):
 func remove_effect(effect):
 	effect.on_remove()
 	active_effects.erase(effect)
+
+func has_effect(effect_type: Script) -> bool:
+	return get_effect(effect_type) != null
+
+func get_effect(effect_type: Script) -> StatusEffect:
+	for effect in active_effects:
+		if effect.get_script() == effect_type:
+			return effect
+	return null
+
+func refresh_effect(effect_type: Script) -> void:
+	var effect = get_effect(effect_type)
+	if effect:
+		effect.duration = effect.data.duration
+		
+		# Optional: If your StatusEffect class has a specific refresh callback, 
+		# you could call something like effect.on_refresh() here.

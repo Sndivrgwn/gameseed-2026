@@ -22,12 +22,13 @@ func take_damage(hit: HitResult):
 	match hit.damage_data.damage_type:
 		CombatTypes.DamageType.HEAL:
 			stats.heal(hit.damage_data.amount)
-	print("Receive damage:", hit.damage_data.amount)
+			return
+	print("Before:", stats.hp)
 	stats.take_damage(hit)
-	
+	print("After:", stats.hp)
 	PopupManager.spawn_damage(
-	hit,
-	global_position
+		hit,
+		global_position
 	)
 	flash()
 
