@@ -1,39 +1,102 @@
 [gd_scene format=3 uid="uid://dddwlg7652ujt"]
 
 [ext_resource type="Texture2D" uid="uid://cc1n45b4pod0l" path="res://assets/Background/Cemetery/Bright/sky.png" id="1_ed3qy"]
+[ext_resource type="PackedScene" uid="uid://dnukjf7em0khy" path="res://ui/hud/Hud.tscn" id="1_kjvqc"]
 [ext_resource type="Texture2D" uid="uid://df523gyoax3ow" path="res://assets/Background/Cemetery/Bright/graves.png" id="2_184m8"]
+[ext_resource type="PackedScene" uid="uid://drxq822htgf4i" path="res://ui/StatsUI/StatsUi.tscn" id="2_fptkq"]
 [ext_resource type="Texture2D" uid="uid://cglk8jqjoe342" path="res://assets/Background/Cemetery/Bright/crypt.png" id="3_7qs83"]
+[ext_resource type="PackedScene" uid="uid://c4yy0wj5vyunq" path="res://ui/SpellInputUI.tscn" id="3_d4fdq"]
 [ext_resource type="Texture2D" uid="uid://2kq7n8owvctw" path="res://assets/Background/Cemetery/Bright/wall.png" id="4_y25bf"]
+[ext_resource type="PackedScene" uid="uid://cs1wr6nqaokic" path="res://actors/magician/magician.tscn" id="4_ykod5"]
 [ext_resource type="Texture2D" uid="uid://cnlrgtlqckfjc" path="res://assets/Background/Cemetery/Bright/back_trees.png" id="5_btmpc"]
 [ext_resource type="Texture2D" uid="uid://rsfwwf43vh7t" path="res://assets/Background/Cemetery/Bright/tree.png" id="6_ki541"]
 [ext_resource type="Texture2D" uid="uid://8bdb3qb3fnee" path="res://assets/Background/Cemetery/Bright/ground.png" id="7_sitnb"]
 
 [node name="Map3" type="Node2D" unique_id=1662914635]
 
-[node name="bg-sky" type="Sprite2D" parent="." unique_id=250270325]
-position = Vector2(49, -266)
+[node name="Hud" parent="." unique_id=1562880650 instance=ExtResource("1_kjvqc")]
+
+[node name="StatsUi" parent="." unique_id=2101833981 instance=ExtResource("2_fptkq")]
+
+[node name="SpellInputUi" parent="." unique_id=633345769 instance=ExtResource("3_d4fdq")]
+
+[node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("4_ykod5")]
+position = Vector2(-711, 174.00003)
+knockback_friction = null
+team = null
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=2040952802]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1304842507]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="bg-sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=250270325]
+position = Vector2(0, -296)
 texture = ExtResource("1_ed3qy")
 
-[node name="grave" type="Sprite2D" parent="." unique_id=749557815]
-position = Vector2(30, 5)
+[node name="bg-sky2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=817171139]
+position = Vector2(3839, -296)
+texture = ExtResource("1_ed3qy")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1803884842]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="grave" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=749557815]
+position = Vector2(-1, -11)
 texture = ExtResource("2_184m8")
 
-[node name="bg-tree3" type="Sprite2D" parent="." unique_id=1065115180]
-position = Vector2(46, -59)
+[node name="grave2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1401633500]
+position = Vector2(3839, -11)
+texture = ExtResource("2_184m8")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=482911222]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="obj-door" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1065115180]
+position = Vector2(0, -73)
 texture = ExtResource("3_7qs83")
 
-[node name="floor-green1" type="Sprite2D" parent="." unique_id=647547365]
-position = Vector2(32, -52)
+[node name="obj-door2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1732072342]
+position = Vector2(3840, -73)
+texture = ExtResource("3_7qs83")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=338388112]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="floor-green1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=647547365]
+position = Vector2(0, -38)
 texture = ExtResource("4_y25bf")
 
-[node name="bg-tree" type="Sprite2D" parent="." unique_id=891759798]
-position = Vector2(12, -32)
+[node name="floor-green2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=543817835]
+position = Vector2(3840, -38)
+texture = ExtResource("4_y25bf")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1484793424]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="bg-tree" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" unique_id=891759798]
+position = Vector2(0, -41)
 texture = ExtResource("5_btmpc")
 
-[node name="bg-tree2" type="Sprite2D" parent="." unique_id=60201084]
-position = Vector2(-2, -35)
+[node name="bg-tree2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" unique_id=687690213]
+position = Vector2(3840, -41)
+texture = ExtResource("5_btmpc")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1082053537]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="bg-tree2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6" unique_id=60201084]
+position = Vector2(0, -35)
 texture = ExtResource("6_ki541")
 
-[node name="floor1" type="Sprite2D" parent="." unique_id=2085896904]
-position = Vector2(18, 0)
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground" unique_id=845509283]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="floor1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7" unique_id=2085896904]
 texture = ExtResource("7_sitnb")
+
+[node name="floor2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7" unique_id=990770470]
+position = Vector2(3840, 0)
+texture = ExtResource("7_sitnb")
+
+[editable path="SpellInputUi"]
