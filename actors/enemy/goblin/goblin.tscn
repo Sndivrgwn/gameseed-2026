@@ -45,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5oujx"]
-radius = 14.008925
+radius = 21.001488
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mp5hi"]
 radius = 15.502016
@@ -63,6 +63,7 @@ autoplay = "idle_down"
 frame_progress = 0.18736371
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840308195]
+position = Vector2(-3, -0.5)
 shape = SubResource("CircleShape2D_5oujx")
 
 [node name="StatsComponent" type="Node" parent="." unique_id=807054544]
@@ -71,6 +72,7 @@ base_stats = ExtResource("4_cmr6w")
 metadata/_custom_type_script = "uid://bouqg2kx7oy65"
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=539405351]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1159689234]
 shape = SubResource("CircleShape2D_mp5hi")

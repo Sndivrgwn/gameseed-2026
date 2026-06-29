@@ -16,7 +16,7 @@ enum State {
 }
 
 var current_state = State.IDLE
-
+signal enemy_died(enemy)
 var can_attack := true
 var is_hit := false
 
@@ -93,10 +93,10 @@ func attack_state():
 			)
 			hit.damage_data.attacker = self
 			hit.damage_data.target = player
-			print("Enemy hp Before:", stats.hp)
+			#print("Enemy hp Before:", stats.hp)
 			player.take_damage(hit)
-			print("Enemy hp After:", stats.hp)
-			print("stack", player.status.get_stack(BurnEffect))
+			#print("Enemy hp After:", stats.hp)
+			#print("stack", player.status.get_stack(BurnEffect))
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 	if !is_instance_valid(player):
@@ -111,6 +111,7 @@ func attack_state():
 		current_state = State.IDLE
 
 func _on_died():
+	enemy_died.emit(self)
 	is_dead = true
 	current_state = State.DEAD
 	var player = get_tree().get_first_node_in_group("player")

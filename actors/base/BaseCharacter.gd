@@ -23,10 +23,10 @@ func take_damage(hit: HitResult):
 		CombatTypes.DamageType.HEAL:
 			stats.heal(hit.damage_data.amount)
 			return
-	print("Before:", stats.hp)
+	#print("Before:", stats.hp)
 	stats.take_damage(hit)
-	print("After:", stats.hp)
-	print("stack:  ", self.status.get_stack(BurnEffect))
+	#print("After:", stats.hp)
+	#print("stack:  ", self.status.get_stack(BurnEffect))
 	PopupManager.spawn_damage(
 		hit,
 		global_position

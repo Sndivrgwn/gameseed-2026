@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://cult614aa0t7f"]
+
+[ext_resource type="Script" uid="uid://y31ybqmurum3" path="res://systems/enemies/EnemySpawnData.gd" id="1_we5xl"]
+[ext_resource type="Script" uid="uid://caotj2wyqix3b" path="res://systems/waves/WavesData.gd" id="2_2l0um"]
+[ext_resource type="PackedScene" uid="uid://bbt0gp4jd52bd" path="res://actors/enemy/goblin/goblin.tscn" id="2_w1mr1"]
+
+[sub_resource type="Resource" id="Resource_wl762"]
+script = ExtResource("1_we5xl")
+enemy_scene = ExtResource("2_w1mr1")
+amount = 20
+metadata/_custom_type_script = "uid://y31ybqmurum3"
+
+[resource]
+script = ExtResource("2_2l0um")
+wave_name = "first wave"
+enemies = Array[ExtResource("1_we5xl")]([SubResource("Resource_wl762")])
+metadata/_custom_type_script = "uid://caotj2wyqix3b"

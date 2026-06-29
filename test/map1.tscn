@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drxq822htgf4i" path="res://ui/StatsUI/StatsUi.tscn" id="1_8uxgk"]
 [ext_resource type="PackedScene" uid="uid://cs1wr6nqaokic" path="res://actors/magician/magician.tscn" id="1_c6uj4"]
+[ext_resource type="Script" uid="uid://dy16oh4ixldeb" path="res://test/map_1.gd" id="1_j86fd"]
 [ext_resource type="Texture2D" uid="uid://u71hpdiu8jl" path="res://assets/Background/Castle/Bright/bg.png" id="2_c6uj4"]
 [ext_resource type="Texture2D" uid="uid://dosk8a2if3m18" path="res://assets/Background/Castle/Bright/mountaims.png" id="3_grpo2"]
 [ext_resource type="Texture2D" uid="uid://4najlhiskvfc" path="res://assets/Background/Castle/Bright/floor.png" id="4_8aep6"]
@@ -10,13 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://lqiu4rj3aheo" path="res://assets/Background/Castle/Bright/dragon.png" id="7_3qvml"]
 [ext_resource type="PackedScene" uid="uid://c4yy0wj5vyunq" path="res://ui/SpellInputUI.tscn" id="9_6xffr"]
 [ext_resource type="PackedScene" uid="uid://dnukjf7em0khy" path="res://ui/hud/Hud.tscn" id="10_8uxgk"]
-[ext_resource type="PackedScene" uid="uid://bbt0gp4jd52bd" path="res://actors/enemy/goblin/goblin.tscn" id="11_n7ryp"]
-[ext_resource type="PackedScene" uid="uid://d22ioy8ni3ugx" path="res://actors/enemy/minotaur/minotaur.tscn" id="12_gl4wb"]
+[ext_resource type="Script" uid="uid://b7irvd18f4spx" path="res://systems/waves/WaveManager.gd" id="14_pimjf"]
+[ext_resource type="Script" uid="uid://caotj2wyqix3b" path="res://systems/waves/WavesData.gd" id="15_vb6gt"]
+[ext_resource type="Resource" uid="uid://cult614aa0t7f" path="res://resources/waves/wave_01.tres" id="16_w673k"]
+[ext_resource type="Resource" uid="uid://dquua04atsttg" path="res://resources/waves/wave_02.tres" id="17_irgsm"]
+[ext_resource type="Script" uid="uid://c7dkj0quginq7" path="res://systems/waves/SpawnManager.gd" id="18_pimjf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6xffr"]
 distance = -216.0
 
 [node name="Map1" type="Node2D" unique_id=1882102384]
+script = ExtResource("1_j86fd")
 
 [node name="Hud" parent="." unique_id=1562880650 instance=ExtResource("10_8uxgk")]
 
@@ -26,14 +31,6 @@ distance = -216.0
 
 [node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("1_c6uj4")]
 position = Vector2(-2879.9998, 233.99998)
-
-[node name="Goblin" parent="." unique_id=439640717 instance=ExtResource("11_n7ryp")]
-position = Vector2(2279, 297)
-team = 1
-
-[node name="Minotaur" parent="." unique_id=1405161105 instance=ExtResource("12_gl4wb")]
-position = Vector2(944, 147)
-team = 1
 
 [node name="topwall" type="StaticBody2D" parent="." unique_id=1149215218]
 position = Vector2(579, 590)
@@ -110,6 +107,29 @@ position = Vector2(1105, 43.000004)
 scale = Vector2(1.5700208, 1.6459265)
 skew = -0.06981325
 texture = ExtResource("7_3qvml")
+
+[node name="WaveManager" type="Node" parent="." unique_id=1382392317 node_paths=PackedStringArray("spawn_manager")]
+script = ExtResource("14_pimjf")
+waves = Array[ExtResource("15_vb6gt")]([ExtResource("16_w673k"), ExtResource("17_irgsm")])
+spawn_manager = NodePath("../SpawnManager")
+metadata/_custom_type_script = "uid://b7irvd18f4spx"
+
+[node name="SpawnManager" type="Node" parent="." unique_id=468510597 node_paths=PackedStringArray("enemy_container", "spawn_points", "wave_manager")]
+script = ExtResource("18_pimjf")
+enemy_container = NodePath("../EnemyContainer")
+spawn_points = [NodePath("../SpawnPoints/Marker2D"), NodePath("../SpawnPoints/Marker2D2")]
+wave_manager = NodePath("../WaveManager")
+metadata/_custom_type_script = "uid://c7dkj0quginq7"
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=737535411]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints" unique_id=714209086]
+position = Vector2(314, 267)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPoints" unique_id=963033340]
+position = Vector2(3677, 388)
+
+[node name="EnemyContainer" type="Node2D" parent="." unique_id=2023638517]
 
 [connection signal="text_submitted" from="SpellInputUi/SpellLineEdit" to="Magician" method="_on_spell_line_edit_text_submitted"]
 
