@@ -9,7 +9,7 @@ enum Team {
 }
 
 @export var team: Team
-
+@export var camera_manager: CameraManager
 var knockback_velocity := Vector2.ZERO
 var is_dead := false
 
@@ -31,6 +31,10 @@ func take_damage(hit: HitResult):
 		hit,
 		global_position
 	)
+	print(team)
+	print(camera_manager)
+	if team == Team.PLAYER and camera_manager:
+		camera_manager.shake(8,0.15)
 	flash()
 
 func _on_died():

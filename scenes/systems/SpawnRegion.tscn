@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c3emdlxonowv6"]
+
+[ext_resource type="Script" uid="uid://c3fiucaf85wh2" path="res://scenes/systems/spawn_region.gd" id="1_486yf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jnew"]
+size = Vector2(2478, 1411)
+
+[node name="SpawnRegion" type="Area2D" unique_id=813477534]
+script = ExtResource("1_486yf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1200602120]
+position = Vector2(110, 38.5)
+shape = SubResource("RectangleShape2D_8jnew")
+debug_color = Color(0, 0.6039216, 0.69803923, 0.41960785)

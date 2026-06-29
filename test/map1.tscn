@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dosk8a2if3m18" path="res://assets/Background/Castle/Bright/mountaims.png" id="3_grpo2"]
 [ext_resource type="Texture2D" uid="uid://4najlhiskvfc" path="res://assets/Background/Castle/Bright/floor.png" id="4_8aep6"]
 [ext_resource type="Texture2D" uid="uid://cq7lhetw2aexh" path="res://assets/Background/Castle/Bright/wall@windows.png" id="5_7eyj2"]
+[ext_resource type="PackedScene" uid="uid://sog0cmb87pp1" path="res://ui/Enemy/EnemyIndicatorUI.tscn" id="5_pimjf"]
 [ext_resource type="Texture2D" uid="uid://dpgy4xlgkxulb" path="res://assets/Background/Castle/Bright/columns&falgs.png" id="6_ggk5q"]
 [ext_resource type="Texture2D" uid="uid://lqiu4rj3aheo" path="res://assets/Background/Castle/Bright/dragon.png" id="7_3qvml"]
 [ext_resource type="PackedScene" uid="uid://c4yy0wj5vyunq" path="res://ui/SpellInputUI.tscn" id="9_6xffr"]
@@ -15,6 +16,7 @@
 [ext_resource type="Script" uid="uid://caotj2wyqix3b" path="res://systems/waves/WavesData.gd" id="15_vb6gt"]
 [ext_resource type="Resource" uid="uid://cult614aa0t7f" path="res://resources/waves/wave_01.tres" id="16_w673k"]
 [ext_resource type="Resource" uid="uid://dquua04atsttg" path="res://resources/waves/wave_02.tres" id="17_irgsm"]
+[ext_resource type="Script" uid="uid://doulklr1mqqsw" path="res://systems/camera/CameraManager.gd" id="17_j86fd"]
 [ext_resource type="Script" uid="uid://c7dkj0quginq7" path="res://systems/waves/SpawnManager.gd" id="18_pimjf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6xffr"]
@@ -23,14 +25,21 @@ distance = -216.0
 [node name="Map1" type="Node2D" unique_id=1882102384]
 script = ExtResource("1_j86fd")
 
+[node name="EnemyIndicatorUi" parent="." unique_id=65422089 node_paths=PackedStringArray("spawn_manager", "camera_manager", "player") instance=ExtResource("5_pimjf")]
+spawn_manager = NodePath("../SpawnManager")
+camera_manager = NodePath("../CameraManager")
+player = NodePath("../Magician")
+
 [node name="Hud" parent="." unique_id=1562880650 instance=ExtResource("10_8uxgk")]
+layer = 2
 
 [node name="StatsUi" parent="." unique_id=2101833981 instance=ExtResource("1_8uxgk")]
 
 [node name="SpellInputUi" parent="." unique_id=633345769 instance=ExtResource("9_6xffr")]
 
-[node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("1_c6uj4")]
-position = Vector2(-2879.9998, 233.99998)
+[node name="Magician" parent="." unique_id=1463276590 node_paths=PackedStringArray("camera_manager") instance=ExtResource("1_c6uj4")]
+position = Vector2(1277, 285)
+camera_manager = NodePath("../CameraManager")
 
 [node name="topwall" type="StaticBody2D" parent="." unique_id=1149215218]
 position = Vector2(579, 590)
@@ -114,23 +123,25 @@ waves = Array[ExtResource("15_vb6gt")]([ExtResource("16_w673k"), ExtResource("17
 spawn_manager = NodePath("../SpawnManager")
 metadata/_custom_type_script = "uid://b7irvd18f4spx"
 
-[node name="SpawnManager" type="Node" parent="." unique_id=468510597 node_paths=PackedStringArray("enemy_container", "spawn_points", "wave_manager")]
+[node name="SpawnManager" type="Node" parent="." unique_id=468510597 node_paths=PackedStringArray("enemy_container", "wave_manager", "player", "camera_manager")]
 script = ExtResource("18_pimjf")
 enemy_container = NodePath("../EnemyContainer")
-spawn_points = [NodePath("../SpawnPoints/Marker2D"), NodePath("../SpawnPoints/Marker2D2")]
 wave_manager = NodePath("../WaveManager")
+player = NodePath("../Magician")
+spawn_margin = 500.0
+min_spawn_distance = 1000.0
+camera_manager = NodePath("../CameraManager")
+forward_spawn_chance = 0.635
 metadata/_custom_type_script = "uid://c7dkj0quginq7"
 
-[node name="SpawnPoints" type="Node2D" parent="." unique_id=737535411]
-
-[node name="Marker2D" type="Marker2D" parent="SpawnPoints" unique_id=714209086]
-position = Vector2(314, 267)
-
-[node name="Marker2D2" type="Marker2D" parent="SpawnPoints" unique_id=963033340]
-position = Vector2(3677, 388)
+[node name="CameraManager" type="Node" parent="." unique_id=853301223 node_paths=PackedStringArray("camera")]
+script = ExtResource("17_j86fd")
+camera = NodePath("../Magician/Camera2D")
+metadata/_custom_type_script = "uid://doulklr1mqqsw"
 
 [node name="EnemyContainer" type="Node2D" parent="." unique_id=2023638517]
 
 [connection signal="text_submitted" from="SpellInputUi/SpellLineEdit" to="Magician" method="_on_spell_line_edit_text_submitted"]
 
 [editable path="SpellInputUi"]
+[editable path="Magician"]

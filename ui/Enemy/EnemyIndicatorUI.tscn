@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://sog0cmb87pp1"]
+
+[ext_resource type="Script" uid="uid://byl0qsruiwl6d" path="res://ui/Enemy/EnemyIndicator.gd" id="1_6pb10"]
+[ext_resource type="Texture2D" uid="uid://dslnk16it2t1v" path="res://assets/icon/arrow.png" id="1_kgakj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pb10"]
+atlas = ExtResource("1_kgakj")
+region = Rect2(34.670494, 16.064333, 10.196182, 14.367355)
+
+[node name="EnemyIndicatorUi" type="CanvasLayer" unique_id=65422089]
+script = ExtResource("1_6pb10")
+
+[node name="Control" type="Control" parent="." unique_id=1698197931]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftArrow" type="TextureRect" parent="Control" unique_id=984665259]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 458.0
+offset_right = 73.0
+offset_bottom = 528.0
+rotation = 4.712389
+texture = SubResource("AtlasTexture_6pb10")
+
+[node name="RightArrow" type="TextureRect" parent="Control" unique_id=374056150]
+layout_mode = 0
+offset_left = 1131.0
+offset_top = 397.0
+offset_right = 1181.0
+offset_bottom = 467.0
+rotation = 1.5707964
+texture = SubResource("AtlasTexture_6pb10")
