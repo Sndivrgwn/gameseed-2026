@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c76nf8j2k1p6r"]
+
+[ext_resource type="Script" uid="uid://c7hqeoo5yohx4" path="res://skills/magician/BaseSkillsVisual.gd" id="1_5oifl"]
+
+[node name="BaseSkillVisual" type="Node2D" unique_id=1606546751]
+script = ExtResource("1_5oifl")
+
+[node name="AOEIndicator" type="Node2D" parent="." unique_id=1965201985]

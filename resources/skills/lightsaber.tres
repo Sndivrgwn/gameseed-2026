@@ -13,7 +13,6 @@ damage = 20
 element = 6
 cast_time = 1.0
 lifetime = 2.0
-target_type = 2
 delivery_type = 0
 hit_count = 10
 apply_status = false

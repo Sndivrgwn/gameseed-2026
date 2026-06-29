@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://0mcle34lr48q"]
 
+[ext_resource type="Script" uid="uid://d2p1plnn6hkwe" path="res://skills/magician/darkring/darkring.gd" id="1_6t1ej"]
 [ext_resource type="Texture2D" uid="uid://bpxfkswetxqso" path="res://assets/Skill/Magic/Magic/1 Magic/blackRing.png" id="1_kajpc"]
+[ext_resource type="Texture2D" uid="uid://cya84pq43ocu6" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_1.png" id="3_de4iu"]
+[ext_resource type="Texture2D" uid="uid://bxgp5mncq12a6" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_2.png" id="4_fkjuo"]
+[ext_resource type="Texture2D" uid="uid://c83ow01a0dgj4" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_3.png" id="5_tyxxc"]
+[ext_resource type="Texture2D" uid="uid://lroyps5ilywa" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_4.png" id="6_o6pda"]
+[ext_resource type="Texture2D" uid="uid://drn4yyticepix" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_5.png" id="7_ku6go"]
+[ext_resource type="Texture2D" uid="uid://c0lgjxryiwi6r" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_6.png" id="8_y4su4"]
+[ext_resource type="Texture2D" uid="uid://bvxmi1t5k8fkv" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_7.png" id="9_lehpi"]
+[ext_resource type="Texture2D" uid="uid://csxvwjkjivowp" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_8.png" id="10_vx2ir"]
+[ext_resource type="Texture2D" uid="uid://dl5yu3ldt6ega" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_9.png" id="11_jwkcd"]
+[ext_resource type="Texture2D" uid="uid://b7sobubb4q753" path="res://assets/Skill/Magic/Explosion/Explosion_6/Explosion_10.png" id="12_0genb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t1ej"]
 atlas = ExtResource("1_kajpc")
@@ -62,24 +73,75 @@ animations = [{
 "texture": SubResource("AtlasTexture_fnnpv")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"ring_play",
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lxkqu"]
 radius = 68.570175
 
-[node name="Darkring" type="Area2D" unique_id=1845152996]
+[sub_resource type="SpriteFrames" id="SpriteFrames_powrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_de4iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fkjuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tyxxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o6pda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ku6go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y4su4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lehpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vx2ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jwkcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0genb")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 7.0
+}]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=708372418]
+[node name="Darkring" type="Node2D" unique_id=1545730935]
+script = ExtResource("1_6t1ej")
+show_aoe_indicator = true
+
+[node name="ring_animation" type="AnimatedSprite2D" parent="." unique_id=708372418]
 position = Vector2(0.71967506, 0.72415483)
 rotation = -2.7925267
 scale = Vector2(1.8902912, 1.9830512)
-skew = 0.9005899
+skew = 0.9005898
 sprite_frames = SubResource("SpriteFrames_0qjaw")
-frame_progress = 0.00915666
+animation = &"ring_play"
+autoplay = "ring_play"
+frame_progress = 0.2838322
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1549585042]
-rotation = -3.3335788
-skew = -1.1571532
+[node name="Area2D" type="Area2D" parent="." unique_id=259560358]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1549585042]
+rotation = 2.9496064
+scale = Vector2(0.99999994, 1)
+skew = -1.1571535
 shape = SubResource("CircleShape2D_lxkqu")
+
+[node name="explosion" type="AnimatedSprite2D" parent="." unique_id=940395699]
+position = Vector2(29, -242.00009)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_powrb")
+animation = &"explode"

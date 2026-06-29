@@ -1,7 +1,6 @@
 extends BaseSkillVisual
 class_name BaseProjectile
 
-var caster: BaseCharacter
 var target : BaseCharacter
 
 @export var speed := 500.0

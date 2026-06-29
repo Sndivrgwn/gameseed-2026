@@ -12,5 +12,5 @@ func get_target(
 
 		CombatTypes.TargetType.NEAREST_ENEMY:
 			return CombatQuery.get_nearest_enemy(caster)
-
+		
 	return null

@@ -37,7 +37,6 @@ enum Team {
 enum TargetType {
 	SELF,
 	NEAREST_ENEMY,
-	TARGET_POSITION
 }
 
 enum DeliveryType {

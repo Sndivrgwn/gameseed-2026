@@ -1,12 +1,6 @@
 [gd_scene format=3 uid="uid://dngr38iv3px2t"]
 
-[ext_resource type="Script" uid="uid://da1m2c65p85q8" path="res://scenes/effects/indicators/area_indicator.gd" id="1_mokgb"]
-[ext_resource type="Texture2D" uid="uid://crd2d2olvqsgi" path="res://assets/indicators/aoe_area.png" id="2_krgvi"]
+[ext_resource type="Script" uid="uid://h5mx4ptsnm4c" path="res://skills/magician/darkring/aoe_indicator.gd" id="1_u8ldm"]
 
 [node name="AreaIndicator" type="Node2D" unique_id=334405163]
-script = ExtResource("1_mokgb")
-
-[node name="circle" type="Sprite2D" parent="." unique_id=628937998]
-position = Vector2(472.21866, 236.99998)
-scale = Vector2(1.4300961, 1.7395833)
-texture = ExtResource("2_krgvi")
+script = ExtResource("1_u8ldm")

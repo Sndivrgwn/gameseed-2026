@@ -26,6 +26,7 @@ class_name SkillData
 @export_group("Area of Effect")
 @export var area_radius := 128.0
 @export var area_shape := CombatTypes.AreaShape.CIRCLE
+@export var show_area_indicator := false
 
 @export_group("Hit Mechanics")
 @export var hit_count: int = 1

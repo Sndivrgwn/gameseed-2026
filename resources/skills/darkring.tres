@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_pkvan")
-skill_name = "ring"
+skill_name = "abyss void"
 display_name = "darkring"
 description = "dark ring that pull enemy to the center of the magic"
 spell_scene = ExtResource("2_47m3d")
@@ -13,8 +13,9 @@ mana_cost = 50
 damage = 90
 element = 7
 cast_time = 7.0
-lifetime = 3.0
-target_type = 2
+lifetime = 5.0
 delivery_type = 2
+area_radius = 1000.0
+show_area_indicator = true
 apply_status = false
 metadata/_custom_type_script = "uid://cqev7m7q7tonm"

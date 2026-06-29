@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c84uu3f0or5jr" path="res://skills/magician/zooltrak/zooltrak.gd" id="1_78ctx"]
 [ext_resource type="Texture2D" uid="uid://bncnaj6c7sbfa" path="res://assets/Skill/Magic/Magic/1 Magic/zooltrak.png" id="2_0bkc7"]
 [ext_resource type="Texture2D" uid="uid://cfbtd7k0ket66" path="res://assets/Skill/Magic Circle/2/192x192/pipo-btleffect210_192.png" id="3_0bkc7"]
+[ext_resource type="Script" uid="uid://c7hqeoo5yohx4" path="res://skills/magician/BaseSkillsVisual.gd" id="4_xjw52"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjw52"]
 atlas = ExtResource("2_0bkc7")
@@ -67,10 +68,6 @@ animations = [{
 "name": &"zooltrak",
 "speed": 7.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_78ctx"]
-radius = 9.0
-height = 92.037964
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0bkc7"]
 atlas = ExtResource("3_0bkc7")
@@ -155,7 +152,11 @@ animations = [{
 "speed": 7.0
 }]
 
-[node name="Zooltrak" type="Area2D" unique_id=1702734907]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_78ctx"]
+radius = 9.0
+height = 92.037964
+
+[node name="Zooltrak" type="Node2D" unique_id=1173589820]
 scale = Vector2(5, 5)
 script = ExtResource("1_78ctx")
 
@@ -165,11 +166,6 @@ animation = &"zooltrak"
 autoplay = "zooltrak"
 frame_progress = 0.5234022
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=232917253]
-position = Vector2(2, 2)
-rotation = 2.3439772
-shape = SubResource("CapsuleShape2D_78ctx")
-
 [node name="circle" type="AnimatedSprite2D" parent="." unique_id=1933710162]
 position = Vector2(-42.999985, -33.400005)
 rotation = 2.443461
@@ -178,3 +174,15 @@ skew = 1.1082841
 sprite_frames = SubResource("SpriteFrames_i4shl")
 animation = &"circle_end"
 autoplay = "circle_end"
+
+[node name="BaseSkillVisual" type="Node2D" parent="." unique_id=529098896]
+script = ExtResource("4_xjw52")
+metadata/_custom_type_script = "uid://c7hqeoo5yohx4"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=321748082]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=232917253]
+position = Vector2(1.9999999, 1.9999999)
+rotation = 2.3439772
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CapsuleShape2D_78ctx")
