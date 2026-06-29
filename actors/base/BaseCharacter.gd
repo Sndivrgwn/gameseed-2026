@@ -31,8 +31,6 @@ func take_damage(hit: HitResult):
 		hit,
 		global_position
 	)
-	print(team)
-	print(camera_manager)
 	if team == Team.PLAYER and camera_manager:
 		camera_manager.shake(8,0.15)
 	flash()

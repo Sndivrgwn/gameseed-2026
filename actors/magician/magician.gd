@@ -15,6 +15,7 @@ extends BaseCharacter
 var last_direction = Vector2.RIGHT
 var is_invincible := false
 var is_casting := false
+var facing_direction := 0
 
 func _ready():
 	hud.setup(self)
@@ -25,6 +26,8 @@ func _ready():
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)
 
+func get_facing_direction() -> int:
+	return facing_direction
 	
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -32,7 +35,12 @@ func _physics_process(delta: float) -> void:
 		direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		
-	
+	if Input.get_action_strength("move_right"):
+		facing_direction = 1
+	elif Input.get_action_strength("move_left"):
+		facing_direction = -1
+	else:
+		facing_direction = 0
 	direction = direction.normalized()
 	movement.move(direction)
 	animation.handle_animation(direction)

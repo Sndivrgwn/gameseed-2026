@@ -134,9 +134,10 @@ camera_manager = NodePath("../CameraManager")
 forward_spawn_chance = 0.635
 metadata/_custom_type_script = "uid://c7dkj0quginq7"
 
-[node name="CameraManager" type="Node" parent="." unique_id=853301223 node_paths=PackedStringArray("camera")]
+[node name="CameraManager" type="Node" parent="." unique_id=853301223 node_paths=PackedStringArray("camera", "player")]
 script = ExtResource("17_j86fd")
 camera = NodePath("../Magician/Camera2D")
+player = NodePath("../Magician")
 metadata/_custom_type_script = "uid://doulklr1mqqsw"
 
 [node name="EnemyContainer" type="Node2D" parent="." unique_id=2023638517]
