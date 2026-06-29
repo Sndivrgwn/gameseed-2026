@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://de7gpxiirn1r6"]
 
+[ext_resource type="Script" uid="uid://d33pfgt2n2wbb" path="res://skills/magician/spike/spike.gd" id="1_648rw"]
 [ext_resource type="Texture2D" uid="uid://6g614tejwmde" path="res://assets/Skill/Magic/Magic/1 Magic/iceSpike.png" id="1_qav8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_648rw"]
@@ -70,6 +71,7 @@ animations = [{
 size = Vector2(61, 23)
 
 [node name="Spike" type="Area2D" unique_id=133749577]
+script = ExtResource("1_648rw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1296207451]
 sprite_frames = SubResource("SpriteFrames_wo5pn")

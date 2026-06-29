@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cj122t3r55et7"]
 
 [ext_resource type="Texture2D" uid="uid://ifrvdn6afrnd" path="res://assets/Skill/Magic/Magic/1 Magic/meteor.png" id="1_5kyvh"]
+[ext_resource type="Script" uid="uid://xbjmem57m8aa" path="res://skills/magician/meteor/meteor.gd" id="1_w66rq"]
 [ext_resource type="Texture2D" uid="uid://cm6ghcc8kf6jl" path="res://assets/Skill/Magic/Magic/1 Magic/meteor2.png" id="2_w66rq"]
 [ext_resource type="Texture2D" uid="uid://1ust20pavxa0" path="res://assets/Skill/Magic/Explosion/Explosion_1/Explosion_1.png" id="3_nl23m"]
 [ext_resource type="Texture2D" uid="uid://b4dtd6o7o37w3" path="res://assets/Skill/Magic/Explosion/Explosion_1/Explosion_2.png" id="4_oyo44"]
@@ -132,6 +133,7 @@ animations = [{
 }]
 
 [node name="Meteor" type="Area2D" unique_id=160896827]
+script = ExtResource("1_w66rq")
 
 [node name="meteor" type="AnimatedSprite2D" parent="." unique_id=485226827]
 scale = Vector2(5, 5)

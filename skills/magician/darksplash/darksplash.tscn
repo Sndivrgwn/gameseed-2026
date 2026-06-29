@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dtdyejaoi88nm"]
 
+[ext_resource type="Script" uid="uid://ei8jtbehleyy" path="res://skills/magician/darksplash/darksplash.gd" id="1_6fwdq"]
 [ext_resource type="Texture2D" uid="uid://qmtjxla4kdra" path="res://assets/Skill/Magic/Magic/1 Magic/DarkBeam.png" id="1_qa5nj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fwdq"]
@@ -50,12 +51,14 @@ radius = 25.492485
 height = 83.79759
 
 [node name="darksplash" type="Area2D" unique_id=851645030]
+script = ExtResource("1_6fwdq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=751730305]
 position = Vector2(9.330144, -5.30122)
 rotation = 2.86234
 scale = Vector2(1.5794402, 1.7692087)
 sprite_frames = SubResource("SpriteFrames_tldp6")
+autoplay = "default"
 frame_progress = 0.050004702
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066067593]

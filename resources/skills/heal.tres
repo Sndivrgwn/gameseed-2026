@@ -1,15 +1,14 @@
 [gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://bphyfcd7nxm7f"]
 
 [ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_m8vy4"]
-
-[sub_resource type="PackedScene" id="PackedScene_m8vy4"]
+[ext_resource type="PackedScene" uid="uid://dmnjv6cqatom1" path="res://skills/magician/heal/heal.tscn" id="2_ideiw"]
 
 [resource]
 script = ExtResource("1_m8vy4")
 skill_name = "heal"
 display_name = "heal"
 description = "an healing magic that heal group \"player\""
-spell_scene = SubResource("PackedScene_m8vy4")
+spell_scene = ExtResource("2_ideiw")
 mana_cost = 30
 element = 6
 cast_time = 2.0
