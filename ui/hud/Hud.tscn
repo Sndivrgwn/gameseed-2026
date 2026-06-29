@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://ctc24hbo0kjtk" path="res://ui/hud/hud.gd" id="1_fc3h1"]
 [ext_resource type="Script" uid="uid://daidif03af1d4" path="res://ui/hud/hp_bar.gd" id="2_4sqfl"]
 [ext_resource type="Script" uid="uid://bgypwp0bcebpj" path="res://ui/hud/mana_bar.gd" id="3_by07e"]
+[ext_resource type="Texture2D" uid="uid://b7vv6eh38ki20" path="res://assets/ui/hud/exp_bar.png" id="4_epdrl"]
+[ext_resource type="Texture2D" uid="uid://bs5o82l3etmni" path="res://assets/ui/hud/photo_profil.png" id="4_ks410"]
+[ext_resource type="Texture2D" uid="uid://bemis3riouxbh" path="res://assets/ui/hud/hp_bar.png" id="5_epdrl"]
+[ext_resource type="Texture2D" uid="uid://bgq3co2rl5xoq" path="res://assets/ui/hud/mana_bar.png" id="6_af3s3"]
+[ext_resource type="FontFile" uid="uid://b7wxx57q7gx5r" path="res://assets/font/m5x7.ttf" id="7_af3s3"]
+[ext_resource type="Texture2D" uid="uid://b8cng8xvunr0" path="res://assets/ui/hud/skill.png" id="7_iyywv"]
 
 [sub_resource type="Gradient" id="Gradient_fc3h1"]
 offsets = PackedFloat32Array(0, 0.14766839, 1)
@@ -17,6 +23,33 @@ colors = PackedColorArray(0, 0.23921569, 0.35686275, 1, 0, 0.4509804, 0.65882355
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_by07e"]
 gradient = SubResource("Gradient_4sqfl")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_af3s3"]
+atlas = ExtResource("4_epdrl")
+region = Rect2(0, 0, 1152, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_af3s3"]
+font = ExtResource("7_af3s3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_q25gb"]
+font = ExtResource("7_af3s3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q25gb"]
+atlas = ExtResource("4_ks410")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brn43"]
+atlas = ExtResource("5_epdrl")
+region = Rect2(0, 0, 256, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fs3w"]
+atlas = ExtResource("6_af3s3")
+region = Rect2(0, 0, 256, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyywv"]
+font = ExtResource("7_af3s3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdjf3"]
+atlas = ExtResource("7_iyywv")
+
 [node name="Hud" type="CanvasLayer" unique_id=1562880650]
 script = ExtResource("1_fc3h1")
 
@@ -26,8 +59,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=974201450]
+visible = false
 layout_mode = 2
 
 [node name="HpBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer" unique_id=5775213]
@@ -66,3 +104,100 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 10
 show_percentage = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1187525380]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Exp" type="TextureRect" parent="MarginContainer/VBoxContainer2" unique_id=1917751887]
+layout_mode = 2
+texture = SubResource("AtlasTexture_af3s3")
+
+[node name="Level" type="Label" parent="MarginContainer/VBoxContainer2/Exp" unique_id=1245535879]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 23.0
+text = "Lvl. 1"
+label_settings = SubResource("LabelSettings_af3s3")
+
+[node name="NextLevel" type="Label" parent="MarginContainer/VBoxContainer2/Exp" unique_id=522865734]
+layout_mode = 0
+offset_left = 663.0
+offset_top = 9.0
+offset_right = 715.0
+offset_bottom = 22.0
+text = "1000/1000"
+label_settings = SubResource("LabelSettings_q25gb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2" unique_id=1243026668]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="BorderProfil" type="TextureRect" parent="MarginContainer/VBoxContainer2/HBoxContainer" unique_id=2046664630]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_q25gb")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1832252178]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer" unique_id=1629582652]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Health" type="TextureRect" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=402141485]
+layout_mode = 2
+texture = SubResource("AtlasTexture_brn43")
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer/VBoxContainer/Health" unique_id=1112050687]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 10.0
+offset_right = 143.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("7_af3s3")
+text = "100/100"
+
+[node name="Mana" type="TextureRect" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=925910693]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_4fs3w")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer/VBoxContainer/Mana" unique_id=296147454]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 9.0
+offset_right = 143.0
+offset_bottom = 22.0
+text = "75/75"
+label_settings = SubResource("LabelSettings_iyywv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer" unique_id=301028865]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Skill" type="TextureRect" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1081310074]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vdjf3")
+
+[node name="Skill2" type="TextureRect" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer/VBoxContainer2" unique_id=614681794]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vdjf3")
+
+[node name="Skill3" type="TextureRect" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer/VBoxContainer2" unique_id=601476356]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vdjf3")
