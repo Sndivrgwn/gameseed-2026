@@ -28,3 +28,5 @@ func cast(
 				target,
 				skill
 			)
+		CombatTypes.DeliveryType.BEAM:
+			BeamDelivery.cast(caster,target,skill)

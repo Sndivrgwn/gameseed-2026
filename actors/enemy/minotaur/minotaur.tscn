@@ -86,8 +86,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dvehr"]
-radius = 15.799999
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6qei"]
+size = Vector2(58.600006, 97.80002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtetw"]
 size = Vector2(58.000008, 91.600006)
@@ -110,8 +110,9 @@ autoplay = "idle_down"
 frame_progress = 0.3441005
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1782331370]
-position = Vector2(-11.4, 43.6)
-shape = SubResource("CircleShape2D_dvehr")
+position = Vector2(-7.1000013, 17.899996)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_f6qei")
 
 [node name="StatsComponent" type="Node" parent="." unique_id=1848767637]
 script = ExtResource("3_wtetw")
@@ -119,6 +120,8 @@ base_stats = ExtResource("4_wgcwt")
 metadata/_custom_type_script = "uid://bouqg2kx7oy65"
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=1390434442]
+visible = false
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=2108939711]
 position = Vector2(-7.799998, 17.8)
