@@ -1,3 +1,50 @@
 [gd_scene format=3 uid="uid://c4nk1fq0yhghg"]
 
-[node name="Warrior" type="Node2D" unique_id=1435313534]
+[ext_resource type="Texture2D" uid="uid://bqsij34vpink" path="res://assets/sprites/player/warrior/Idle.png" id="1_l52tq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm7sw"]
+atlas = ExtResource("1_l52tq")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t603i"]
+atlas = ExtResource("1_l52tq")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faepm"]
+atlas = ExtResource("1_l52tq")
+region = Rect2(256, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08w88"]
+atlas = ExtResource("1_l52tq")
+region = Rect2(384, 64, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8o8w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm7sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t603i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faepm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08w88")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8lta"]
+
+[node name="Warrior" type="CharacterBody2D" unique_id=64899249]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1475726269]
+sprite_frames = SubResource("SpriteFrames_8o8w4")
+frame_progress = 0.6788243
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1561050754]
+shape = SubResource("CircleShape2D_v8lta")

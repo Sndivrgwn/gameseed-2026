@@ -24,6 +24,7 @@ TargetingManager="*uid://cma6qc12qqwl6"
 CombatQuery="*uid://b7700ih4oyl4w"
 DeliveryManager="*uid://creqy5c374w6h"
 Fade="*uid://28bhqkmkcrl"
+AiManager="*uid://d3ucmvvcj25lu"
 
 [input]
 

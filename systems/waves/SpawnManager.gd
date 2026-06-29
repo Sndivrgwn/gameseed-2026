@@ -20,6 +20,7 @@ var spawn_queue: Array[SpawnRequest] = []
 var is_spawning := false
 
 func _ready():
+	add_to_group("spawn_manager")
 	wave_manager.wave_started.connect(_on_wave_started)
 
 func enqueue(data: EnemySpawnData):
