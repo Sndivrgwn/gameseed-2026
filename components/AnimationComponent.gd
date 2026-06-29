@@ -10,13 +10,13 @@ func handle_animation(direction):
 
 	if direction == Vector2.ZERO:
 		if last_direction.y < 0:
-			anim.play("idle_up")
+			anim.play("idle_down")
 		elif last_direction.y > 0:
 			anim.play("idle_down")
 		elif last_direction.x < 0:
-			anim.play("idle_left")
+			anim.play("idle_down")
 		elif last_direction.x > 0:
-			anim.play("idle_right")
+			anim.play("idle_down")
 	else:
 		if direction.y < 0:
 			anim.play("up")
