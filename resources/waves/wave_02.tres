@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://y31ybqmurum3" path="res://systems/enemies/EnemySpawnData.gd" id="1_qq08y"]
 [ext_resource type="Script" uid="uid://caotj2wyqix3b" path="res://systems/waves/WavesData.gd" id="2_2b24a"]
-[ext_resource type="PackedScene" uid="uid://d22ioy8ni3ugx" path="res://actors/enemy/minotaur/minotaur.tscn" id="2_s46f8"]
+[ext_resource type="PackedScene" uid="uid://bbt0gp4jd52bd" path="res://actors/enemy/goblin/goblin.tscn" id="2_s46f8"]
 
 [sub_resource type="Resource" id="Resource_nhgry"]
 script = ExtResource("1_qq08y")
 enemy_scene = ExtResource("2_s46f8")
-amount = 3
+amount = 100
 metadata/_custom_type_script = "uid://y31ybqmurum3"
 
 [resource]

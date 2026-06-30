@@ -104,4 +104,4 @@ func move(
 		enemy.knockback_friction * delta
 	)
 
-	enemy.update_animation(direction)
+	enemy.animation.update(direction)

@@ -37,7 +37,7 @@ func move(
 
 	direction = direction.normalized()
 
-	enemy.update_animation(direction)
+	enemy.animation.update(direction)
 
 	var target_velocity = (
 		direction

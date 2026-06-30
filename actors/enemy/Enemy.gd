@@ -11,6 +11,7 @@ class_name Enemy
 
 @onready var status: StatusComponent = $StatusComponent
 @onready var resistance: ResistanceComponent = $ResistanceComponent
+@onready var animation: AnimationComponent = $AnimationComponent
 
 signal enemy_died(enemy)
 
@@ -89,6 +90,3 @@ func _on_died():
 		)
 
 	queue_free()
-
-func update_animation(direction):
-	pass

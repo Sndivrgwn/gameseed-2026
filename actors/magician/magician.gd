@@ -41,11 +41,14 @@ func _physics_process(delta: float) -> void:
 		facing_direction = 0
 	direction = direction.normalized()
 	movement.move(direction)
-	animation.handle_animation(direction)
+	animation.update(direction)
 
 func can_move() -> bool:
-	return spell_caster.current_state == spell_caster.State.NORMAL and !is_casting
-
+	return (
+		spell_caster.current_state == spell_caster.State.NORMAL
+		and !is_casting
+		and !animation.is_locked()
+	)
 func submit_spell():
 	var spell_name = spell_input.text.to_lower()
 	print("submit spell")

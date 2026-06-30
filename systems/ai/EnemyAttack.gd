@@ -42,6 +42,10 @@ func update(delta: float) -> void:
 func attack():
 
 	is_attacking = true
+	var dir = (
+		enemy.player.global_position
+		- enemy.global_position
+	).normalized()
 
 	var success = await SpellManager.cast(
 		enemy,

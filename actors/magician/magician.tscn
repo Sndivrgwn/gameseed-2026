@@ -18,6 +18,22 @@
 [ext_resource type="Script" uid="uid://m1obqaeytkmq" path="res://systems/combat/ResistanceComponent.gd" id="11_ps0bv"]
 [ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="13_mvv8q"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqjim"]
+atlas = ExtResource("4_2mr3n")
+region = Rect2(0, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuep6"]
+atlas = ExtResource("4_2mr3n")
+region = Rect2(124, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6ugh"]
+atlas = ExtResource("4_2mr3n")
+region = Rect2(248, 0, 124, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3286i"]
+atlas = ExtResource("4_2mr3n")
+region = Rect2(372, 0, 124, 124)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj7f8"]
 atlas = ExtResource("2_b41wp")
 region = Rect2(0, 0, 124, 124)
@@ -41,22 +57,6 @@ region = Rect2(496, 0, 124, 124)
 [sub_resource type="AtlasTexture" id="AtlasTexture_etwjf"]
 atlas = ExtResource("2_b41wp")
 region = Rect2(620, 0, 124, 124)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqjim"]
-atlas = ExtResource("4_2mr3n")
-region = Rect2(0, 0, 124, 124)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fuep6"]
-atlas = ExtResource("4_2mr3n")
-region = Rect2(124, 0, 124, 124)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e6ugh"]
-atlas = ExtResource("4_2mr3n")
-region = Rect2(248, 0, 124, 124)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3286i"]
-atlas = ExtResource("4_2mr3n")
-region = Rect2(372, 0, 124, 124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wslc4"]
 atlas = ExtResource("5_sfsn1")
@@ -134,6 +134,23 @@ region = Rect2(620, 0, 124, 124)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_mqjim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuep6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6ugh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3286i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tj7f8")
 }, {
 "duration": 1.0,
@@ -152,24 +169,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_etwjf")
 }],
 "loop": true,
-"name": &"down",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mqjim")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fuep6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e6ugh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3286i")
-}],
-"loop": true,
-"name": &"idle_down",
+"name": &"walk_down",
 "speed": 7.0
 }, {
 "frames": [{
@@ -192,7 +192,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_sym4y")
 }],
 "loop": true,
-"name": &"left",
+"name": &"walk_left",
 "speed": 7.0
 }, {
 "frames": [{
@@ -215,7 +215,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8e1nh")
 }],
 "loop": true,
-"name": &"right",
+"name": &"walk_right",
 "speed": 7.0
 }, {
 "frames": [{
@@ -238,7 +238,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xtlkp")
 }],
 "loop": true,
-"name": &"up",
+"name": &"walk_up",
 "speed": 7.0
 }]
 
@@ -545,14 +545,13 @@ radius = 12.199998
 scale = Vector2(5, 5)
 collision_layer = 2
 script = ExtResource("1_dovo2")
-knockback_friction = null
 basic_attack = ExtResource("2_2mr3n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837991875]
 z_index = 4
 sprite_frames = SubResource("SpriteFrames_x7p2l")
-animation = &"left"
-autoplay = "idle_down"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1090862229]
 visible = false
@@ -591,9 +590,9 @@ character = NodePath("..")
 stats = NodePath("../StatsComponent")
 metadata/_custom_type_script = "uid://c4qjxrs4y6m2n"
 
-[node name="AnimationComponent" type="Node" parent="." unique_id=757536182 node_paths=PackedStringArray("anim")]
+[node name="AnimationComponent" type="Node" parent="." unique_id=757536182 node_paths=PackedStringArray("sprite")]
 script = ExtResource("8_3jbaj")
-anim = NodePath("../AnimatedSprite2D")
+sprite = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://dbpvb1yh2glls"
 
 [node name="SpellCasterComponent" type="Node" parent="." unique_id=1905344196 node_paths=PackedStringArray("magic_circle", "stats")]
