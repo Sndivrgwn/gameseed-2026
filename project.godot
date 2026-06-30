@@ -26,6 +26,13 @@ DeliveryManager="*uid://creqy5c374w6h"
 Fade="*uid://28bhqkmkcrl"
 AiManager="*uid://d3ucmvvcj25lu"
 
+[file_customization]
+
+folder_colors={
+"res://assets/ui/": "purple",
+"res://ui/": "purple"
+}
+
 [input]
 
 move_up={

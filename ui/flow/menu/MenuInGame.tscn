@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://wo23175it1eg"]
+
+[ext_resource type="Texture2D" uid="uid://bq8k3uo4y43ag" path="res://assets/ui/flow/panel.png" id="1_b3gke"]
+[ext_resource type="Texture2D" uid="uid://bdfickap48mn0" path="res://assets/ui/icon/title_bar.png" id="2_pxqs8"]
+[ext_resource type="Texture2D" uid="uid://dyaj0u677dmlx" path="res://assets/ui/icon/ornamen_menu.png" id="3_mtpaw"]
+[ext_resource type="Texture2D" uid="uid://ddowgmcm4fwk4" path="res://assets/ui/flow/button/btn_hover.png" id="4_b8rg5"]
+[ext_resource type="Texture2D" uid="uid://ci0f3vuy4belg" path="res://assets/ui/flow/button/btn_press.png" id="5_0ss0c"]
+[ext_resource type="Texture2D" uid="uid://lwcnpdj3f751" path="res://assets/ui/flow/button/btn_normal.png" id="6_v15xj"]
+[ext_resource type="FontFile" uid="uid://b7wxx57q7gx5r" path="res://assets/font/m5x7.ttf" id="7_7j2f0"]
+[ext_resource type="Texture2D" uid="uid://c6guw20nh67gh" path="res://assets/ui/flow/button/btn_disable.png" id="8_pxqs8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mtpaw"]
+font = ExtResource("7_7j2f0")
+font_size = 32
+outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_ns58c"]
+font = ExtResource("7_7j2f0")
+font_size = 24
+outline_size = 1
+
+[node name="MenuInGame" type="Node" unique_id=583570051]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1005363264]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=421814267]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="panel" type="NinePatchRect" parent="MarginContainer/CenterContainer" unique_id=662858933]
+custom_minimum_size = Vector2(256, 288)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_b3gke")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Ornamen" type="Sprite2D" parent="MarginContainer/CenterContainer" unique_id=1554601762]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/CenterContainer/Ornamen" unique_id=115122164]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 254.0
+offset_bottom = 42.0
+texture = ExtResource("2_pxqs8")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/Ornamen/NinePatchRect" unique_id=2015893837]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 248.0
+offset_bottom = 36.0
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_mtpaw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OrnamenMenu2" type="Sprite2D" parent="MarginContainer/CenterContainer/Ornamen" unique_id=1007597864]
+position = Vector2(244, 12)
+texture = ExtResource("3_mtpaw")
+flip_h = true
+
+[node name="OrnamenMenu4" type="Sprite2D" parent="MarginContainer/CenterContainer/Ornamen" unique_id=2036101073]
+position = Vector2(12, 276)
+texture = ExtResource("3_mtpaw")
+flip_v = true
+
+[node name="OrnamenMenu3" type="Sprite2D" parent="MarginContainer/CenterContainer/Ornamen" unique_id=2008905143]
+position = Vector2(244, 276)
+texture = ExtResource("3_mtpaw")
+flip_h = true
+flip_v = true
+
+[node name="OrnamenMenu" type="Sprite2D" parent="MarginContainer/CenterContainer/Ornamen" unique_id=823384916]
+position = Vector2(13, 12)
+texture = ExtResource("3_mtpaw")
+
+[node name="button" type="Sprite2D" parent="MarginContainer/CenterContainer" unique_id=1893400871]
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/button" unique_id=1708727539]
+offset_left = 6.0
+offset_top = 41.0
+offset_right = 250.0
+offset_bottom = 282.0
+
+[node name="Normal" type="VBoxContainer" parent="MarginContainer/CenterContainer/button/MarginContainer" unique_id=1317525485]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/CenterContainer/button/MarginContainer/Normal" unique_id=846813458]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+texture_normal = ExtResource("6_v15xj")
+texture_pressed = ExtResource("5_0ss0c")
+texture_hover = ExtResource("4_b8rg5")
+texture_disabled = ExtResource("8_pxqs8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/button/MarginContainer/Normal/TextureButton" unique_id=639156095]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+text = "RESUME"
+label_settings = SubResource("LabelSettings_ns58c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/CenterContainer/button/MarginContainer/Normal" unique_id=1589993539]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+texture_normal = ExtResource("6_v15xj")
+texture_pressed = ExtResource("5_0ss0c")
+texture_hover = ExtResource("4_b8rg5")
+texture_disabled = ExtResource("8_pxqs8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/button/MarginContainer/Normal/TextureButton2" unique_id=144954567]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+text = "RESTART"
+label_settings = SubResource("LabelSettings_ns58c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="MarginContainer/CenterContainer/button/MarginContainer/Normal" unique_id=44706936]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+texture_normal = ExtResource("6_v15xj")
+texture_pressed = ExtResource("5_0ss0c")
+texture_hover = ExtResource("4_b8rg5")
+texture_disabled = ExtResource("8_pxqs8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/button/MarginContainer/Normal/TextureButton4" unique_id=62222563]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+text = "CONTROL"
+label_settings = SubResource("LabelSettings_ns58c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="MarginContainer/CenterContainer/button/MarginContainer/Normal" unique_id=1576809011]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+texture_normal = ExtResource("6_v15xj")
+texture_pressed = ExtResource("5_0ss0c")
+texture_hover = ExtResource("4_b8rg5")
+texture_disabled = ExtResource("8_pxqs8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="MarginContainer/CenterContainer/button/MarginContainer/Normal/TextureButton3" unique_id=1014301125]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+text = "EXIT"
+label_settings = SubResource("LabelSettings_ns58c")
+horizontal_alignment = 1
+vertical_alignment = 1

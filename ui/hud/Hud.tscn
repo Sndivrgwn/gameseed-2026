@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bgq3co2rl5xoq" path="res://assets/ui/hud/mana_bar.png" id="6_af3s3"]
 [ext_resource type="FontFile" uid="uid://b7wxx57q7gx5r" path="res://assets/font/m5x7.ttf" id="7_af3s3"]
 [ext_resource type="Texture2D" uid="uid://b8cng8xvunr0" path="res://assets/ui/hud/skill.png" id="7_iyywv"]
+[ext_resource type="PackedScene" uid="uid://wo23175it1eg" path="res://ui/flow/menu/MenuInGame.tscn" id="10_iyywv"]
+[ext_resource type="Texture2D" uid="uid://ciy8jt3uxwndu" path="res://assets/ui/icon/coin.png" id="11_q25gb"]
 
 [sub_resource type="Gradient" id="Gradient_fc3h1"]
 offsets = PackedFloat32Array(0, 0.14766839, 1)
@@ -201,3 +203,10 @@ texture = SubResource("AtlasTexture_vdjf3")
 [node name="Skill3" type="TextureRect" parent="MarginContainer/VBoxContainer2/HBoxContainer/HBoxContainer/VBoxContainer2" unique_id=601476356]
 layout_mode = 2
 texture = SubResource("AtlasTexture_vdjf3")
+
+[node name="MenuInGame" parent="." unique_id=583570051 instance=ExtResource("10_iyywv")]
+
+[node name="Coin" type="Sprite2D" parent="." unique_id=713323723]
+position = Vector2(1037, 113)
+scale = Vector2(2, 2)
+texture = ExtResource("11_q25gb")
