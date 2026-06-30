@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://m1obqaeytkmq" path="res://systems/combat/ResistanceComponent.gd" id="5_r1sy1"]
 [ext_resource type="Script" uid="uid://b2yrx18vojt2t" path="res://systems/ai/EnemyMovement.gd" id="8_irxnv"]
 [ext_resource type="Script" uid="uid://cw55vjtam4v0l" path="res://systems/ai/EnemyAttack.gd" id="9_kluru"]
-[ext_resource type="Script" uid="uid://c1fvcvb2jxd6x" path="res://systems/ai/attack/MeeleAttack.gd" id="10_xjwj2"]
+[ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="10_xjwj2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mljs2"]
 atlas = ExtResource("2_cmr6w")
@@ -53,15 +53,12 @@ radius = 21.001488
 [sub_resource type="CircleShape2D" id="CircleShape2D_mp5hi"]
 radius = 15.502016
 
-[sub_resource type="Resource" id="Resource_x8nv2"]
-script = ExtResource("10_xjwj2")
-metadata/_custom_type_script = "uid://c1fvcvb2jxd6x"
-
 [node name="Goblin" type="CharacterBody2D" unique_id=439640717 groups=["enemy"]]
 scale = Vector2(4, 4)
 collision_layer = 8
 script = ExtResource("1_xcqix")
 enemy_data = ExtResource("2_2o35i")
+team = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1879592294]
 sprite_frames = SubResource("SpriteFrames_jth41")
@@ -98,5 +95,8 @@ metadata/_custom_type_script = "uid://cw55vjtam4v0l"
 
 [node name="EnemyAttack" type="Node" parent="." unique_id=1887930562]
 script = ExtResource("9_kluru")
-attack_strategy = SubResource("Resource_x8nv2")
 metadata/_custom_type_script = "uid://cw55vjtam4v0l"
+
+[node name="CooldownComponent" type="Node" parent="." unique_id=392682626]
+script = ExtResource("10_xjwj2")
+metadata/_custom_type_script = "uid://c7otefy1qs7jg"

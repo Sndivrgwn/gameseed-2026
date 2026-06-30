@@ -3,7 +3,6 @@ class_name Enemy
 
 @export_group("Combat")
 @export var attack_range := 40.0
-@export var attack_cooldown := 1.0
 
 @export var enemy_data: EnemyData
 
@@ -23,8 +22,6 @@ enum State{
 }
 
 var current_state := State.CHASE
-
-var can_attack := true
 
 var is_hit := false
 
@@ -65,7 +62,7 @@ func chase_state(delta):
 
 	if global_position.distance_to(
 		player.global_position
-	) <= attack_range:
+	) <= enemy_data.attack_range:
 
 		current_state = State.ATTACK
 		return
@@ -74,53 +71,6 @@ func chase_state(delta):
 
 func attack_state(delta):
 	attack.update(delta)
-
-	velocity = velocity.move_toward(
-		Vector2.ZERO,
-		movement.deceleration * delta
-	)
-
-	move_and_slide()
-
-	if !can_attack:
-
-		if global_position.distance_to(
-			player.global_position
-		) > attack_range:
-
-			current_state = State.CHASE
-
-		return
-
-	can_attack = false
-
-	if is_instance_valid(player):
-
-		if global_position.distance_to(
-			player.global_position
-		) <= attack_range:
-
-			var hit = CombatCalculator.calculate_basic_attack(
-				self,
-				player
-			)
-
-			player.take_damage(hit)
-
-	await get_tree().create_timer(
-		attack_cooldown
-	).timeout
-
-	can_attack = true
-
-	if !is_instance_valid(player):
-		return
-
-	if global_position.distance_to(
-		player.global_position
-	) > attack_range:
-
-		current_state = State.CHASE
 
 func _on_died():
 

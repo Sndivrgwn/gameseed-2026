@@ -2,8 +2,8 @@ extends Node
 class_name EnemyAttack
 
 @onready var enemy := get_parent() as Enemy
-@export var attack_strategy: AttackStrategy
-var can_attack := true
+
+var is_attacking := false
 
 func update(delta: float) -> void:
 
@@ -13,7 +13,6 @@ func update(delta: float) -> void:
 	if !is_instance_valid(enemy.player):
 		return
 
-	# Berhenti bergerak saat menyerang
 	enemy.velocity = enemy.velocity.move_toward(
 		Vector2.ZERO,
 		enemy.movement.deceleration * delta
@@ -21,29 +20,42 @@ func update(delta: float) -> void:
 
 	enemy.move_and_slide()
 
-	if !can_attack:
+	if is_attacking:
+		return
 
-		if enemy.global_position.distance_to(
-			enemy.player.global_position
-		) > enemy.attack_range:
+	if enemy.global_position.distance_to(
+		enemy.player.global_position
+	) > enemy.enemy_data.attack_range:
 
-			enemy.current_state = Enemy.State.CHASE
+		enemy.current_state = Enemy.State.CHASE
+		return
 
+	if !SpellManager.can_cast(
+		enemy,
+		enemy.enemy_data.attack_skill
+	):
 		return
 
 	attack()
 
 
 func attack():
-	can_attack = false
-	attack_strategy.perform_attack(enemy)
-	await get_tree().create_timer(
-		enemy.attack_cooldown
-	).timeout
-	can_attack = true
+
+	is_attacking = true
+
+	await SpellManager.cast(
+		enemy,
+		enemy.enemy_data.attack_skill,
+		enemy.player
+	)
+
+	is_attacking = false
+
 	if !is_instance_valid(enemy.player):
 		return
+
 	if enemy.global_position.distance_to(
 		enemy.player.global_position
-	) > enemy.attack_range:
+	) > enemy.enemy_data.attack_range:
+
 		enemy.current_state = Enemy.State.CHASE

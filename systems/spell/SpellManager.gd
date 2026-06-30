@@ -1,41 +1,76 @@
 extends Node
 
-func cast(caster, spell_name):
-	print("casting: ", spell_name)
-	var skill = SkillDatabase.get_skill(spell_name)
+func can_cast(
+	caster: BaseCharacter,
+	spell_name: StringName
+) -> bool:
+
+	var skill: SkillData = SkillDatabase.get_skill(spell_name)
+	
 	if skill == null:
-		print("Skill not found")
-		return
+		return false
 
 	if caster.is_casting:
-		print("still casting")
-		return
+		return false
+
 	if caster.cooldowns.is_on_cooldown(skill.skill_name):
-		print("Skill cooldown")
-		return
-	
-	if !caster.stats.spend_mana(skill.mana_cost):
-		print("not enough mana")
-		return
+		return false
+
+	if caster.stats.mana < skill.mana_cost:
+		return false
+
+	return true
+
+
+func cast(
+	caster: BaseCharacter,
+	spell_name: StringName,
+	target_override: BaseCharacter = null
+) -> bool:
+
+	if !can_cast(caster, spell_name):
+		return false
+
+	var skill: SkillData = SkillDatabase.get_skill(spell_name)
+
+	# Spend mana
+	caster.stats.spend_mana(skill.mana_cost)
 
 	caster.is_casting = true
-	caster.show_cast_time(skill.cast_time)
-	await caster.get_tree().create_timer(
-		skill.cast_time
-	).timeout
+
+	if caster.has_method("show_cast_time"):
+		caster.show_cast_time(skill.cast_time)
+
+	if skill.cast_time > 0:
+
+		await caster.get_tree().create_timer(
+			skill.cast_time
+		).timeout
+	if !is_instance_valid(caster):
+		return false
 	caster.is_casting = false
+
 	caster.cooldowns.start_cooldown(
-	skill.skill_name,
-	skill.cooldown
+		skill.skill_name,
+		skill.cooldown
 	)
-	if skill.spell_scene:
-		var target = TargetingManager.get_target(caster, skill.target_type)
-		if target == null:
-			return
-		print(target)
-		print(skill.delivery_type)
-		DeliveryManager.cast(
+
+	var target := target_override
+
+	if target == null:
+
+		target = TargetingManager.get_target(
 			caster,
-			target,
-			skill
+			skill.target_type
 		)
+
+	if target == null:
+		return false
+
+	DeliveryManager.cast(
+		caster,
+		target,
+		skill
+	)
+
+	return true

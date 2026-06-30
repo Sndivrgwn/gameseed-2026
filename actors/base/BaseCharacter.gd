@@ -13,6 +13,10 @@ enum Team {
 var knockback_velocity := Vector2.ZERO
 var is_dead := false
 
+# Combat
+var is_casting := false
+@onready var cooldowns: CooldownComponent = get_node_or_null("CooldownComponent")
+
 func _ready():
 	stats.died.connect(_on_died)
 

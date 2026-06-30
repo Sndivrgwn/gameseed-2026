@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://22fv5pvvmmx4"]
+
+[ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_xpddy"]
+[ext_resource type="PackedScene" uid="uid://bi2lukcyopghx" path="res://skills/enemy/slash.tscn" id="2_8bler"]
+
+[resource]
+script = ExtResource("1_xpddy")
+skill_name = "slash"
+display_name = "slash"
+description = "the most basic attack ever"
+spell_scene = ExtResource("2_8bler")
+damage = 5
+damage_type = 0
+lifetime = 0.1
+delivery_type = 2
+show_area_indicator = true
+apply_status = false
+cooldown = 1.0
+metadata/_custom_type_script = "uid://cqev7m7q7tonm"

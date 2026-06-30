@@ -22,8 +22,9 @@ static func execute(
 			target,
 			skill
 		)
-		
+
 	if skill.heal_amount > 0:
+
 		HealImpact.execute(
 			caster,
 			target,

@@ -14,4 +14,5 @@ script = ExtResource("1_luvia")
 display_name = "Goblin"
 base_stats = ExtResource("1_kkmrk")
 resistance_data = SubResource("Resource_r7erd")
+attack_skill = &"slash"
 metadata/_custom_type_script = "uid://b5csn2d3xci6c"

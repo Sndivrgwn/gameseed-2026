@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bi2lukcyopghx"]
+
+[ext_resource type="Texture2D" uid="uid://c6jp3pkugdkxe" path="res://assets/Skill/vfx/slash/8/1.png" id="1_3bdc1"]
+[ext_resource type="Script" uid="uid://67rwpmj0yi7q" path="res://skills/enemy/slash.gd" id="1_foiuo"]
+[ext_resource type="Texture2D" uid="uid://dryq1swosr2me" path="res://assets/Skill/vfx/slash/8/2.png" id="2_foiuo"]
+[ext_resource type="Texture2D" uid="uid://b1od7dtstvxnn" path="res://assets/Skill/vfx/slash/8/3.png" id="3_am7sn"]
+[ext_resource type="Texture2D" uid="uid://d042mlq3gbrst" path="res://assets/Skill/vfx/slash/8/4.png" id="4_lr2sa"]
+[ext_resource type="Texture2D" uid="uid://c60yv7vphk8qx" path="res://assets/Skill/vfx/slash/8/5.png" id="5_vuw1g"]
+[ext_resource type="Texture2D" uid="uid://ca0tcrmi2ewng" path="res://assets/Skill/vfx/slash/8/6.png" id="6_5e1sd"]
+[ext_resource type="Texture2D" uid="uid://cmvls4d8f5vc" path="res://assets/Skill/vfx/slash/8/7.png" id="7_nr13w"]
+[ext_resource type="Texture2D" uid="uid://bqjvvrofvpj65" path="res://assets/Skill/vfx/slash/8/8.png" id="8_3lvje"]
+[ext_resource type="Texture2D" uid="uid://b0cwnaq01heqm" path="res://assets/Skill/vfx/slash/8/9.png" id="9_3kbyq"]
+[ext_resource type="Texture2D" uid="uid://bxq2iv3cj606b" path="res://assets/Skill/vfx/slash/8/10.png" id="10_78ekt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_su4ni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3bdc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_foiuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_am7sn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lr2sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vuw1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5e1sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nr13w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3lvje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3kbyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_78ekt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Slash" type="Node2D" unique_id=1326700465]
+script = ExtResource("1_foiuo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1886968453]
+sprite_frames = SubResource("SpriteFrames_su4ni")
+autoplay = "default"
+frame_progress = 0.632885

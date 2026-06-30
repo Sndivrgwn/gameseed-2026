@@ -1,14 +1,16 @@
 extends Node
 class_name ProjectileDelivery
 
-
 static func cast(
 	caster: BaseCharacter,
 	target: BaseCharacter,
 	skill: SkillData
 ):
 
-	var projectile = skill.spell_scene.instantiate()
+	if skill.spell_scene == null:
+		return
+
+	var projectile: BaseProjectile = skill.spell_scene.instantiate()
 
 	projectile.caster = caster
 	projectile.target = target

@@ -7,6 +7,8 @@
 [ext_resource type="Resource" uid="uid://b2oll5s1bju5r" path="res://resources/stats/enemy/minotaur_stats.tres" id="4_wgcwt"]
 [ext_resource type="Script" uid="uid://ccos28ldja0k0" path="res://systems/status/StatusComponent.gd" id="5_wgcwt"]
 [ext_resource type="Script" uid="uid://m1obqaeytkmq" path="res://systems/combat/ResistanceComponent.gd" id="6_fh4tb"]
+[ext_resource type="Script" uid="uid://b2yrx18vojt2t" path="res://systems/ai/EnemyMovement.gd" id="8_ws8fe"]
+[ext_resource type="Script" uid="uid://cw55vjtam4v0l" path="res://systems/ai/EnemyAttack.gd" id="9_e5sdu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ai3sg"]
 atlas = ExtResource("2_hejod")
@@ -96,11 +98,10 @@ size = Vector2(58.000008, 91.600006)
 scale = Vector2(5, 5)
 collision_layer = 8
 script = ExtResource("1_ytcqf")
-detection_range = 800.0
 attack_range = 100.0
-attack_cooldown = 4.0
 enemy_data = ExtResource("2_f6qei")
 knockback_friction = 2000.0
+team = 1
 metadata/_custom_type_script = "uid://d0guseehm2e4t"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1193271748]
@@ -135,3 +136,11 @@ metadata/_custom_type_script = "uid://ccos28ldja0k0"
 [node name="ResistanceComponent" type="Node" parent="." unique_id=386673523]
 script = ExtResource("6_fh4tb")
 metadata/_custom_type_script = "uid://m1obqaeytkmq"
+
+[node name="EnemyMovement" type="Node" parent="." unique_id=1961099652]
+script = ExtResource("8_ws8fe")
+metadata/_custom_type_script = "uid://b2yrx18vojt2t"
+
+[node name="EnemyAttack" type="Node" parent="." unique_id=1259426928]
+script = ExtResource("9_e5sdu")
+metadata/_custom_type_script = "uid://cw55vjtam4v0l"

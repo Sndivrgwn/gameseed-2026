@@ -10,11 +10,9 @@ extends BaseCharacter
 @onready var level: LevelComponent = $LevelComponent
 @onready var status: StatusComponent = $StatusComponent
 @onready var resistance: ResistanceComponent = $ResistanceComponent
-@onready var cooldowns: CooldownComponent = $CooldownComponent
 
 var last_direction = Vector2.RIGHT
 var is_invincible := false
-var is_casting := false
 var facing_direction := 0
 
 func _ready():
