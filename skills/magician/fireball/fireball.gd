@@ -1,5 +1,5 @@
 extends BaseProjectile
 
 func _ready():
-	super()
+	super._ready()
 	print(skill_data.display_name)

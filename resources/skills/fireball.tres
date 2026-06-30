@@ -15,6 +15,7 @@ damage = 25
 element = 0
 cast_time = 0.5
 lifetime = 3.0
+homing = true
 apply_status_effect = true
 status_effect = ExtResource("3_wb8wf")
 cooldown = 5.0

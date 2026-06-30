@@ -1,51 +1,59 @@
 extends BaseSkillVisual
 class_name BaseProjectile
 
-var target : BaseCharacter
+var target: BaseCharacter
 
-@export var speed := 500.0
+var direction := Vector2.ZERO
 
 func _ready():
-	print("Projectile Spawn")
-	
+
+	super._ready()
+
+	if is_instance_valid(target):
+
+		direction = (
+			target.global_position
+			-
+			global_position
+		).normalized()
+
 func _physics_process(delta):
 
-	if !is_instance_valid(target):
+	if skill_data == null:
 		queue_free()
 		return
 
-	var direction = (
-		target.global_position
-		-
-		global_position
-	).normalized()
+	# Homing
+	if skill_data.homing:
 
-	global_position += direction * speed * delta
+		if !is_instance_valid(target):
+			queue_free()
+			return
 
-	if global_position.distance_to(
-		target.global_position
-	) <= 10:
+		direction = (
+			target.global_position
+			-
+			global_position
+		).normalized()
 
-		hit_target()
+	global_position += (
+		direction
+		*
+		skill_data.projectile_speed
+		*
+		delta
+	)
 
-func move(delta):
+	if is_instance_valid(target):
 
-	position += Vector2.RIGHT * speed * delta
+		if global_position.distance_to(
+			target.global_position
+		) <= skill_data.hit_distance:
 
-func can_hit(body) -> bool:
-
-	if !(body is BaseCharacter):
-		return false
-
-	if body.team == caster.team:
-		return false
-
-	return true
-
-func _on_body_entered(body):
-	pass
-
+			hit_target()
+	rotation = direction.angle() + PI / 2
 func hit_target():
+
 	if !is_instance_valid(target):
 		queue_free()
 		return

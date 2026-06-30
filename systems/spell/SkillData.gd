@@ -22,6 +22,11 @@ class_name SkillData
 @export var cast_time: float = 0.0
 @export var lifetime: float = 0.0
 
+@export_group("Projectile")
+@export var homing := false
+@export var projectile_speed := 500.0
+@export var hit_distance := 10.0
+
 @export_group("Targeting & Delivery")
 @export var target_type := CombatTypes.TargetType.NEAREST_ENEMY
 @export var delivery_type := CombatTypes.DeliveryType.PROJECTILE
