@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://bgxmyq035ytyj"]
+
+[ext_resource type="PackedScene" uid="uid://d1qqmca0aotqp" path="res://actors/cutscene/cutMage.tscn" id="1_ha7d4"]
+[ext_resource type="Script" uid="uid://jxf6twwvfqjw" path="res://scenes/cutscenes/cutscene_mage_2.gd" id="1_vvd04"]
+[ext_resource type="Texture2D" uid="uid://u71hpdiu8jl" path="res://assets/Background/Castle/Bright/bg.png" id="2_vvd04"]
+[ext_resource type="Texture2D" uid="uid://dosk8a2if3m18" path="res://assets/Background/Castle/Bright/mountaims.png" id="3_tpkpu"]
+[ext_resource type="Texture2D" uid="uid://4najlhiskvfc" path="res://assets/Background/Castle/Bright/floor.png" id="4_110ds"]
+[ext_resource type="Texture2D" uid="uid://cq7lhetw2aexh" path="res://assets/Background/Castle/Bright/wall@windows.png" id="5_cs7ct"]
+[ext_resource type="Texture2D" uid="uid://dpgy4xlgkxulb" path="res://assets/Background/Castle/Bright/columns&falgs.png" id="6_3jf5a"]
+[ext_resource type="Texture2D" uid="uid://lqiu4rj3aheo" path="res://assets/Background/Castle/Bright/dragon.png" id="7_trc12"]
+[ext_resource type="PackedScene" uid="uid://d2wucufqpq4gn" path="res://actors/cutscene/king.tscn" id="8_ha7d4"]
+[ext_resource type="Script" uid="uid://cj8wt4304yenm" path="res://actors/cutscene/king.gd" id="9_vvd04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha7d4"]
+size = Vector2(346.5, 183.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4eyl"]
+radius = 15.0
+height = 214.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c4eyl"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x3rmp"]
+normal = Vector2(0, 1)
+
+[node name="Cutscene" type="Node2D" unique_id=1205190803]
+script = ExtResource("1_vvd04")
+
+[node name="Magician" parent="." unique_id=1463276590 instance=ExtResource("1_ha7d4")]
+position = Vector2(375.99997, 250.99998)
+scale = Vector2(3.5, 3.5)
+
+[node name="Scene1" type="ParallaxBackground" parent="." unique_id=145339077]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Scene1" unique_id=1859450029]
+position = Vector2(43, -2)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="bg-blue" type="Sprite2D" parent="Scene1/ParallaxLayer" unique_id=534627024]
+position = Vector2(932.8438, -269)
+scale = Vector2(0.97307956, 0.4597222)
+texture = ExtResource("2_vvd04")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="Scene1" unique_id=611322778]
+position = Vector2(43, -2)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Scene1/ParallaxLayer8" unique_id=798467234]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -806.0
+offset_top = -1310.0
+offset_right = 2809.0
+offset_bottom = 1243.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Scene1" unique_id=2030614506]
+position = Vector2(8, -1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="mountain" type="Sprite2D" parent="Scene1/ParallaxLayer2" unique_id=1240426646]
+position = Vector2(936.5, -87)
+scale = Vector2(0.97968745, 1)
+texture = ExtResource("3_tpkpu")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Scene1" unique_id=458168497]
+position = Vector2(18, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="mountain2" type="Sprite2D" parent="Scene1/ParallaxLayer3" unique_id=1291425604]
+position = Vector2(908.8126, -9)
+scale = Vector2(0.95957035, 1)
+texture = ExtResource("3_tpkpu")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Scene1" unique_id=151320802]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="floor1" type="Sprite2D" parent="Scene1/ParallaxLayer4" unique_id=2126564122]
+position = Vector2(964, 28)
+texture = ExtResource("4_110ds")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Scene1" unique_id=1714341444]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="wall1" type="Sprite2D" parent="Scene1/ParallaxLayer5" unique_id=223454949]
+position = Vector2(961.5, 12)
+scale = Vector2(0.9994792, 1)
+texture = ExtResource("5_cs7ct")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Scene1" unique_id=389420936]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="wall-decor1" type="Sprite2D" parent="Scene1/ParallaxLayer6" unique_id=1404669807]
+position = Vector2(953.99994, 30)
+scale = Vector2(0.9937499, 1.0305556)
+texture = ExtResource("6_3jf5a")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="Scene1" unique_id=790718261]
+z_index = 100
+motion_mirroring = Vector2(2500, 0)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Scene1/ParallaxLayer7" unique_id=1308662867]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene1/ParallaxLayer7/StaticBody2D2" unique_id=1285396750]
+position = Vector2(1034.75, 13.25)
+shape = SubResource("RectangleShape2D_ha7d4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Scene1/ParallaxLayer7/StaticBody2D2" unique_id=638251911]
+position = Vector2(1289, -11)
+shape = SubResource("CapsuleShape2D_c4eyl")
+
+[node name="wall-decor5" type="Sprite2D" parent="Scene1/ParallaxLayer7" unique_id=802162675]
+z_index = 100
+position = Vector2(1105, 43.000004)
+scale = Vector2(1.5700208, 1.6459265)
+skew = -0.06981325
+texture = ExtResource("7_trc12")
+
+[node name="barrier-down" type="StaticBody2D" parent="." unique_id=1048337609]
+position = Vector2(98, 529)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrier-down" unique_id=1903698057]
+shape = SubResource("WorldBoundaryShape2D_c4eyl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=486745167]
+position = Vector2(33, 35)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1319984070]
+position = Vector2(111, 5)
+shape = SubResource("WorldBoundaryShape2D_x3rmp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=757189489]
+position = Vector2(45, 58)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=387348384]
+position = Vector2(1034.75, 13.25)
+shape = SubResource("RectangleShape2D_ha7d4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=592559065]
+position = Vector2(3530, 6)
+shape = SubResource("RectangleShape2D_ha7d4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2020295076]
+position = Vector2(3791, 5)
+shape = SubResource("CapsuleShape2D_c4eyl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1410432885]
+position = Vector2(1289, -11)
+shape = SubResource("CapsuleShape2D_c4eyl")
+
+[node name="King" parent="." unique_id=848123197 instance=ExtResource("8_ha7d4")]
+position = Vector2(1416, 275)
+script = ExtResource("9_vvd04")

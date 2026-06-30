@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ldtq27f3w5xl"]
+
+[ext_resource type="Script" uid="uid://by2klctggvssi" path="res://scenes/systems/speech_bubble.gd" id="1_cjtjh"]
+[ext_resource type="FontFile" uid="uid://b7wxx57q7gx5r" path="res://assets/font/m5x7.ttf" id="2_d4we7"]
+
+[node name="SpeechBubble" type="Node2D" unique_id=879198078]
+script = ExtResource("1_cjtjh")
+
+[node name="Panel" type="Panel" parent="." unique_id=705688414]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1182624138]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_d4we7")
+theme_override_font_sizes/normal_font_size = 16
+fit_content = true
+scroll_following = true
