@@ -6,6 +6,7 @@ static func cast(
 	target: BaseCharacter,
 	skill: SkillData
 ):
+	print("beamDelivery")
 	var beam = skill.spell_scene.instantiate()
 
 	beam.caster = caster

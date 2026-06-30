@@ -7,7 +7,6 @@ static func execute(
 	target: BaseCharacter,
 	skill: SkillData
 ):
-
 	var hit = CombatCalculator.calculate_spell_damage(
 		caster,
 		target,

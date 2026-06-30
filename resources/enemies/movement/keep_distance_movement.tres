@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="KeepDistanceMovement" format=3 uid="uid://c6xiqhenhguur"]
+
+[ext_resource type="Script" uid="uid://2ucmwrpr71ee" path="res://systems/ai/movement/KeepDistanceMovement.gd" id="1_4aaps"]
+
+[resource]
+script = ExtResource("1_4aaps")
+metadata/_custom_type_script = "uid://2ucmwrpr71ee"

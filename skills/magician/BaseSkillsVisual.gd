@@ -9,7 +9,6 @@ var aoe_indicator
 
 
 func _ready():
-	print(name, " skill_data =", skill_data)
 	if skill_data == null:
 		return
 
@@ -32,8 +31,9 @@ func _ready():
 func deal_area_damage():
 
 	var enemies = CombatQuery.get_enemies_in_radius(
-		global_position,
-		skill_data.area_radius
+	caster,
+	global_position,
+	skill_data.area_radius
 	)
 
 	for enemy in enemies:

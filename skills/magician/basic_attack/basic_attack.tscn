@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cegqqr7lrdiv2"]
+
+[ext_resource type="Texture2D" uid="uid://1ioflg2btsrb" path="res://assets/Skill/Magic/Magic/1 Magic/fireball.png" id="1_1kmlt"]
+[ext_resource type="Script" uid="uid://kovys4yw1hab" path="res://skills/magician/basic_attack/basic_attack.gd" id="1_gmmw6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmmw6"]
+atlas = ExtResource("1_1kmlt")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5vlr"]
+atlas = ExtResource("1_1kmlt")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37nfp"]
+atlas = ExtResource("1_1kmlt")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x7a3"]
+atlas = ExtResource("1_1kmlt")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2g74j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmmw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5vlr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37nfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x7a3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_652h6"]
+radius = 21.023796
+
+[node name="BasicAttack" type="Node2D" unique_id=122714491]
+script = ExtResource("1_gmmw6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=789233149]
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_2g74j")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1887554287]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=444048432]
+shape = SubResource("CircleShape2D_652h6")

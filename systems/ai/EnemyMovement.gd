@@ -12,63 +12,19 @@ class_name EnemyMovement
 @export var separation_strength := 1.2
 @export var personal_space := 16.0
 
-func update(delta: float) -> void:
+func update(delta):
 
-	if enemy == null:
+	if owner.enemy_data == null:
 		return
 
-	if !is_instance_valid(enemy.player):
+	if owner.enemy_data.movement_strategy == null:
 		return
 
-	# ===========================
-	# Knockback
-	# ===========================
-	if enemy.is_hit:
-
-		enemy.velocity = enemy.knockback_velocity
-
-		enemy.move_and_slide()
-
-		enemy.knockback_velocity = enemy.knockback_velocity.move_toward(
-			Vector2.ZERO,
-			enemy.knockback_friction * delta
-		)
-
-		if enemy.knockback_velocity.length() < 5:
-			enemy.is_hit = false
-
-		return
-
-	# ===========================
-	# Steering
-	# ===========================
-	var direction := get_steering()
-
-	if direction == Vector2.ZERO:
-		return
-
-	enemy.update_animation(direction)
-
-	var target_velocity = direction * enemy.stats.get_speed()
-
-	enemy.velocity = enemy.velocity.move_toward(
-		target_velocity,
-		acceleration * delta
+	owner.enemy_data.movement_strategy.move(
+		owner,
+		self,
+		delta
 	)
-
-	# Blend knockback
-	enemy.velocity += enemy.knockback_velocity
-
-	enemy.move_and_slide()
-
-	enemy.knockback_velocity = enemy.knockback_velocity.move_toward(
-		Vector2.ZERO,
-		enemy.knockback_friction * delta
-	)
-
-	if enemy.velocity.length() < 1:
-		enemy.velocity = Vector2.ZERO
-
 
 func get_steering() -> Vector2:
 

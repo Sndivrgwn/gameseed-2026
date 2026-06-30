@@ -18,7 +18,9 @@ func _ready():
 	explosion.animation_finished.connect(_on_explosion_finished)
 
 func initialize():
+
 	enemies = CombatQuery.get_enemies_in_radius(
+		caster,
 		global_position,
 		skill_data.area_radius
 	)
@@ -58,7 +60,6 @@ func explode():
 	if exploded:
 		return
 
-	print("Dark Ring explode")
 
 	exploded = true
 	pulling = false

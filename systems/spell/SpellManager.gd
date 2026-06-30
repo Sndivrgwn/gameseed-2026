@@ -5,19 +5,30 @@ func can_cast(
 	spell_name: StringName
 ) -> bool:
 
-	var skill: SkillData = SkillDatabase.get_skill(spell_name)
-	
+	if !is_instance_valid(caster):
+		return false
+
+	var skill := SkillDatabase.get_skill(spell_name)
+
 	if skill == null:
+		print("Skill not found :", spell_name)
+		return false
+
+	if caster.is_dead:
 		return false
 
 	if caster.is_casting:
 		return false
 
+	if caster.cooldowns == null:
+		return false
+
 	if caster.cooldowns.is_on_cooldown(skill.skill_name):
 		return false
 
-	if caster.stats.mana < skill.mana_cost:
-		return false
+	if !skill.is_basic_attack:
+		if caster.stats.mana < skill.mana_cost:
+			return false
 
 	return true
 
@@ -33,8 +44,13 @@ func cast(
 
 	var skill: SkillData = SkillDatabase.get_skill(spell_name)
 
-	# Spend mana
-	caster.stats.spend_mana(skill.mana_cost)
+	if skill == null:
+		return false
+
+	if !skill.is_basic_attack:
+
+		if !caster.stats.spend_mana(skill.mana_cost):
+			return false
 
 	caster.is_casting = true
 
@@ -46,14 +62,22 @@ func cast(
 		await caster.get_tree().create_timer(
 			skill.cast_time
 		).timeout
+
+	# caster mati saat casting
 	if !is_instance_valid(caster):
 		return false
+
+	if caster.is_dead:
+		return false
+
 	caster.is_casting = false
 
-	caster.cooldowns.start_cooldown(
-		skill.skill_name,
-		skill.cooldown
-	)
+	if caster.cooldowns:
+
+		caster.cooldowns.start_cooldown(
+			skill.skill_name,
+			skill.cooldown
+		)
 
 	var target := target_override
 
@@ -64,7 +88,11 @@ func cast(
 			skill.target_type
 		)
 
-	if target == null:
+	# target mati
+	if !is_instance_valid(target):
+		return false
+
+	if target.is_dead:
 		return false
 
 	DeliveryManager.cast(

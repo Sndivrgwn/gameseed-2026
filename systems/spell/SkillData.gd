@@ -9,6 +9,9 @@ class_name SkillData
 @export_multiline var description := ""
 @export var spell_scene: PackedScene
 
+@export_group("Basic Attack")
+@export var is_basic_attack := false
+
 @export_group("Combat Stats")
 @export var mana_cost: int = 0
 @export var damage: int = 0

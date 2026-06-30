@@ -1,32 +1,32 @@
-[gd_scene format=3 uid="uid://bbt0gp4jd52bd"]
+[gd_scene format=3 uid="uid://kg8qo5vmba4w"]
 
-[ext_resource type="Script" uid="uid://dtqws3vu0jh6w" path="res://actors/enemy/goblin/goblin.gd" id="1_xcqix"]
-[ext_resource type="Resource" uid="uid://dlxjilbolwd3h" path="res://resources/stats/enemy/data/goblin_data.tres" id="2_2o35i"]
-[ext_resource type="Texture2D" uid="uid://cpvntwr6b2dho" path="res://assets/sprites/Enemy/goblin/PNG/Orc1/With_shadow/orc1_idle_with_shadow.png" id="2_cmr6w"]
-[ext_resource type="Resource" uid="uid://22fv5pvvmmx4" path="res://resources/skills/slash.tres" id="3_jth41"]
-[ext_resource type="Script" uid="uid://bouqg2kx7oy65" path="res://components/StatsComponent.gd" id="3_mljs2"]
-[ext_resource type="Resource" uid="uid://cpvdkhcnjhbps" path="res://resources/stats/enemy/goblin_stats.tres" id="4_cmr6w"]
-[ext_resource type="Script" uid="uid://ccos28ldja0k0" path="res://systems/status/StatusComponent.gd" id="5_mljs2"]
-[ext_resource type="Script" uid="uid://m1obqaeytkmq" path="res://systems/combat/ResistanceComponent.gd" id="5_r1sy1"]
-[ext_resource type="Script" uid="uid://b2yrx18vojt2t" path="res://systems/ai/EnemyMovement.gd" id="8_irxnv"]
-[ext_resource type="Script" uid="uid://cw55vjtam4v0l" path="res://systems/ai/EnemyAttack.gd" id="9_kluru"]
-[ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="10_xjwj2"]
-[ext_resource type="Script" uid="uid://blf1016fqcwun" path="res://systems/ai/EnemyBrain.gd" id="11_x8nv2"]
+[ext_resource type="Script" uid="uid://dtqws3vu0jh6w" path="res://actors/enemy/goblin/goblin.gd" id="1_ixe17"]
+[ext_resource type="Resource" uid="uid://88lpesw3wkmp" path="res://resources/stats/enemy/data/goblin_mage_data.tres" id="2_ixe17"]
+[ext_resource type="Resource" uid="uid://cb4diate7a5gt" path="res://resources/skills/fireball.tres" id="3_i6ue7"]
+[ext_resource type="Texture2D" uid="uid://cpvntwr6b2dho" path="res://assets/sprites/Enemy/goblin/PNG/Orc1/With_shadow/orc1_idle_with_shadow.png" id="4_swnpe"]
+[ext_resource type="Script" uid="uid://bouqg2kx7oy65" path="res://components/StatsComponent.gd" id="5_qjdjt"]
+[ext_resource type="Resource" uid="uid://die050uwe8uao" path="res://resources/stats/enemy/goblin_mage_data.tres" id="6_ixe17"]
+[ext_resource type="Script" uid="uid://m1obqaeytkmq" path="res://systems/combat/ResistanceComponent.gd" id="7_tbqj6"]
+[ext_resource type="Script" uid="uid://ccos28ldja0k0" path="res://systems/status/StatusComponent.gd" id="8_h2i4l"]
+[ext_resource type="Script" uid="uid://b2yrx18vojt2t" path="res://systems/ai/EnemyMovement.gd" id="9_ra0ea"]
+[ext_resource type="Script" uid="uid://cw55vjtam4v0l" path="res://systems/ai/EnemyAttack.gd" id="10_xnfgg"]
+[ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="11_wt0sm"]
+[ext_resource type="Script" uid="uid://blf1016fqcwun" path="res://systems/ai/EnemyBrain.gd" id="12_53rfo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mljs2"]
-atlas = ExtResource("2_cmr6w")
+atlas = ExtResource("4_swnpe")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1sy1"]
-atlas = ExtResource("2_cmr6w")
+atlas = ExtResource("4_swnpe")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o35i"]
-atlas = ExtResource("2_cmr6w")
+atlas = ExtResource("4_swnpe")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irxnv"]
-atlas = ExtResource("2_cmr6w")
+atlas = ExtResource("4_swnpe")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jth41"]
@@ -58,10 +58,10 @@ radius = 15.502016
 [node name="Goblin" type="CharacterBody2D" unique_id=439640717 groups=["enemy"]]
 scale = Vector2(4, 4)
 collision_layer = 8
-script = ExtResource("1_xcqix")
-enemy_data = ExtResource("2_2o35i")
+script = ExtResource("1_ixe17")
+enemy_data = ExtResource("2_ixe17")
 team = 1
-basic_attack = ExtResource("3_jth41")
+basic_attack = ExtResource("3_i6ue7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1879592294]
 sprite_frames = SubResource("SpriteFrames_jth41")
@@ -74,8 +74,8 @@ position = Vector2(-3, -0.5)
 shape = SubResource("CircleShape2D_5oujx")
 
 [node name="StatsComponent" type="Node" parent="." unique_id=807054544]
-script = ExtResource("3_mljs2")
-base_stats = ExtResource("4_cmr6w")
+script = ExtResource("5_qjdjt")
+base_stats = ExtResource("6_ixe17")
 metadata/_custom_type_script = "uid://bouqg2kx7oy65"
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=539405351]
@@ -85,26 +85,25 @@ visible = false
 shape = SubResource("CircleShape2D_mp5hi")
 
 [node name="ResistanceComponent" type="Node" parent="." unique_id=474756651]
-script = ExtResource("5_r1sy1")
+script = ExtResource("7_tbqj6")
 metadata/_custom_type_script = "uid://m1obqaeytkmq"
 
 [node name="StatusComponent" type="Node" parent="." unique_id=1465714952]
-script = ExtResource("5_mljs2")
+script = ExtResource("8_h2i4l")
 metadata/_custom_type_script = "uid://ccos28ldja0k0"
 
 [node name="EnemyMovement" type="Node" parent="." unique_id=1999446127]
-script = ExtResource("8_irxnv")
+script = ExtResource("9_ra0ea")
 metadata/_custom_type_script = "uid://cw55vjtam4v0l"
 
-[node name="EnemyAttack" type="Node" parent="." unique_id=1887930562 node_paths=PackedStringArray("enemy")]
-script = ExtResource("9_kluru")
-enemy = NodePath("..")
+[node name="EnemyAttack" type="Node" parent="." unique_id=1887930562]
+script = ExtResource("10_xnfgg")
 metadata/_custom_type_script = "uid://cw55vjtam4v0l"
 
 [node name="CooldownComponent" type="Node" parent="." unique_id=392682626]
-script = ExtResource("10_xjwj2")
+script = ExtResource("11_wt0sm")
 metadata/_custom_type_script = "uid://c7otefy1qs7jg"
 
 [node name="EnemyBrain" type="Node" parent="." unique_id=1755584476]
-script = ExtResource("11_x8nv2")
+script = ExtResource("12_53rfo")
 metadata/_custom_type_script = "uid://blf1016fqcwun"

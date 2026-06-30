@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ChaseMovement" format=3 uid="uid://d0bgr6yoi8lbw"]
+
+[ext_resource type="Script" uid="uid://dttylvvisk8c3" path="res://systems/ai/movement/ChaseMovement.gd" id="1_3kjek"]
+
+[resource]
+script = ExtResource("1_3kjek")
+metadata/_custom_type_script = "uid://dttylvvisk8c3"

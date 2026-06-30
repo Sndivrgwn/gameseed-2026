@@ -6,7 +6,7 @@ static func cast(
 	target: BaseCharacter,
 	skill: SkillData
 ):
-
+	print("AreatDelivery")
 	if skill.spell_scene:
 
 		var visual: BaseSkillVisual = skill.spell_scene.instantiate()
@@ -24,6 +24,7 @@ static func cast(
 		return
 
 	var enemies = CombatQuery.get_enemies_in_radius(
+		caster,
 		target.global_position,
 		skill.area_radius
 	)

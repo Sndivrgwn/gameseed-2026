@@ -11,13 +11,14 @@ enum Team {
 @export var team: Team
 @export var camera_manager: CameraManager
 var knockback_velocity := Vector2.ZERO
+@export_group("Combat")
+@export var basic_attack: SkillData
 var is_dead := false
-
-# Combat
 var is_casting := false
 @onready var cooldowns: CooldownComponent = get_node_or_null("CooldownComponent")
 
 func _ready():
+	add_to_group("character")
 	stats.died.connect(_on_died)
 
 func take_damage(hit: HitResult):
@@ -27,10 +28,7 @@ func take_damage(hit: HitResult):
 		CombatTypes.DamageType.HEAL:
 			stats.heal(hit.damage_data.amount)
 			return
-	#print("Before:", stats.hp)
 	stats.take_damage(hit)
-	#print("After:", stats.hp)
-	#print("stack:  ", self.status.get_stack(BurnEffect))
 	PopupManager.spawn_damage(
 		hit,
 		global_position
@@ -50,3 +48,6 @@ func flash():
 	modulate = Color.RED
 	await get_tree().create_timer(.1).timeout
 	modulate = Color.WHITE
+
+func get_cast_position() -> Vector2:
+	return global_position

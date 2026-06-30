@@ -2,7 +2,6 @@ extends BaseCharacter
 class_name Enemy
 
 @export_group("Combat")
-@export var attack_range := 40.0
 
 @export var enemy_data: EnemyData
 
@@ -61,9 +60,8 @@ func chase_state(delta):
 		return
 
 	if global_position.distance_to(
-		player.global_position
+	player.global_position
 	) <= enemy_data.attack_range:
-
 		current_state = State.ATTACK
 		return
 

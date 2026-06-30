@@ -6,7 +6,8 @@ static func cast(
 	target: BaseCharacter,
 	skill: SkillData
 ):
-
+	print("ProjectileDelivery")
+	print("Projectile target :", target)
 	if skill.spell_scene == null:
 		return
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cs1wr6nqaokic"]
 
 [ext_resource type="Script" uid="uid://ksskf4nv13f" path="res://actors/magician/magician.gd" id="1_dovo2"]
+[ext_resource type="Resource" uid="uid://dxbv4hcweertg" path="res://resources/skills/basic_attack/basic_attack.tres" id="2_2mr3n"]
 [ext_resource type="Texture2D" uid="uid://w8ltorkq2ggl" path="res://assets/sprites/player/magic/magic_down.png" id="2_b41wp"]
 [ext_resource type="Texture2D" uid="uid://dfy8te7slfyp4" path="res://assets/Skill/Magic Circle/2/192x192/pipo-btleffect213_192.png" id="3_f0n2r"]
 [ext_resource type="Texture2D" uid="uid://c42x77o5uucwt" path="res://assets/sprites/player/magic/magic-idle.png" id="4_2mr3n"]
@@ -541,6 +542,8 @@ animations = [{
 scale = Vector2(5, 5)
 collision_layer = 2
 script = ExtResource("1_dovo2")
+knockback_friction = null
+basic_attack = ExtResource("2_2mr3n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837991875]
 z_index = 4

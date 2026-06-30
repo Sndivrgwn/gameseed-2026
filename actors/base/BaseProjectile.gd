@@ -5,6 +5,9 @@ var target : BaseCharacter
 
 @export var speed := 500.0
 
+func _ready():
+	print("Projectile Spawn")
+	
 func _physics_process(delta):
 
 	if !is_instance_valid(target):
@@ -43,6 +46,9 @@ func _on_body_entered(body):
 	pass
 
 func hit_target():
+	if !is_instance_valid(target):
+		queue_free()
+		return
 
 	HitExecutor.execute(
 		caster,

@@ -52,19 +52,32 @@ func submit_spell():
 	SpellManager.cast(self, spell_name)
 	spell_input.text = ""
 	spell_caster.exit_spell_mode(spell_input)
+
+func basic_attack_input():
+	print("pressed")
+	print(basic_attack)
+	if spell_caster.current_state != spell_caster.State.NORMAL:
+		return
+
+	if is_casting:
+		return
+
+	if basic_attack == null:
+		return
+
+	SpellManager.cast(
+		self,
+		basic_attack.skill_name
+	)
 	
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		level.add_exp(40)
-
+	if event.is_action_pressed("attack"):
+		basic_attack_input()
 	if event.is_action_pressed("state_magic"):
 		if spell_caster.current_state == spell_caster.State.NORMAL:
 			spell_caster.enter_spell_mode(spell_input)
 		else:
 			spell_caster.exit_spell_mode(spell_input)
-
-func get_cast_position() -> Vector2:
-	return global_position
 
 func _on_spell_line_edit_text_submitted(new_text: String) -> void:
 	submit_spell()

@@ -43,11 +43,15 @@ func attack():
 
 	is_attacking = true
 
-	await SpellManager.cast(
+	var success = await SpellManager.cast(
 		enemy,
 		enemy.enemy_data.attack_skill,
 		enemy.player
 	)
+
+	if !success:
+		is_attacking = false
+		return
 
 	is_attacking = false
 

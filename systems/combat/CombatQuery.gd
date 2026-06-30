@@ -2,27 +2,33 @@ extends Node
 
 func get_nearest_enemy(caster: BaseCharacter) -> BaseCharacter:
 
-	var enemies = caster.get_tree().get_nodes_in_group("enemy")
-
 	var nearest: BaseCharacter = null
 	var nearest_distance := INF
 
-	for enemy in enemies:
+	for character in get_tree().get_nodes_in_group("character"):
 
-		if !is_instance_valid(enemy):
+		if !is_instance_valid(character):
 			continue
 
-		if enemy.is_dead:
+		if character.is_dead:
 			continue
 
-		var distance = caster.global_position.distance_to(enemy.global_position)
+		if character == caster:
+			continue
+
+		if character.team == caster.team:
+			continue
+
+		var distance := caster.global_position.distance_to(
+			character.global_position
+		)
 
 		if distance < nearest_distance:
-
 			nearest_distance = distance
-			nearest = enemy
+			nearest = character
 
 	return nearest
+
 
 func get_enemies(
 	caster: BaseCharacter
@@ -30,41 +36,42 @@ func get_enemies(
 
 	var result : Array[BaseCharacter]
 
-	for enemy in caster.get_tree().get_nodes_in_group("enemy"):
+	for character in get_tree().get_nodes_in_group("character"):
 
-		if !is_instance_valid(enemy):
+		if !is_instance_valid(character):
 			continue
 
-		if enemy.is_dead:
+		if character.is_dead:
 			continue
 
-		result.append(enemy)
+		if character.team == caster.team:
+			continue
+
+		result.append(character)
 
 	return result
 
+
 func get_enemies_in_radius(
+	caster: BaseCharacter,
 	position: Vector2,
 	radius: float
 ) -> Array[BaseCharacter]:
 
 	var result : Array[BaseCharacter]
 
-	for enemy in get_tree().get_nodes_in_group("enemy"):
+	for character in get_tree().get_nodes_in_group("character"):
 
-		if !is_instance_valid(enemy):
+		if !is_instance_valid(character):
 			continue
 
-		if enemy.is_dead:
+		if character.is_dead:
 			continue
 
-		var distance = enemy.global_position.distance_to(position)
+		if character.team == caster.team:
+			continue
 
-		print(enemy.name, " distance = ", distance)
-
-		if distance <= radius:
-			result.append(enemy)
-
-	print("Radius :", radius)
-	print("Enemy dalam radius :", result.size())
+		if character.global_position.distance_to(position) <= radius:
+			result.append(character)
 
 	return result
