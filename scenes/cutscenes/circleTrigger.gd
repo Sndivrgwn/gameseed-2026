@@ -15,6 +15,7 @@ func _on_body_entered(body):
 
 		await Fade.fadeIn()
 
-		get_tree().change_scene_to_file("res://map/map2.tscn")
+		get_tree().change_scene_to_file("res://scenes/cutscenes/cutsceneMage2.tscn")
 
 		await Fade.fadeOut()
+		body.can_move = false
