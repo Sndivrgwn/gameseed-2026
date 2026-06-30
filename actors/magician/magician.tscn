@@ -598,7 +598,7 @@ basic_attack = ExtResource("2_2mr3n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837991875]
 z_index = 4
 sprite_frames = SubResource("SpriteFrames_x7p2l")
-animation = &"cast"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1090862229]

@@ -11,7 +11,13 @@ func on_tick():
 	if !is_instance_valid(owner):
 		return
 	if !is_instance_valid(source):
-		owner.take_damage_direct(damage_per_tick)
+		var hit = HitResult.new()
+		hit.damage_data = DamageData.new()
+		hit.damage_data.amount = damage_per_tick
+		hit.damage_data.damage_type = CombatTypes.DamageType.PURE
+		hit.damage_data.element_type = CombatTypes.ElementType.FIRE
+
+		owner.take_damage(hit)
 		return
 	var hit = CombatCalculator.calculate_effect_damage(
 	source,

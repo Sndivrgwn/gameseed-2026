@@ -11,9 +11,7 @@ static func cast(
 
 	beam.caster = caster
 	beam.skill_data = skill
-	beam.direction = (
-	target.global_position - caster.global_position
-	).normalized()
+	beam.direction = Vector2(caster.get_facing_direction(), 0)	
 
 	caster.get_tree().current_scene.add_child(beam)
 

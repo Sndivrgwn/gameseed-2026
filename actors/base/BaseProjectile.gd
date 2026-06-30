@@ -90,9 +90,17 @@ func _on_body_entered(body):
 		queue_free()
 
 
-func can_hit(body)->bool:
+func can_hit(body) -> bool:
+	if !is_instance_valid(body):
+		return false
+
 	if !(body is BaseCharacter):
 		return false
+
+	if !is_instance_valid(caster):
+		return false
+
 	if body.team == caster.team:
 		return false
+
 	return true

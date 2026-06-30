@@ -32,13 +32,10 @@ func _physics_process(delta: float) -> void:
 	if can_move():
 		direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-		
-	if Input.get_action_strength("move_right"):
-		facing_direction = 1
-	elif Input.get_action_strength("move_left"):
-		facing_direction = -1
-	else:
-		facing_direction = 0
+		if Input.get_action_strength("move_right"):
+			facing_direction = 1
+		elif Input.get_action_strength("move_left"):
+			facing_direction = -1
 	direction = direction.normalized()
 	movement.move(direction)
 	animation.update(direction)
