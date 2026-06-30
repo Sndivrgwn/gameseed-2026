@@ -46,6 +46,9 @@ func attack():
 		enemy.player.global_position
 		- enemy.global_position
 	).normalized()
+	
+	enemy.animation.play_attack(dir)
+	await enemy.animation.animation_finished
 
 	var success = await SpellManager.cast(
 		enemy,

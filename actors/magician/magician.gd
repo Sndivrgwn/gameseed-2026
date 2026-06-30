@@ -79,8 +79,10 @@ func _input(event):
 	if event.is_action_pressed("state_magic"):
 		if spell_caster.current_state == spell_caster.State.NORMAL:
 			spell_caster.enter_spell_mode(spell_input)
+			animation.play_cast(last_direction)
 		else:
 			spell_caster.exit_spell_mode(spell_input)
+			animation.unlock_animation()
 
 func _on_spell_line_edit_text_submitted(new_text: String) -> void:
 	submit_spell()

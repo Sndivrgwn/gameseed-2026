@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_u20l6")
+max_hp = 10000
 magic_attack = 25
 magic_defense = 12
 move_speed = 1000.0

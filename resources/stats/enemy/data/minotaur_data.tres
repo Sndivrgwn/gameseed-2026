@@ -16,5 +16,7 @@ display_name = "Minotaur"
 base_stats = ExtResource("1_8ujvk")
 resistance_data = SubResource("Resource_38j4d")
 attack_skill = "slash"
+attack_cooldown = 3.0
 movement_strategy = ExtResource("2_38j4d")
+exp_reward = 100
 metadata/_custom_type_script = "uid://b5csn2d3xci6c"

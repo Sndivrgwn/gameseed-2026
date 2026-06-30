@@ -4,11 +4,12 @@
 
 [resource]
 script = ExtResource("1_1pru4")
-max_hp = 10000
+max_hp = 300
 max_mana = 10
-attack = 30
+attack = 50
 magic_attack = 0
-defense = 10
-move_speed = 0.0
+defense = 40
+move_speed = 50.0
+critical_rate = 0.875
 damage_type = 0
 metadata/_custom_type_script = "uid://cwjjeqd3a16bt"

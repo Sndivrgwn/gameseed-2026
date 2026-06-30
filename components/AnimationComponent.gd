@@ -174,9 +174,10 @@ func play_first(list: Array):
 
 		if sprite.sprite_frames.has_animation(anim):
 
-			if sprite.animation != anim:
+			if sprite.animation == anim and sprite.is_playing():
+				return
 
-				sprite.play(anim)
+			sprite.play(anim)
 
 			return
 
@@ -198,8 +199,21 @@ func _on_animation_finished():
 
 	animation_finished.emit(state)
 
+func apply_flip():
+	if sprite == null:
+		return
+	sprite.flip_h = false
+	match facing:
+		"left":
+			sprite.flip_h = true
+		"right":
+			sprite.flip_h = false
+
 func is_locked() -> bool:
 	return animation_locked
 
 func get_facing() -> String:
 	return facing
+
+func unlock_animation():
+	animation_locked = false
