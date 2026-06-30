@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bju8q8dvw20t8"]
 
-[ext_resource type="Script" uid="uid://d3diso3t8tta5" path="res://skills/magician/fireball/fireball.gd" id="1_rf0ts"]
 [ext_resource type="Texture2D" uid="uid://1ioflg2btsrb" path="res://assets/Skill/Magic/Magic/1 Magic/fireball.png" id="2_2o03v"]
+[ext_resource type="Script" uid="uid://0b8f3k0ot2mj" path="res://actors/base/BaseProjectile.gd" id="3_317eq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_317eq"]
 atlas = ExtResource("2_2o03v")
@@ -45,7 +45,7 @@ radius = 4.0
 [node name="Fireball" type="Area2D" unique_id=1676251023]
 collision_layer = 4
 collision_mask = 10
-script = ExtResource("1_rf0ts")
+script = ExtResource("3_317eq")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1850419432]
 scale = Vector2(6, 6)
