@@ -6,7 +6,6 @@ static func cast(
 	target: BaseCharacter,
 	skill: SkillData
 ):
-	print("InstanttDelivery")
 	HitExecutor.execute(
 		caster,
 		target,

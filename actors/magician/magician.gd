@@ -47,14 +47,17 @@ func can_move() -> bool:
 	)
 func submit_spell():
 	var spell_name = spell_input.text.to_lower()
-	print("submit spell")
-	SpellManager.cast(self, spell_name)
+	spell_caster.close_input(spell_input)
+	await SpellManager.cast(
+		self,
+		spell_name
+	)
+
+	spell_caster.exit_spell_mode(spell_input)
 	spell_input.text = ""
 	spell_caster.exit_spell_mode(spell_input)
 
 func basic_attack_input():
-	print("pressed")
-	print(basic_attack)
 	if spell_caster.current_state != spell_caster.State.NORMAL:
 		return
 
@@ -90,7 +93,6 @@ func _on_level_up(new_level):
 	stats.base_stats.magic_attack += 3
 	stats.base_stats.defense += 1
 	print("LEVEL UP :", new_level)
-	print(stats.base_stats.defense)
 
 func _on_died():
 	print("Player Mati")

@@ -6,7 +6,6 @@ static func cast(
 	target: BaseCharacter,
 	skill: SkillData
 ):
-	print("AreatDelivery")
 	if skill.spell_scene:
 
 		var visual: BaseSkillVisual = skill.spell_scene.instantiate()

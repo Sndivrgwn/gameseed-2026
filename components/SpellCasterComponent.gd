@@ -12,9 +12,12 @@ enum State {
 
 var current_state = State.NORMAL
 
+func _ready():
+	magic_circle.visible = false
+	magic_circle.animation_finished.connect(_on_circle_animation_finished)
+
 func enter_spell_mode(spell_input: LineEdit):
 	current_state = State.SPELL_INPUT
-	print("enter spell mode")
 	magic_circle.visible = true
 	magic_circle.play("circle_start")
 	spell_input.visible = true
@@ -22,11 +25,22 @@ func enter_spell_mode(spell_input: LineEdit):
 
 func exit_spell_mode(spell_input: LineEdit):
 	current_state = State.NORMAL
-	magic_circle.play("circle_stop")
-	print("exit spell mode")
+	if magic_circle.visible:
+		magic_circle.play("circle_stop")
 	spell_input.visible = false
-	await self.get_tree().create_timer(
-			4
-		).timeout
-	magic_circle.visible = false
 	
+func _on_circle_animation_finished():
+	match magic_circle.animation:
+		"circle_start":
+			magic_circle.play("circle_loop")
+
+		"circle_stop":
+			magic_circle.visible = false
+
+func close_input(spell_input: LineEdit):
+	current_state = State.NORMAL
+	spell_input.visible = false
+	
+func stop_magic_circle():
+	if magic_circle.visible:
+		magic_circle.play("circle_stop")

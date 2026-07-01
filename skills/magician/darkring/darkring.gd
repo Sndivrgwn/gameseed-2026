@@ -75,6 +75,5 @@ func explode():
 
 func _on_explosion_finished():
 
-	print("Explosion finished")
 
 	queue_free()
