@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_vfgci"]
 [ext_resource type="PackedScene" uid="uid://de7gpxiirn1r6" path="res://skills/magician/spike/spike.tscn" id="2_qgvo4"]
+[ext_resource type="Resource" uid="uid://bxjdsu0wlwgyw" path="res://resources/status_effect/slowness.tres" id="3_qgvo4"]
 
 [resource]
 script = ExtResource("1_vfgci")
@@ -15,5 +16,7 @@ cast_time = 3.0
 lifetime = 3.0
 delivery_type = 0
 hit_count = 3
+apply_status_effect = true
+status_effect = ExtResource("3_qgvo4")
 cooldown = 15.0
 metadata/_custom_type_script = "uid://cqev7m7q7tonm"

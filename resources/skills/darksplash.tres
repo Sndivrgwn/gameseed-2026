@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_yq4v4"]
 [ext_resource type="PackedScene" uid="uid://dtdyejaoi88nm" path="res://skills/magician/darksplash/darksplash.tscn" id="2_qsb2f"]
+[ext_resource type="Resource" uid="uid://b3i2ch2uhbfrj" path="res://resources/status_effect/poison.tres" id="3_qsb2f"]
 
 [resource]
 script = ExtResource("1_yq4v4")
@@ -14,6 +15,10 @@ damage = 25
 element = 7
 cast_time = 3.0
 lifetime = 1.0
-delivery_type = 0
+delivery_type = 2
+area_radius = 500.0
+show_area_indicator = true
+apply_status_effect = true
+status_effect = ExtResource("3_qsb2f")
 cooldown = 15.0
 metadata/_custom_type_script = "uid://cqev7m7q7tonm"

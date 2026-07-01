@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="StatusEffectData" format=3 uid="uid://p4g8mnsjlbxj"]
+
+[ext_resource type="Script" uid="uid://bwdf6slr3n16r" path="res://systems/status/effects/BleedEffect.gd" id="1_26djh"]
+[ext_resource type="Script" uid="uid://cmin03uwv3poc" path="res://systems/status/StatusEffectData.gd" id="1_t3x30"]
+
+[resource]
+script = ExtResource("1_t3x30")
+display_name = "bleed"
+duration = 3.0
+tick_rate = 3.0
+max_stacks = 5
+effect_script = ExtResource("1_26djh")
+is_negative = true
+metadata/_custom_type_script = "uid://cmin03uwv3poc"

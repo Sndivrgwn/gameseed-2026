@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqev7m7q7tonm" path="res://systems/spell/SkillData.gd" id="1_d5t86"]
 [ext_resource type="PackedScene" uid="uid://h3rdx7uvl5pt" path="res://skills/magician/spine/spine.tscn" id="2_3jpq0"]
+[ext_resource type="Resource" uid="uid://p4g8mnsjlbxj" path="res://resources/status_effect/BleedData.tres" id="3_v7xgt"]
 
 [resource]
 script = ExtResource("1_d5t86")
@@ -15,5 +16,7 @@ cast_time = 1.0
 lifetime = 3.0
 delivery_type = 0
 hit_count = 3
+apply_status_effect = true
+status_effect = ExtResource("3_v7xgt")
 cooldown = 5.0
 metadata/_custom_type_script = "uid://cqev7m7q7tonm"

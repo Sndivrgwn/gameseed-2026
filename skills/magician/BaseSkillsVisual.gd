@@ -46,3 +46,31 @@ func deal_area_damage():
 			enemy,
 			skill_data
 		)
+
+func play_repeated_hits() -> void:
+
+	for i in range(skill_data.hit_count):
+
+		play_hit_animation()
+
+		await wait_until_hit()
+
+		deal_area_damage()
+
+		await wait_until_animation_finished()
+
+		if i < skill_data.hit_count - 1:
+			await get_tree().create_timer(
+				skill_data.hit_interval
+			).timeout
+
+func play_hit_animation():
+	pass
+
+
+func wait_until_hit():
+	pass
+
+
+func wait_until_animation_finished():
+	pass

@@ -64,8 +64,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uh1es")
 }],
-"loop": true,
-"name": &"zooltrak",
+"loop": false,
+"name": &"strike",
 "speed": 7.0
 }]
 
@@ -162,9 +162,8 @@ script = ExtResource("1_78ctx")
 
 [node name="zooltrak" type="AnimatedSprite2D" parent="." unique_id=1360409479]
 sprite_frames = SubResource("SpriteFrames_5fvyk")
-animation = &"zooltrak"
-autoplay = "zooltrak"
-frame_progress = 0.5234022
+animation = &"strike"
+frame = 2
 
 [node name="circle" type="AnimatedSprite2D" parent="." unique_id=1933710162]
 position = Vector2(-42.999985, -33.400005)

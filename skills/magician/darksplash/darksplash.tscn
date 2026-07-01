@@ -47,22 +47,22 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t0ngo"]
-radius = 25.492485
-height = 83.79759
+radius = 78.25659
+height = 178.77217
 
 [node name="darksplash" type="Area2D" unique_id=851645030]
 script = ExtResource("1_6fwdq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=751730305]
-position = Vector2(9.330144, -5.30122)
+position = Vector2(47, 14)
 rotation = 2.86234
-scale = Vector2(1.5794402, 1.7692087)
+scale = Vector2(3, 3.361)
 sprite_frames = SubResource("SpriteFrames_tldp6")
 autoplay = "default"
 frame_progress = 0.050004702
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066067593]
-position = Vector2(4, -32.000004)
+position = Vector2(8, -30)
 rotation = -3.4382987
 skew = 0.08726646
 shape = SubResource("CapsuleShape2D_t0ngo")

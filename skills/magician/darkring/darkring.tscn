@@ -120,12 +120,11 @@ animations = [{
 
 [node name="Darkring" type="Node2D" unique_id=1545730935]
 script = ExtResource("1_6t1ej")
-show_aoe_indicator = true
 
 [node name="ring_animation" type="AnimatedSprite2D" parent="." unique_id=708372418]
 position = Vector2(0.71967506, 0.72415483)
 rotation = -2.7925267
-scale = Vector2(1.8902912, 1.9830512)
+scale = Vector2(10, 10.492)
 skew = 0.9005898
 sprite_frames = SubResource("SpriteFrames_0qjaw")
 animation = &"ring_play"

@@ -26,6 +26,10 @@ DeliveryManager="*uid://creqy5c374w6h"
 Fade="*uid://28bhqkmkcrl"
 AiManager="*uid://d3ucmvvcj25lu"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

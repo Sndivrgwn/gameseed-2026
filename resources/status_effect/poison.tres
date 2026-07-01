@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="StatusEffectData" format=3 uid="uid://b3i2ch2uhbfrj"]
 
 [ext_resource type="Script" uid="uid://cmin03uwv3poc" path="res://systems/status/StatusEffectData.gd" id="1_m5lu6"]
+[ext_resource type="Script" uid="uid://esukcwdg2y58" path="res://systems/status/effects/PoisonEffect.gd" id="1_tb4nl"]
 
 [resource]
 script = ExtResource("1_m5lu6")
@@ -8,4 +9,6 @@ display_name = "poison effect"
 description = "DoT damage that contain dark effect"
 duration = 10.0
 max_stacks = 10
+effect_script = ExtResource("1_tb4nl")
+is_negative = true
 metadata/_custom_type_script = "uid://cmin03uwv3poc"
