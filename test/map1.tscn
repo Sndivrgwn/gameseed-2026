@@ -31,7 +31,7 @@ script = ExtResource("19_ynt11")
 script = ExtResource("21_lugf8")
 amplitude = 12.0
 frequency = 1.5
-noise_seed = 264
+noise_seed = 872
 metadata/_custom_type_script = "uid://dimvdouy8g0sv"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6xffr"]
@@ -99,6 +99,7 @@ lookahead = true
 lookahead_acceleration = 0.312
 lookahead_deceleration = 0.302
 draw_limits = true
+_preview_noise = false
 noise_emitter_layer = 1
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 

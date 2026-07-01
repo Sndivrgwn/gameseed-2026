@@ -28,7 +28,6 @@ func shake(
 	duration: float = 0.15,
 	frequency: float = 1.5
 ) -> void:
-	print("shake callled")
 	if noise_emitter == null:
 		return
 
@@ -37,7 +36,6 @@ func shake(
 
 	noise_emitter.duration = duration
 	noise_emitter.emit()
-	print("Emitting:", noise_emitter.is_emitting())
 func small_shake():
 	shake(6, 0.08, 1.8)
 

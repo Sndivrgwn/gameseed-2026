@@ -26,7 +26,10 @@ func move(
 			enemy.is_hit = false
 
 		return
-
+	if enemy.animation.is_locked():
+		enemy.velocity = Vector2.ZERO
+		enemy.move_and_slide()
+		return
 	var direction = (
 		enemy.player.global_position
 		-
