@@ -41,7 +41,7 @@ func _physics_process(delta):
 
 
 func explode():
-
+	CameraManager.big_shake()
 	exploded = true
 
 	meteor.hide()

@@ -26,6 +26,7 @@ DeliveryManager="*uid://creqy5c374w6h"
 Fade="*uid://28bhqkmkcrl"
 AiManager="*uid://d3ucmvvcj25lu"
 PhantomCameraManager="*uid://duq6jhf6unyis"
+CameraManager="*uid://doulklr1mqqsw"
 
 [editor_plugins]
 

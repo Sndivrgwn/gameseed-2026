@@ -17,7 +17,22 @@
 [ext_resource type="Resource" uid="uid://cult614aa0t7f" path="res://resources/waves/wave_01.tres" id="16_w673k"]
 [ext_resource type="Resource" uid="uid://dquua04atsttg" path="res://resources/waves/wave_02.tres" id="17_irgsm"]
 [ext_resource type="Script" uid="uid://doulklr1mqqsw" path="res://systems/camera/CameraManager.gd" id="17_j86fd"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="18_irgsm"]
 [ext_resource type="Script" uid="uid://c7dkj0quginq7" path="res://systems/waves/SpawnManager.gd" id="18_pimjf"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="19_ynt11"]
+[ext_resource type="Script" uid="uid://bhd4nuiu23e7l" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_2d.gd" id="20_pde1m"]
+[ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="21_lugf8"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="23_pde1m"]
+
+[sub_resource type="Resource" id="Resource_ynt11"]
+script = ExtResource("19_ynt11")
+
+[sub_resource type="Resource" id="Resource_pde1m"]
+script = ExtResource("21_lugf8")
+amplitude = 12.0
+frequency = 1.5
+noise_seed = 264
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6xffr"]
 distance = -216.0
@@ -46,9 +61,54 @@ camera_manager = NodePath("../CameraManager")
 collision_layer = 32
 collision_mask = 0
 
-[node name="MagicCircle" parent="Magician" index="3" unique_id=1422474221]
+[node name="MagicCircle" parent="Magician" index="2" unique_id=1422474221]
 position = Vector2(10.999999, 30.2)
 frame_progress = 0.22879344
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=621158237]
+physics_interpolation_mode = 1
+top_level = true
+position = Vector2(1277, 285)
+zoom = Vector2(0.6, 0.6)
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1882328265]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("23_pde1m")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="CameraManager" type="Node" parent="." unique_id=545500572 node_paths=PackedStringArray("camera", "noise_emitter")]
+script = ExtResource("17_j86fd")
+camera = NodePath("../Camera2D")
+noise_emitter = NodePath("../PhantomCameraNoiseEmitter2D")
+metadata/_custom_type_script = "uid://doulklr1mqqsw"
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=481413434 node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(1277, 285)
+script = ExtResource("18_irgsm")
+priority = 10
+follow_mode = 2
+follow_target = NodePath("../Magician")
+zoom = Vector2(0.6, 0.6)
+tween_resource = SubResource("Resource_ynt11")
+follow_damping = true
+follow_damping_value = Vector2(0.4, 0.4)
+lookahead = true
+lookahead_acceleration = 0.312
+lookahead_deceleration = 0.302
+draw_limits = true
+noise_emitter_layer = 1
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="PhantomCameraNoiseEmitter2D" type="Node2D" parent="." unique_id=368409988]
+script = ExtResource("20_pde1m")
+noise = SubResource("Resource_pde1m")
+growth_time = 0.02
+duration = 0.12
+decay_time = 0.15
+metadata/_custom_type_script = "uid://bhd4nuiu23e7l"
 
 [node name="topwall" type="StaticBody2D" parent="." unique_id=1149215218]
 position = Vector2(579, 590)
@@ -142,12 +202,6 @@ min_spawn_distance = 1000.0
 camera_manager = NodePath("../CameraManager")
 forward_spawn_chance = 0.635
 metadata/_custom_type_script = "uid://c7dkj0quginq7"
-
-[node name="CameraManager" type="Node" parent="." unique_id=853301223 node_paths=PackedStringArray("camera", "player")]
-script = ExtResource("17_j86fd")
-camera = NodePath("../Magician/Camera2D")
-player = NodePath("../Magician")
-metadata/_custom_type_script = "uid://doulklr1mqqsw"
 
 [node name="EnemyContainer" type="Node2D" parent="." unique_id=2023638517]
 
