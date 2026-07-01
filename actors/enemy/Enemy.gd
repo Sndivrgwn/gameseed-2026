@@ -38,38 +38,6 @@ func _ready():
 
 			resistance.load(enemy_data.resistance_data)
 
-func _physics_process(delta):
-
-	match current_state:
-
-		State.CHASE:
-
-			chase_state(delta)
-
-		State.ATTACK:
-
-			attack_state(delta)
-
-		State.DEAD:
-
-			pass
-
-func chase_state(delta):
-
-	if !is_instance_valid(player):
-		return
-
-	if global_position.distance_to(
-	player.global_position
-	) <= enemy_data.attack_range:
-		current_state = State.ATTACK
-		return
-
-	movement.update(delta)
-
-func attack_state(delta):
-	attack.update(delta)
-
 func _on_died():
 
 	enemy_died.emit(self)

@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="11_wt0sm"]
 [ext_resource type="Script" uid="uid://blf1016fqcwun" path="res://systems/ai/EnemyBrain.gd" id="12_53rfo"]
 [ext_resource type="Script" uid="uid://dbpvb1yh2glls" path="res://components/AnimationComponent.gd" id="14_i6ue7"]
+[ext_resource type="BehaviorTree" uid="uid://dv7fircgx6sxr" path="res://resources/LimboAI/Goblin.tres" id="18_tbqj6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5fj0t"]
 atlas = ExtResource("4_qjdjt")
@@ -854,9 +855,12 @@ radius = 21.001488
 [sub_resource type="CircleShape2D" id="CircleShape2D_mp5hi"]
 radius = 15.502016
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_h2i4l"]
+
 [node name="Goblin" type="CharacterBody2D" unique_id=439640717 groups=["enemy"]]
 scale = Vector2(4, 4)
 collision_layer = 8
+collision_mask = 9
 script = ExtResource("1_ixe17")
 enemy_data = ExtResource("2_ixe17")
 basic_attack = ExtResource("3_i6ue7")
@@ -910,3 +914,7 @@ metadata/_custom_type_script = "uid://blf1016fqcwun"
 script = ExtResource("14_i6ue7")
 sprite = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://dbpvb1yh2glls"
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=117333901]
+behavior_tree = ExtResource("18_tbqj6")
+blackboard_plan = SubResource("BlackboardPlan_h2i4l")

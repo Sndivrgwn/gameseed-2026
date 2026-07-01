@@ -1,0 +1,26 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://ex1j8prilcc6"]
+
+[ext_resource type="Script" uid="uid://dt0ih33qep7cy" path="res://ai/tasks/BTPlayerInRange.gd" id="1_hp0ru"]
+[ext_resource type="Script" uid="uid://bh3hjgslqne4y" path="res://ai/tasks/BTAttack.gd" id="2_2kaq4"]
+[ext_resource type="Script" uid="uid://c1qhm6s4ejfxo" path="res://ai/tasks/BTChase.gd" id="3_hr1yx"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_er465"]
+
+[sub_resource type="BTCondition" id="BTCondition_new6f"]
+script = ExtResource("1_hp0ru")
+
+[sub_resource type="BTAction" id="BTAction_n0ctc"]
+script = ExtResource("2_2kaq4")
+
+[sub_resource type="BTSequence" id="BTSequence_f3sh0"]
+children = [SubResource("BTCondition_new6f"), SubResource("BTAction_n0ctc")]
+
+[sub_resource type="BTAction" id="BTAction_j5lyr"]
+script = ExtResource("3_hr1yx")
+
+[sub_resource type="BTSelector" id="BTSelector_3egjb"]
+children = [SubResource("BTSequence_f3sh0"), SubResource("BTAction_j5lyr")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_er465")
+root_task = SubResource("BTSelector_3egjb")

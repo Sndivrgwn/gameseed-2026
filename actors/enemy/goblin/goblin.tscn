@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="10_xjwj2"]
 [ext_resource type="Script" uid="uid://blf1016fqcwun" path="res://systems/ai/EnemyBrain.gd" id="11_x8nv2"]
 [ext_resource type="Script" uid="uid://dbpvb1yh2glls" path="res://components/AnimationComponent.gd" id="14_m8cqd"]
+[ext_resource type="BehaviorTree" uid="uid://dv7fircgx6sxr" path="res://resources/LimboAI/Goblin.tres" id="18_cwobd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5fj0t"]
 atlas = ExtResource("4_j0qhk")
@@ -849,14 +850,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5oujx"]
-radius = 21.001488
+radius = 8.173891
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mp5hi"]
 radius = 15.502016
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_iyspl"]
+
 [node name="Goblin" type="CharacterBody2D" unique_id=439640717 groups=["enemy"]]
 scale = Vector2(4, 4)
 collision_layer = 8
+collision_mask = 9
 script = ExtResource("1_xcqix")
 enemy_data = ExtResource("2_2o35i")
 basic_attack = ExtResource("3_jth41")
@@ -868,7 +872,7 @@ animation = &"hit_down"
 autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840308195]
-position = Vector2(-3, -0.5)
+position = Vector2(-1.5, 2.75)
 shape = SubResource("CircleShape2D_5oujx")
 
 [node name="StatsComponent" type="Node" parent="." unique_id=807054544]
@@ -911,3 +915,7 @@ script = ExtResource("14_m8cqd")
 sprite = NodePath("../AnimatedSprite2D")
 attack_impact_frame = 2
 metadata/_custom_type_script = "uid://dbpvb1yh2glls"
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=1431018130]
+behavior_tree = ExtResource("18_cwobd")
+blackboard_plan = SubResource("BlackboardPlan_iyspl")

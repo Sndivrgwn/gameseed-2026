@@ -13,10 +13,6 @@ func add_effect(effect: StatusEffect):
 	var existing = get_effect(
 		effect.get_script()
 	)
-	print("Incoming:", effect.get_script())
-
-	for e in active_effects:
-		print("Existing:", e.get_script())
 		
 	if existing:
 		if existing.stacks < existing.max_stacks:

@@ -25,15 +25,20 @@ CombatQuery="*uid://b7700ih4oyl4w"
 DeliveryManager="*uid://creqy5c374w6h"
 Fade="*uid://28bhqkmkcrl"
 AiManager="*uid://d3ucmvvcj25lu"
+PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
+"res://assets/": "orange",
 "res://assets/ui/": "purple",
+"res://resources/": "green",
+"res://systems/": "yellow",
 "res://ui/": "purple"
 }
 

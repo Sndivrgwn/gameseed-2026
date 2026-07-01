@@ -1,0 +1,51 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://dv7fircgx6sxr"]
+
+[ext_resource type="Script" uid="uid://dt0ih33qep7cy" path="res://ai/tasks/BTPlayerInRange.gd" id="1_8gpj7"]
+[ext_resource type="Script" uid="uid://c1qhm6s4ejfxo" path="res://ai/tasks/BTChase.gd" id="1_c4ta8"]
+[ext_resource type="Script" uid="uid://yx8ihcjbh4ue" path="res://ai/tasks/BTUpdateTarget.gd" id="1_y6b6s"]
+[ext_resource type="Script" uid="uid://bh3hjgslqne4y" path="res://ai/tasks/BTAttack.gd" id="2_8bg4k"]
+[ext_resource type="Script" uid="uid://ch5g7xvy80uiw" path="res://ai/tasks/BTCanAttack.gd" id="3_032sc"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_li85p"]
+var/target/name = &"target"
+var/target/type = 24
+var/target/hint = 0
+var/target/hint_string = ""
+var/distance/name = &"distance"
+var/distance/type = 3
+var/distance/value = 0.0
+var/distance/hint = 0
+var/distance/hint_string = ""
+var/can_attack/name = &"can_attack"
+var/can_attack/type = 1
+var/can_attack/value = false
+var/can_attack/hint = 0
+var/can_attack/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_yrcif"]
+script = ExtResource("1_y6b6s")
+
+[sub_resource type="BTCondition" id="BTCondition_h5jcp"]
+script = ExtResource("1_8gpj7")
+
+[sub_resource type="BTCondition" id="BTCondition_hicsx"]
+script = ExtResource("3_032sc")
+
+[sub_resource type="BTAction" id="BTAction_hj86m"]
+script = ExtResource("2_8bg4k")
+
+[sub_resource type="BTSequence" id="BTSequence_kuyne"]
+children = [SubResource("BTCondition_h5jcp"), SubResource("BTCondition_hicsx"), SubResource("BTAction_hj86m")]
+
+[sub_resource type="BTAction" id="BTAction_cbi3l"]
+script = ExtResource("1_c4ta8")
+
+[sub_resource type="BTSelector" id="BTSelector_2rnlg"]
+children = [SubResource("BTSequence_kuyne"), SubResource("BTAction_cbi3l")]
+
+[sub_resource type="BTSequence" id="BTSequence_qh3d1"]
+children = [SubResource("BTAction_yrcif"), SubResource("BTSelector_2rnlg")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_li85p")
+root_task = SubResource("BTSequence_qh3d1")

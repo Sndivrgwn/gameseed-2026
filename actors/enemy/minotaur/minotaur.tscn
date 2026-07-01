@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cw55vjtam4v0l" path="res://systems/ai/EnemyAttack.gd" id="9_e5sdu"]
 [ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="15_7f563"]
 [ext_resource type="Script" uid="uid://dbpvb1yh2glls" path="res://components/AnimationComponent.gd" id="16_2ph7n"]
+[ext_resource type="BehaviorTree" uid="uid://dv7fircgx6sxr" path="res://resources/LimboAI/Goblin.tres" id="17_0qcp0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ue685"]
 atlas = ExtResource("4_0qcp0")
@@ -296,6 +297,8 @@ size = Vector2(58.600006, 97.80002)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtetw"]
 size = Vector2(58.000008, 91.600006)
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_0ufnp"]
+
 [node name="Minotaur" type="CharacterBody2D" unique_id=1405161105 groups=["enemy"]]
 scale = Vector2(5, 5)
 collision_layer = 8
@@ -356,3 +359,7 @@ metadata/_custom_type_script = "uid://c7otefy1qs7jg"
 script = ExtResource("16_2ph7n")
 sprite = NodePath("../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://dbpvb1yh2glls"
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=107447573]
+behavior_tree = ExtResource("17_0qcp0")
+blackboard_plan = SubResource("BlackboardPlan_0ufnp")
