@@ -42,6 +42,14 @@ position = Vector2(1277, 285)
 scale = Vector2(3.5, 3.5)
 camera_manager = NodePath("../CameraManager")
 
+[node name="Area2D" parent="Magician" index="1" unique_id=1090862229]
+collision_layer = 32
+collision_mask = 0
+
+[node name="MagicCircle" parent="Magician" index="3" unique_id=1422474221]
+position = Vector2(10.999999, 30.2)
+frame_progress = 0.22879344
+
 [node name="topwall" type="StaticBody2D" parent="." unique_id=1149215218]
 position = Vector2(579, 590)
 collision_mask = 2

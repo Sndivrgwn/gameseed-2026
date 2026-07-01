@@ -11,13 +11,14 @@ enum AnimationState {
 }
 
 @export var sprite: AnimatedSprite2D
+@export var attack_impact_frame := 3
 
 var state := AnimationState.IDLE
 var facing := "down"
-
 var animation_locked := false
 
 signal animation_finished(state)
+signal attack_impact
 
 func _ready():
 
@@ -26,6 +27,7 @@ func _ready():
 
 	if sprite:
 		sprite.animation_finished.connect(_on_animation_finished)
+		sprite.frame_changed.connect(_on_frame_changed)
 
 func update(direction: Vector2):
 
@@ -163,29 +165,29 @@ func play_first(list: Array) -> bool:
 
 	for anim in list:
 
+		# langsung ada
 		if sprite.sprite_frames.has_animation(anim):
 
 			sprite.flip_h = false
 
-			if sprite.animation == anim and sprite.is_playing():
-				return true
+			if sprite.animation != anim:
+				sprite.play(anim)
 
-			sprite.play(anim)
 			return true
 
-		if anim.ends_with("_left"):
+		# fallback kanan
+		var right_anim = anim.replace("_up", "_right")
+		right_anim = right_anim.replace("_down", "_right")
+		right_anim = right_anim.replace("_left", "_right")
 
-			var right_anim = anim.replace("_left", "_right")
+		if sprite.sprite_frames.has_animation(right_anim):
 
-			if sprite.sprite_frames.has_animation(right_anim):
+			sprite.flip_h = (anim.ends_with("_left"))
 
-				sprite.flip_h = true
-
-				if sprite.animation == right_anim and sprite.is_playing():
-					return true
-
+			if sprite.animation != right_anim:
 				sprite.play(right_anim)
-				return true
+
+			return true
 
 	return false
 
@@ -225,3 +227,11 @@ func get_facing() -> String:
 
 func unlock_animation():
 	animation_locked = false
+
+func _on_frame_changed():
+
+	if state != AnimationState.ATTACK:
+		return
+
+	if sprite.frame == attack_impact_frame:
+		attack_impact.emit()

@@ -909,4 +909,5 @@ metadata/_custom_type_script = "uid://blf1016fqcwun"
 [node name="AnimationComponent" type="Node" parent="." unique_id=1059234631 node_paths=PackedStringArray("sprite")]
 script = ExtResource("14_m8cqd")
 sprite = NodePath("../AnimatedSprite2D")
+attack_impact_frame = 2
 metadata/_custom_type_script = "uid://dbpvb1yh2glls"

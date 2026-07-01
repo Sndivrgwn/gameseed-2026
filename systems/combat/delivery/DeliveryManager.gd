@@ -30,3 +30,9 @@ func cast(
 			)
 		CombatTypes.DeliveryType.BEAM:
 			BeamDelivery.cast(caster,target,skill)
+		CombatTypes.DeliveryType.MELEE:
+			MeleeDelivery.cast(
+			caster,
+			target,
+			skill
+			)

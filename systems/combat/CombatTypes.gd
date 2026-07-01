@@ -40,10 +40,11 @@ enum TargetType {
 }
 
 enum DeliveryType {
-	INSTANT,
 	PROJECTILE,
+	INSTANT,
 	AREA,
-	BEAM
+	BEAM,
+	MELEE
 }
 
 enum AreaShape {

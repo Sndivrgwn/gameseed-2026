@@ -54,6 +54,7 @@ animations = [{
 script = ExtResource("1_foiuo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1886968453]
+visible = false
 sprite_frames = SubResource("SpriteFrames_su4ni")
 autoplay = "default"
 frame_progress = 0.632885

@@ -15,10 +15,11 @@ var is_invincible := false
 var facing_direction := 0
 
 func _ready():
+	super()
 	hud.setup(self)
 	stats_ui.setup(self)
-	stats.died.connect(_on_died)
 	level.level_changed.connect(_on_level_up)
+	
 
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)

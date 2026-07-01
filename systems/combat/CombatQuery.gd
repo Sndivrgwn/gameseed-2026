@@ -1,11 +1,11 @@
 extends Node
 
-func get_nearest_enemy(caster: BaseCharacter) -> BaseCharacter:
+static func get_nearest_enemy(caster: BaseCharacter) -> BaseCharacter:
 
 	var nearest: BaseCharacter = null
 	var nearest_distance := INF
 
-	for character in get_tree().get_nodes_in_group("character"):
+	for character in caster.get_tree().get_nodes_in_group("character"):
 
 		if !is_instance_valid(character):
 			continue
@@ -26,17 +26,17 @@ func get_nearest_enemy(caster: BaseCharacter) -> BaseCharacter:
 		if distance < nearest_distance:
 			nearest_distance = distance
 			nearest = character
-
+	
 	return nearest
 
 
-func get_enemies(
+static func get_enemies(
 	caster: BaseCharacter
 ) -> Array[BaseCharacter]:
 
-	var result : Array[BaseCharacter]
+	var result: Array[BaseCharacter] = []
 
-	for character in get_tree().get_nodes_in_group("character"):
+	for character in caster.get_tree().get_nodes_in_group("character"):
 
 		if !is_instance_valid(character):
 			continue
@@ -52,15 +52,15 @@ func get_enemies(
 	return result
 
 
-func get_enemies_in_radius(
+static func get_enemies_in_radius(
 	caster: BaseCharacter,
 	position: Vector2,
 	radius: float
 ) -> Array[BaseCharacter]:
 
-	var result : Array[BaseCharacter]
+	var result: Array[BaseCharacter] = []
 
-	for character in get_tree().get_nodes_in_group("character"):
+	for character in caster.get_tree().get_nodes_in_group("character"):
 
 		if !is_instance_valid(character):
 			continue
@@ -76,17 +76,18 @@ func get_enemies_in_radius(
 
 	return result
 
-func get_enemies_in_front(
+
+static func get_enemies_in_front(
 	caster: BaseCharacter,
 	distance: float,
 	width: float
 ) -> Array[BaseCharacter]:
 
-	var result : Array[BaseCharacter]
+	var result: Array[BaseCharacter] = []
 
 	var facing = caster.get_facing_direction()
 
-	for character in get_tree().get_nodes_in_group("character"):
+	for character in caster.get_tree().get_nodes_in_group("character"):
 
 		if !is_instance_valid(character):
 			continue
@@ -99,7 +100,7 @@ func get_enemies_in_front(
 
 		var offset = character.global_position - caster.global_position
 
-		# cek depan belakang
+		# cek depan/belakang
 		if facing == 1:
 			if offset.x < 0:
 				continue
@@ -118,3 +119,18 @@ func get_enemies_in_front(
 		result.append(character)
 
 	return result
+
+
+static func get_enemy_in_range(
+	caster: BaseCharacter,
+	range: float
+) -> BaseCharacter:
+
+	var target := get_nearest_enemy(caster)
+	if target == null:
+		return null
+
+	if caster.global_position.distance_to(target.global_position) > range:
+		return null
+
+	return target
