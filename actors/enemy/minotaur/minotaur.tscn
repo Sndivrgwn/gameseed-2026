@@ -176,7 +176,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_31552")
 }],
 "loop": false,
-"name": &"attack",
+"name": &"attack_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -209,8 +209,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1ymu6")
 }],
-"loop": true,
-"name": &"hurt",
+"loop": false,
+"name": &"hit_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -245,7 +245,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_6aiib")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_right",
 "speed": 7.0
 }, {
 "frames": [{
@@ -286,7 +286,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_hv3te")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"walk_right",
 "speed": 5.0
 }]
 
@@ -301,16 +301,16 @@ scale = Vector2(5, 5)
 collision_layer = 8
 script = ExtResource("1_42vv0")
 enemy_data = ExtResource("2_f6qei")
+basic_attack = ExtResource("3_42vv0")
 knockback_friction = 2000.0
 team = 1
-basic_attack = ExtResource("3_42vv0")
 metadata/_custom_type_script = "uid://d0guseehm2e4t"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1193271748]
 sprite_frames = SubResource("SpriteFrames_i46s0")
-animation = &"attack"
-autoplay = "idle"
-frame = 4
+animation = &"hit_right"
+autoplay = "idle_right"
+frame = 2
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1782331370]

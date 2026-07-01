@@ -70,7 +70,7 @@ func explode():
 	explosion.visible = true
 	explosion.play("explode")
 
-	deal_area_damage()
+	impact()
 
 
 func _on_explosion_finished():

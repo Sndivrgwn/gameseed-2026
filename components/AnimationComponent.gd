@@ -84,14 +84,11 @@ func play_attack(direction: Vector2 = Vector2.ZERO):
 
 	state = AnimationState.ATTACK
 
-	animation_locked = true
-
-	play_first([
+	if play_first([
 		"attack_" + facing,
-		"attack",
-		"idle_" + facing,
-		"idle"
-	])
+		"attack"
+	]):
+		animation_locked = true
 
 # =========================
 # CAST
@@ -104,14 +101,11 @@ func play_cast(direction: Vector2 = Vector2.ZERO):
 
 	state = AnimationState.CAST
 
-	animation_locked = true
-
-	play_first([
+	if play_first([
 		"cast_" + facing,
-		"cast",
-		"idle_" + facing,
-		"idle"
-	])
+		"cast"
+	]):
+		animation_locked = true
 
 # =========================
 # HIT
@@ -124,14 +118,11 @@ func play_hit(direction: Vector2 = Vector2.ZERO):
 
 	state = AnimationState.HIT
 
-	animation_locked = true
-
-	play_first([
+	if play_first([
 		"hit_" + facing,
-		"hit",
-		"idle_" + facing,
-		"idle"
-	])
+		"hit"
+	]):
+		animation_locked = true
 
 # =========================
 # DEATH
@@ -141,11 +132,11 @@ func play_death():
 
 	state = AnimationState.DEAD
 
-	animation_locked = true
-
-	play_first([
-		"death"
-	])
+	if play_first([
+		"death",
+		"death_right"
+	]):
+		animation_locked = true
 
 # =========================
 # INTERNAL
@@ -165,21 +156,38 @@ func get_direction(direction: Vector2) -> String:
 
 	return "up"
 
-func play_first(list: Array):
+func play_first(list: Array) -> bool:
 
 	if sprite == null:
-		return
+		return false
 
 	for anim in list:
 
 		if sprite.sprite_frames.has_animation(anim):
 
+			sprite.flip_h = false
+
 			if sprite.animation == anim and sprite.is_playing():
-				return
+				return true
 
 			sprite.play(anim)
+			return true
 
-			return
+		if anim.ends_with("_left"):
+
+			var right_anim = anim.replace("_left", "_right")
+
+			if sprite.sprite_frames.has_animation(right_anim):
+
+				sprite.flip_h = true
+
+				if sprite.animation == right_anim and sprite.is_playing():
+					return true
+
+				sprite.play(right_anim)
+				return true
+
+	return false
 
 func _on_animation_finished():
 

@@ -11,7 +11,6 @@ class_name Enemy
 
 @onready var status: StatusComponent = $StatusComponent
 @onready var resistance: ResistanceComponent = $ResistanceComponent
-@onready var animation: AnimationComponent = $AnimationComponent
 
 signal enemy_died(enemy)
 
@@ -78,15 +77,17 @@ func _on_died():
 	is_dead = true
 
 	current_state = State.DEAD
-
+	set_physics_process(false)
 	AIManager.instance.unregister_enemy(self)
 
 	var p = get_tree().get_first_node_in_group("player")
 
 	if p:
+		p.level.add_exp(enemy_data.exp_reward)
 
-		p.level.add_exp(
-			enemy_data.exp_reward
-		)
+	animation.play_death()
+
+	if animation.is_locked():
+		await animation.animation_finished
 
 	queue_free()

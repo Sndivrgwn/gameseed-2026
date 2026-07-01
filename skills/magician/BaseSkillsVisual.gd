@@ -7,7 +7,6 @@ var caster: BaseCharacter
 var skill_data: SkillData
 var aoe_indicator
 
-
 func _ready():
 	if skill_data == null:
 		return
@@ -55,7 +54,7 @@ func play_repeated_hits() -> void:
 
 		await wait_until_hit()
 
-		deal_area_damage()
+		impact()
 
 		await wait_until_animation_finished()
 
@@ -74,3 +73,6 @@ func wait_until_hit():
 
 func wait_until_animation_finished():
 	pass
+
+func impact():
+	deal_area_damage()

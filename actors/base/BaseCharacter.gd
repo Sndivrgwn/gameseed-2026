@@ -1,21 +1,22 @@
 extends CharacterBody2D
 class_name BaseCharacter
 
-@onready var stats: StatsComponent = $StatsComponent
+@export_group("Combat")
+@export var basic_attack: SkillData
 @export var knockback_friction := 1200.0
+@export var team: Team
+@export var camera_manager: CameraManager
+@onready var stats: StatsComponent = $StatsComponent
+@onready var animation: AnimationComponent = get_node_or_null("AnimationComponent")
+@onready var cooldowns: CooldownComponent = get_node_or_null("CooldownComponent")
 enum Team {
 	PLAYER,
 	ENEMY
 }
 
-@export var team: Team
-@export var camera_manager: CameraManager
 var knockback_velocity := Vector2.ZERO
-@export_group("Combat")
-@export var basic_attack: SkillData
 var is_dead := false
 var is_casting := false
-@onready var cooldowns: CooldownComponent = get_node_or_null("CooldownComponent")
 
 func _ready():
 	add_to_group("character")
@@ -24,17 +25,29 @@ func _ready():
 func take_damage(hit: HitResult):
 	if is_dead:
 		return
+
+
 	match hit.damage_data.damage_type:
+
 		CombatTypes.DamageType.HEAL:
 			stats.heal(hit.damage_data.amount)
 			return
+
 	stats.take_damage(hit)
+	if is_dead:
+		return
+		
+	if animation:
+		animation.play_hit()
+
 	PopupManager.spawn_damage(
 		hit,
 		global_position
 	)
+
 	if team == Team.PLAYER and camera_manager:
 		camera_manager.shake(8,0.15)
+
 	flash()
 
 func _on_died():

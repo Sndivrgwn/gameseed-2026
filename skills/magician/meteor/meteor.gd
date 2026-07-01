@@ -2,6 +2,8 @@ extends BaseSkillVisual
 
 @export var fall_speed := 900.0
 @export var spawn_height := 700.0
+var velocity := 0.0
+@export var gravity := 2500.0
 
 var target_position := Vector2.ZERO
 var exploded := false
@@ -27,7 +29,9 @@ func _physics_process(delta):
 	if exploded:
 		return
 
-	global_position.y += fall_speed * delta
+	velocity += gravity * delta
+
+	global_position.y += velocity * delta
 
 	if global_position.y >= target_position.y:
 
@@ -46,7 +50,7 @@ func explode():
 
 	explosion.play("meteor_explosion")
 
-	deal_area_damage()
+	impact()
 
 	await explosion.animation_finished
 

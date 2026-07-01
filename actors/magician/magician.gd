@@ -4,7 +4,6 @@ extends BaseCharacter
 @onready var hud: CanvasLayer = $"../Hud"
 @onready var stats_ui: CanvasLayer = $"../StatsUi"
 @onready var movement: MovementComponent = $MovementComponent
-@onready var animation: AnimationComponent = $AnimationComponent
 @onready var spell_caster: SpellCasterComponent = $SpellCasterComponent
 @onready var spell_input: LineEdit = $"../SpellInputUi/SpellLineEdit"
 @onready var level: LevelComponent = $LevelComponent
