@@ -2,13 +2,19 @@ extends Node2D
 
 @onready var Player = $Magician
 @onready var king = $King
+@onready var anim: AnimatedSprite2D = $magicCircle
 
 var offset := 300.0
 
 func _ready():
-
 	Player.can_move = false
 
+	anim.visible = true
+	anim.play("circle_close")
+
+	await anim.animation_finished
+	anim.visible = false
+	
 	await Fade.fadeOut()
 
 	await get_tree().process_frame

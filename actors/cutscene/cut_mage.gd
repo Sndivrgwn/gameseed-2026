@@ -30,7 +30,7 @@ func _physics_process(delta):
 func handle_animation(direction: Vector2):
 
 	if direction == Vector2.ZERO:
-		anim.play("idle_" + last_direction)
+		anim.play("idle_down")
 		return
 
 	if abs(direction.x) > abs(direction.y):
