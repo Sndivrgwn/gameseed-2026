@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bja3camu6ihhw"
-path="res://.godot/imported/Icon_10.png-7eea671d14f23fb5cf8f08f2c72bd9a8.ctex"
+uid="uid://dq1c6anxn6fdw"
+path="res://.godot/imported/spine.png-fe9a098b7a83b17acbe63013c5604892.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/2 Icons/Icon_10.png"
-dest_files=["res://.godot/imported/Icon_10.png-7eea671d14f23fb5cf8f08f2c72bd9a8.ctex"]
+source_file="res://assets/Skill/Magic/Magic/2 Icons/spine.png"
+dest_files=["res://.godot/imported/spine.png-fe9a098b7a83b17acbe63013c5604892.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn2caenspeve6"
-path="res://.godot/imported/Icon_07.png-9a4ee101800d0f09933964b0cfdd97a6.ctex"
+uid="uid://btd23o2ureetv"
+path="res://.godot/imported/lightsaber.png-f77834511bfff03aa8616e14c3465477.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/2 Icons/Icon_07.png"
-dest_files=["res://.godot/imported/Icon_07.png-9a4ee101800d0f09933964b0cfdd97a6.ctex"]
+source_file="res://assets/Skill/Magic/Magic/2 Icons/lightsaber.png"
+dest_files=["res://.godot/imported/lightsaber.png-f77834511bfff03aa8616e14c3465477.ctex"]
 
 [params]
 

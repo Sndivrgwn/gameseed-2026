@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7gskirn0hllt"
-path="res://.godot/imported/Icon_06.png-0767fd341a671858d31f2eae66a216a2.ctex"
+uid="uid://ure46mle8xiy"
+path="res://.godot/imported/heal.png-a4cc2c73747de023be1ff47a59bbd8a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/2 Icons/Icon_06.png"
-dest_files=["res://.godot/imported/Icon_06.png-0767fd341a671858d31f2eae66a216a2.ctex"]
+source_file="res://assets/Skill/Magic/Magic/2 Icons/heal.png"
+dest_files=["res://.godot/imported/heal.png-a4cc2c73747de023be1ff47a59bbd8a4.ctex"]
 
 [params]
 

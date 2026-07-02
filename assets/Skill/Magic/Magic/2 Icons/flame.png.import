@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnfictea4lmgh"
-path="res://.godot/imported/Icon_05.png-3c6a50e5ada5627c3c774fb638f602d5.ctex"
+uid="uid://d2bcyxv1r6mlh"
+path="res://.godot/imported/flame.png-65538254c857339c45324bfd0869f286.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/2 Icons/Icon_05.png"
-dest_files=["res://.godot/imported/Icon_05.png-3c6a50e5ada5627c3c774fb638f602d5.ctex"]
+source_file="res://assets/Skill/Magic/Magic/2 Icons/flame.png"
+dest_files=["res://.godot/imported/flame.png-65538254c857339c45324bfd0869f286.ctex"]
 
 [params]
 

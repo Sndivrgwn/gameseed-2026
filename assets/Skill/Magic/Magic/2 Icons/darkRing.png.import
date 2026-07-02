@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byk8tf5ewyu53"
-path="res://.godot/imported/Icon_01.png-035b7aa1eeabcdb303e7e4bf57c14082.ctex"
+uid="uid://ckj7kiablnr2m"
+path="res://.godot/imported/darkRing.png-7bc57f7cbcbf6d28e36aa03e9818926d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/2 Icons/Icon_01.png"
-dest_files=["res://.godot/imported/Icon_01.png-035b7aa1eeabcdb303e7e4bf57c14082.ctex"]
+source_file="res://assets/Skill/Magic/Magic/2 Icons/darkRing.png"
+dest_files=["res://.godot/imported/darkRing.png-7bc57f7cbcbf6d28e36aa03e9818926d.ctex"]
 
 [params]
 

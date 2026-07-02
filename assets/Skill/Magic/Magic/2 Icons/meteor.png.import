@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iylhp3xjvakk"
-path="res://.godot/imported/Icon_03.png-c52a3438c5196f4e8f6cd0666c4f267f.ctex"
+uid="uid://cdg7kvjku3dng"
+path="res://.godot/imported/meteor.png-259455a55a66f176b767ad3ab1ce722b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Skill/Magic/Magic/2 Icons/Icon_03.png"
-dest_files=["res://.godot/imported/Icon_03.png-c52a3438c5196f4e8f6cd0666c4f267f.ctex"]
+source_file="res://assets/Skill/Magic/Magic/2 Icons/meteor.png"
+dest_files=["res://.godot/imported/meteor.png-259455a55a66f176b767ad3ab1ce722b.ctex"]
 
 [params]
 
