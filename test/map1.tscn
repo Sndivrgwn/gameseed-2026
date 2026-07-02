@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://bhd4nuiu23e7l" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_2d.gd" id="20_pde1m"]
 [ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="21_lugf8"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="23_pde1m"]
+[ext_resource type="PackedScene" uid="uid://8xyfp0tih4a" path="res://ui/flow/pause/Pause.tscn" id="25_cki63"]
 
 [sub_resource type="Resource" id="Resource_ynt11"]
 script = ExtResource("19_ynt11")
@@ -53,6 +54,7 @@ player = NodePath("../Magician")
 layer = 2
 
 [node name="StatsUi" parent="." unique_id=2101833981 instance=ExtResource("1_8uxgk")]
+layer = 5
 
 [node name="SpellInputUi" parent="." unique_id=633345769 instance=ExtResource("9_6xffr")]
 
@@ -209,6 +211,9 @@ forward_spawn_chance = 0.635
 metadata/_custom_type_script = "uid://c7dkj0quginq7"
 
 [node name="EnemyContainer" type="Node2D" parent="." unique_id=2023638517]
+
+[node name="Pause" parent="." unique_id=699165725 instance=ExtResource("25_cki63")]
+layer = 5
 
 [connection signal="text_submitted" from="SpellInputUi/SpellLineEdit" to="Magician" method="_on_spell_line_edit_text_submitted"]
 

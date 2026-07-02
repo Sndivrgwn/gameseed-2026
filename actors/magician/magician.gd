@@ -20,7 +20,10 @@ var facing_direction := 0
 func _ready():
 	super()
 	hud.setup(self)
-	stats_ui.setup(self)
+	if stats_ui and stats_ui.has_method("setup"):
+		stats_ui.setup(self)
+	else:
+		push_error("StatsUi tidak ditemukan atau tidak punya method setup")
 	level.level_changed.connect(_on_level_up)
 	
 func show_cast_time(duration)  :

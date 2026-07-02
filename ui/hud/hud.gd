@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var hp_bar: TextureProgressBar = $Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_HealthLayout/Texture_HealthProgres
 @onready var mana_bar: TextureProgressBar = $Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_ManaLayout/Texture_ManaProgres
-@onready var casting_bar: ProgressBar = $Margin_PlayerHud/VBoxContainer/CastingBar
+@onready var casting_bar: ProgressBar = $Margin_PlayerHud/VBox_HudLayout/CastingBar
 @onready var level_ui: Label = $Margin_PlayerHud/VBox_HudLayout/MarginContainer/Nine_ExpBar/Label_LevelDisplay
 @onready var exp: Label = $Margin_PlayerHud/VBox_HudLayout/MarginContainer/Nine_ExpBar/HBox_ExpLayout/Label_ExpDisplay
 @onready var to_next: Label = $Margin_PlayerHud/VBox_HudLayout/MarginContainer/Nine_ExpBar/HBox_ExpLayout/Label_ExpDisplay2

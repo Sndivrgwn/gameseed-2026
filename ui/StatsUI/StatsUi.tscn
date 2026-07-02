@@ -1,38 +1,399 @@
 [gd_scene format=3 uid="uid://drxq822htgf4i"]
 
 [ext_resource type="Script" uid="uid://x4snllnpnc1r" path="res://ui/StatsUI/stats_ui.gd" id="1_daw2e"]
+[ext_resource type="Texture2D" uid="uid://bq8k3uo4y43ag" path="res://assets/ui/flow/panel.png" id="2_78twv"]
+[ext_resource type="Texture2D" uid="uid://bdfickap48mn0" path="res://assets/ui/icon/title_bar.png" id="3_12doj"]
+[ext_resource type="FontFile" uid="uid://b7wxx57q7gx5r" path="res://assets/font/m5x7.ttf" id="4_j3rt4"]
+[ext_resource type="Texture2D" uid="uid://dyaj0u677dmlx" path="res://assets/ui/icon/ornamen_menu.png" id="5_lm6yb"]
+[ext_resource type="Texture2D" uid="uid://bs5o82l3etmni" path="res://assets/ui/hud/photo_profil.png" id="6_ehol7"]
+[ext_resource type="Texture2D" uid="uid://b7dfncjbotvgv" path="res://assets/ui/icon/divider.png" id="7_3s60h"]
+[ext_resource type="Texture2D" uid="uid://rm86js86vmhb" path="res://assets/ui/icon/+.png" id="8_13b61"]
+[ext_resource type="Texture2D" uid="uid://lwcnpdj3f751" path="res://assets/ui/flow/button/btn_normal.png" id="9_8rlgw"]
+[ext_resource type="Texture2D" uid="uid://ci0f3vuy4belg" path="res://assets/ui/flow/button/btn_press.png" id="10_xij0w"]
+[ext_resource type="Texture2D" uid="uid://ddowgmcm4fwk4" path="res://assets/ui/flow/button/btn_hover.png" id="11_m50i8"]
+[ext_resource type="Texture2D" uid="uid://c6guw20nh67gh" path="res://assets/ui/flow/button/btn_disable.png" id="12_8oyyp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dp62"]
+font = ExtResource("4_j3rt4")
+font_size = 64
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77eum"]
+atlas = ExtResource("6_ehol7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1fabd"]
+font = ExtResource("4_j3rt4")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_cfvql"]
+font = ExtResource("4_j3rt4")
+font_color = Color(0.76862746, 0.76862746, 0.76862746, 0.99215686)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tq5n1"]
+font = ExtResource("4_j3rt4")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_qji5e"]
+font = ExtResource("4_j3rt4")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_wsk80"]
+font = ExtResource("4_j3rt4")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_osuga"]
+font = ExtResource("4_j3rt4")
+font_size = 24
 
 [node name="StatsUi" type="CanvasLayer" unique_id=2101833981]
+process_mode = 3
 script = ExtResource("1_daw2e")
 
-[node name="stats" type="VBoxContainer" parent="." unique_id=769796121]
-custom_minimum_size = Vector2(100, 0)
-anchors_preset = 11
-anchor_left = 1.0
+[node name="Margin_StatusWindow" type="MarginContainer" parent="." unique_id=1306422253]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="hp" type="Label" parent="stats" unique_id=1672456299]
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="mana" type="Label" parent="stats" unique_id=1981811782]
+[node name="Panel" type="Panel" parent="Margin_StatusWindow" unique_id=933539747]
 layout_mode = 2
 
-[node name="def" type="Label" parent="stats" unique_id=2134011849]
+[node name="Center_StatusWindowLayout" type="CenterContainer" parent="Margin_StatusWindow" unique_id=169132103]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Nine_PanelLayout" type="NinePatchRect" parent="Margin_StatusWindow/Center_StatusWindowLayout" unique_id=461417143]
+custom_minimum_size = Vector2(480, 420)
+layout_mode = 2
+texture = ExtResource("2_78twv")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="Sprite2D_TitleAbsolute" type="Sprite2D" parent="Margin_StatusWindow/Center_StatusWindowLayout/Nine_PanelLayout" unique_id=1284859976]
+
+[node name="Nine_TitleBg" type="NinePatchRect" parent="Margin_StatusWindow/Center_StatusWindowLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute" unique_id=1560817983]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 478.0
+offset_bottom = 73.0
+texture = ExtResource("3_12doj")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label_ValueGameOver" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Nine_TitleBg" unique_id=934289545]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 476.0
+offset_bottom = 64.0
+text = "STATUS"
+label_settings = SubResource("LabelSettings_7dp62")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D_Ornaments" type="Sprite2D" parent="Margin_StatusWindow/Center_StatusWindowLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute" unique_id=1026032143]
+
+[node name="OrnamenMenu5" type="Sprite2D" parent="Margin_StatusWindow/Center_StatusWindowLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=30513779]
+position = Vector2(467, 12)
+texture = ExtResource("5_lm6yb")
+flip_h = true
+
+[node name="OrnamenMenu6" type="Sprite2D" parent="Margin_StatusWindow/Center_StatusWindowLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=915515775]
+position = Vector2(13, 407)
+texture = ExtResource("5_lm6yb")
+flip_v = true
+
+[node name="OrnamenMenu7" type="Sprite2D" parent="Margin_StatusWindow/Center_StatusWindowLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=624625768]
+position = Vector2(467, 407)
+texture = ExtResource("5_lm6yb")
+flip_h = true
+flip_v = true
+
+[node name="OrnamenMenu8" type="Sprite2D" parent="Margin_StatusWindow/Center_StatusWindowLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=457201122]
+position = Vector2(13, 12)
+texture = ExtResource("5_lm6yb")
+
+[node name="Margin_ContentLayout" type="MarginContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout" unique_id=1593152001]
+custom_minimum_size = Vector2(0, 356)
 layout_mode = 2
 
-[node name="attack" type="Label" parent="stats" unique_id=193914561]
+[node name="Vbox_Content" type="VBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout" unique_id=400330272]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 24
+
+[node name="HBox_ProfileLayout" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content" unique_id=1938349059]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Texture_ProfileBorder" type="NinePatchRect" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/HBox_ProfileLayout" unique_id=609685741]
+visible = false
+layout_mode = 2
+texture = SubResource("AtlasTexture_77eum")
+patch_margin_left = 64
+patch_margin_top = 64
+patch_margin_right = 64
+patch_margin_bottom = 64
+
+[node name="VBox_DecsLayout" type="VBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/HBox_ProfileLayout" unique_id=1414396801]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="VBoxLevel" type="VBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/HBox_ProfileLayout/VBox_DecsLayout" unique_id=2143539242]
 layout_mode = 2
 
-[node name="magic_attack" type="Label" parent="stats" unique_id=1917110051]
+[node name="Label_LevelDisplay" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/HBox_ProfileLayout/VBox_DecsLayout/VBoxLevel" unique_id=1374592145]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+text = "LV. 13"
+label_settings = SubResource("LabelSettings_1fabd")
+
+[node name="Label_LevelDisplay2" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/HBox_ProfileLayout/VBox_DecsLayout/VBoxLevel" unique_id=252730868]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+text = "EXP : 200/30000"
+label_settings = SubResource("LabelSettings_cfvql")
+
+[node name="Nine_Divider" type="NinePatchRect" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/HBox_ProfileLayout/VBox_DecsLayout/VBoxLevel" unique_id=703883289]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("7_3s60h")
+patch_margin_left = 8
+patch_margin_top = 4
+patch_margin_right = 8
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content" unique_id=1556064994]
+layout_mode = 2
+text = "STATS POINT: 0"
+label_settings = SubResource("LabelSettings_tq5n1")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content" unique_id=1366533492]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Nine_Line1" type="NinePatchRect" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer" unique_id=1254548196]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("7_3s60h")
+patch_margin_left = 16
+patch_margin_right = 16
+
+[node name="HBox_Stats" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer" unique_id=699758317]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats" unique_id=1600555197]
 layout_mode = 2
 
-[node name="magic_def" type="Label" parent="stats" unique_id=128753926]
+[node name="HBox_StatsMaxHP" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2" unique_id=1315212671]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label_TitleMaxHP" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsMaxHP" unique_id=2029949190]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAX HP"
+label_settings = SubResource("LabelSettings_qji5e")
+
+[node name="Label_StatsValue" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsMaxHP" unique_id=102589668]
+layout_mode = 2
+text = "250"
+label_settings = SubResource("LabelSettings_wsk80")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsMaxHP" unique_id=798872482]
 layout_mode = 2
 
-[node name="speed" type="Label" parent="stats" unique_id=289041303]
+[node name="TextureRect" type="TextureButton" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsMaxHP/HBoxContainer" unique_id=55870268]
 layout_mode = 2
+texture_normal = ExtResource("8_13b61")
+stretch_mode = 5
+
+[node name="HBox_StatsMaxMana" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2" unique_id=1335781452]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label_TitleMaxMana" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsMaxMana" unique_id=741281889]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAX MANA"
+label_settings = SubResource("LabelSettings_qji5e")
+
+[node name="Label_StatsValue" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsMaxMana" unique_id=1158311153]
+layout_mode = 2
+text = "250"
+label_settings = SubResource("LabelSettings_wsk80")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsMaxMana" unique_id=954718062]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureButton" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsMaxMana/HBoxContainer" unique_id=1288908780]
+layout_mode = 2
+texture_normal = ExtResource("8_13b61")
+stretch_mode = 5
+
+[node name="HBox_StatsAttack" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2" unique_id=85376878]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label_TitleAttack" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsAttack" unique_id=1981159596]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ATTACK"
+label_settings = SubResource("LabelSettings_qji5e")
+
+[node name="Label_StatsValue" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsAttack" unique_id=2031766297]
+layout_mode = 2
+text = "250"
+label_settings = SubResource("LabelSettings_wsk80")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsAttack" unique_id=805539086]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureButton" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsAttack/HBoxContainer" unique_id=1595455133]
+layout_mode = 2
+texture_normal = ExtResource("8_13b61")
+stretch_mode = 5
+
+[node name="HBox_StatsDefend" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2" unique_id=1766081715]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label_TitleDefend" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsDefend" unique_id=2144012458]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DEFENSE"
+label_settings = SubResource("LabelSettings_qji5e")
+
+[node name="Label_StatsValue" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsDefend" unique_id=1863530777]
+layout_mode = 2
+text = "250"
+label_settings = SubResource("LabelSettings_wsk80")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsDefend" unique_id=690830076]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureButton" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer2/HBox_StatsDefend/HBoxContainer" unique_id=1761916735]
+layout_mode = 2
+texture_normal = ExtResource("8_13b61")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats" unique_id=112143376]
+layout_mode = 2
+
+[node name="HBox_StatsMagicAttack" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer" unique_id=978856544]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label_TitleMagicAttack" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMagicAttack" unique_id=116144944]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAGIC ATTACK"
+label_settings = SubResource("LabelSettings_qji5e")
+
+[node name="Label_StatsValue" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMagicAttack" unique_id=443650243]
+layout_mode = 2
+text = "250"
+label_settings = SubResource("LabelSettings_wsk80")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMagicAttack" unique_id=1456316875]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureButton" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMagicAttack/HBoxContainer" unique_id=1094778464]
+layout_mode = 2
+texture_normal = ExtResource("8_13b61")
+stretch_mode = 5
+
+[node name="HBox_StatsMagicDefend" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer" unique_id=708402975]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label_TitleMagicDefend" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMagicDefend" unique_id=1114065879]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MAGIC DEFEND"
+label_settings = SubResource("LabelSettings_qji5e")
+
+[node name="Label_StatsValue" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMagicDefend" unique_id=402638059]
+layout_mode = 2
+text = "250"
+label_settings = SubResource("LabelSettings_wsk80")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMagicDefend" unique_id=715097954]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureButton" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMagicDefend/HBoxContainer" unique_id=1583654685]
+layout_mode = 2
+texture_normal = ExtResource("8_13b61")
+stretch_mode = 5
+
+[node name="HBox_StatsMaxHP8" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer" unique_id=361023764]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label_TitleMaxHP" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMaxHP8" unique_id=422004540]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CRITICAL RATE"
+label_settings = SubResource("LabelSettings_qji5e")
+
+[node name="Label_StatsValue" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMaxHP8" unique_id=953469357]
+layout_mode = 2
+text = "250"
+label_settings = SubResource("LabelSettings_wsk80")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMaxHP8" unique_id=266961987]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureButton" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer/HBox_Stats/VBoxContainer/HBox_StatsMaxHP8/HBoxContainer" unique_id=179513082]
+layout_mode = 2
+texture_normal = ExtResource("8_13b61")
+stretch_mode = 5
+
+[node name="Nine_Line2" type="NinePatchRect" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/VBoxContainer" unique_id=1246495902]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("7_3s60h")
+patch_margin_left = 16
+patch_margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content" unique_id=523001146]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="TextureButton" type="TextureButton" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/HBoxContainer" unique_id=1816007242]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_8rlgw")
+texture_pressed = ExtResource("10_xij0w")
+texture_hover = ExtResource("11_m50i8")
+texture_disabled = ExtResource("12_8oyyp")
+
+[node name="Label" type="Label" parent="Margin_StatusWindow/Center_StatusWindowLayout/Margin_ContentLayout/Vbox_Content/HBoxContainer/TextureButton" unique_id=1554417231]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 40.0
+text = "Reset"
+label_settings = SubResource("LabelSettings_osuga")
+horizontal_alignment = 1
+vertical_alignment = 1
