@@ -2,14 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://b4toj3kujf3dh" path="res://assets/ui/hud/HP_Potion.png" id="1_j6ctc"]
 [ext_resource type="Script" uid="uid://dykka2pmednyb" path="res://inventory/data/items/consumable_item.gd" id="2_or6qs"]
+[ext_resource type="Script" uid="uid://b2ugrscc2m7ld" path="res://inventory/effects/heal_effect.gd" id="3_or6qs"]
+
+[sub_resource type="Resource" id="Resource_tbn7q"]
+script = ExtResource("3_or6qs")
+metadata/_custom_type_script = "uid://b2ugrscc2m7ld"
 
 [resource]
 script = ExtResource("2_or6qs")
-heal_hp = 25
 id = "heal_potion"
 item_name = "Heal Potion"
 description = "it heal"
 icon = ExtResource("1_j6ctc")
+scale = Vector2(2, 2)
 max_stack = 10
 sell_price = 200
+use_effect = SubResource("Resource_tbn7q")
 metadata/_custom_type_script = "uid://dykka2pmednyb"

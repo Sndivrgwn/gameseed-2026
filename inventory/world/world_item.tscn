@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cpp7ddxoveoku" path="res://inventory/world/world_item.gd" id="1_6tmqb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2dp2"]
-radius = 11.0
+radius = 21.095022
 
 [node name="WorldItem" type="Area2D" unique_id=960101673]
 collision_layer = 32

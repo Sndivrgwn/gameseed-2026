@@ -22,7 +22,7 @@ func _ready():
 	hud.setup(self)
 	stats_ui.setup(self)
 	level.level_changed.connect(_on_level_up)
-		
+	
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)
 

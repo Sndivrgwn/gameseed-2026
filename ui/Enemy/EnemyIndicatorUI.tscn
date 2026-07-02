@@ -13,8 +13,6 @@ script = ExtResource("1_6pb10")
 [node name="Control" type="Control" parent="." unique_id=1698197931]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="LeftArrow" type="TextureRect" parent="Control" unique_id=984665259]
 layout_mode = 0

@@ -60,6 +60,7 @@ func _update_visual():
 		return
 
 	sprite.texture = inventory_item.item.icon
+	sprite.scale = inventory_item.item.scale
 
 
 func _enable_pickup():

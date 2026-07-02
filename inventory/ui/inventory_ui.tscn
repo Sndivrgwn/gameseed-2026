@@ -38,11 +38,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "0/0"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1212628396]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ItemList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=756704696]
+[node name="ItemList" type="ItemList" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=926128300]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 3

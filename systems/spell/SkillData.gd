@@ -8,6 +8,7 @@ class_name SkillData
 @export var display_name: String
 @export_multiline var description := ""
 @export var spell_scene: PackedScene
+@export var icon: Texture2D
 
 @export_group("Basic Attack")
 @export var is_basic_attack := false

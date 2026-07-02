@@ -8,9 +8,27 @@ class_name BaseItem
 @export_multiline var description : String
 
 @export var icon : Texture2D
+@export var scale : Vector2
 
 @export_group("Inventory")
 
 @export var max_stack : int = 1
 @export var sell_price : int = 0
 @export var item_type : ItemType.Type
+
+@export_group("Use")
+
+@export var use_effect : BaseItemEffect
+
+func use(
+	user: BaseCharacter,
+	item: InventoryItem
+) -> bool:
+	print("using: ", item.item.item_name)
+	if use_effect == null:
+		return false
+
+	return use_effect.use(
+		user,
+		item
+	)

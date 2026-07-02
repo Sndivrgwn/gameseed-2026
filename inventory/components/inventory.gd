@@ -154,3 +154,23 @@ func clear():
 	items.clear()
 
 	inventory_changed.emit()
+
+func remove_inventory_item(
+	inventory_item: InventoryItem,
+	amount := 1
+) -> bool:
+
+	if inventory_item == null:
+		return false
+
+	if !items.has(inventory_item):
+		return false
+
+	inventory_item.amount -= amount
+
+	if inventory_item.amount <= 0:
+		items.erase(inventory_item)
+
+	inventory_changed.emit()
+
+	return true

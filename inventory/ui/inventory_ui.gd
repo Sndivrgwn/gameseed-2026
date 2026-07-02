@@ -2,13 +2,10 @@ extends CanvasLayer
 class_name InventoryUI
 
 @export var player_path: NodePath
-@onready var capacity_label: Label = $PanelContainer/MarginContainer/VBoxContainer/CapacityLabel
-@onready var currency_list: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/CurrencyList
-@onready var item_list: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ItemList
 
-const ROW_SCENE := preload(
-	"res://inventory/ui/inventory_row.tscn"
-)
+@onready var capacity_label: Label = $PanelContainer/MarginContainer/VBoxContainer/CapacityLabel
+@onready var item_list: ItemList = $PanelContainer/MarginContainer/VBoxContainer/ItemList
+@onready var currency_list: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/CurrencyList
 
 var player
 var inventory: Inventory
@@ -16,9 +13,9 @@ var wallet: Wallet
 
 
 func _ready():
-	
-	visible = false
 
+	visible = false
+	await get_tree().process_frame
 	if player_path.is_empty():
 		player = get_tree().get_first_node_in_group("player")
 	else:
@@ -33,6 +30,9 @@ func _ready():
 
 	inventory.inventory_changed.connect(_refresh_inventory)
 	wallet.currency_changed.connect(_refresh_currency)
+
+	item_list.item_clicked.connect(_on_item_clicked)
+
 	_refresh_inventory()
 	_refresh_currency()
 
@@ -59,23 +59,24 @@ func _refresh_inventory():
 		inventory.capacity
 	]
 
-	for child in item_list.get_children():
-		child.queue_free()
+	item_list.clear()
 
 	for item in inventory.items:
 
-		var row: InventoryRow = ROW_SCENE.instantiate()
+		var text := item.item.item_name
 
-		item_list.add_child(row)
-		print(row.size)
-		print(item_list.get_child_count())
-		row.setup(item)
+		if item.amount > 1:
+			text += " x%d" % item.amount
+
+		item_list.add_item(
+			text,
+			item.item.icon
+		)
+
 	if inventory.items.is_empty():
-		var label := Label.new()
 
-		label.text = "(Empty)"
+		item_list.add_item("(Empty)")
 
-		item_list.add_child(label)
 
 func _refresh_currency(
 	_currency := StringName(),
@@ -88,20 +89,61 @@ func _refresh_currency(
 	for child in currency_list.get_children():
 		child.queue_free()
 
-	for id in wallet.get_all():
+	var currencies := wallet.get_all()
+
+	if currencies.is_empty():
+
+		var empty := Label.new()
+		empty.text = "(No Currency)"
+		currency_list.add_child(empty)
+		return
+
+	for id in currencies.keys():
 
 		var label := Label.new()
 
 		label.text = "%s : %d" % [
-			id,
+			String(id).capitalize(),
 			wallet.get_amount(id)
 		]
 
 		currency_list.add_child(label)
-	if wallet.get_all().is_empty():
 
-		var label := Label.new()
 
-		label.text = "(No Currency)"
+func _on_item_clicked(
+	index: int,
+	_at_position: Vector2,
+	_mouse_button_index: int
+):
 
-		currency_list.add_child(label)
+	if inventory == null:
+		return
+
+	if player == null:
+		return
+
+	if index < 0:
+		return
+
+	if index >= inventory.items.size():
+		return
+
+	var inventory_item := inventory.items[index]
+
+	if inventory_item == null:
+		return
+
+	if inventory_item.item == null:
+		return
+
+	var success := inventory_item.item.use(
+		player,
+		inventory_item
+	)
+	if !success:
+		return
+	print("Use Success :", success)
+
+	inventory.remove_inventory_item(
+		inventory_item
+	)
