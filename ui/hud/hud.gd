@@ -1,11 +1,11 @@
 extends CanvasLayer
 
-@onready var hp_bar: TextureProgressBar = $MarginContainer/VBoxContainer/HpBar
-@onready var mana_bar: TextureProgressBar = $MarginContainer/VBoxContainer/ManaBar
-@onready var casting_bar: ProgressBar = $MarginContainer/VBoxContainer/CastingBar
-@onready var level_ui: Label = $MarginContainer/VBoxContainer/Level
-@onready var exp: Label = $MarginContainer/VBoxContainer/Exp
-@onready var to_next: Label = $MarginContainer/VBoxContainer/ToNext
+@onready var hp_bar: TextureProgressBar = $Margin_PlayerHud/VBoxContainer/HpBar
+@onready var mana_bar: TextureProgressBar = $Margin_PlayerHud/VBoxContainer/ManaBar
+@onready var casting_bar: ProgressBar = $Margin_PlayerHud/VBoxContainer/CastingBar
+@onready var level_ui: Label = $Margin_PlayerHud/VBoxContainer/Level
+@onready var exp: Label = $Margin_PlayerHud/VBoxContainer/Exp
+@onready var to_next: Label = $Margin_PlayerHud/VBoxContainer/ToNext
 
 func setup(player):
 	var stats = player.stats

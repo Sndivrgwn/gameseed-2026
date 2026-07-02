@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnslrvkj83u6h"
-path="res://.godot/imported/Speed_Potion.png-b92544bce17b4a8bb5869d91762aa178.ctex"
+uid="uid://cvmpfj1vklnn1"
+path="res://.godot/imported/exp_bar_empty.png-f3978ac730257686abfcd5e605f2ea9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/hud/Speed_Potion.png"
-dest_files=["res://.godot/imported/Speed_Potion.png-b92544bce17b4a8bb5869d91762aa178.ctex"]
+source_file="res://assets/ui/hud/exp_bar_empty.png"
+dest_files=["res://.godot/imported/exp_bar_empty.png-f3978ac730257686abfcd5e605f2ea9c.ctex"]
 
 [params]
 
