@@ -4,7 +4,7 @@ var current_tween: Tween
 
 func update_hp_smooth(new_value: float, duration: float = 0.5):
 	if current_tween:
-		current_tween.kill() # Hentikan animasi sebelumnya jika ada
+		current_tween.kill()
 		
 	var tween = create_tween()
 	

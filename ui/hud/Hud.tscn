@@ -4,11 +4,16 @@
 [ext_resource type="Script" uid="uid://daidif03af1d4" path="res://ui/hud/hp_bar.gd" id="2_4sqfl"]
 [ext_resource type="Script" uid="uid://bgypwp0bcebpj" path="res://ui/hud/mana_bar.gd" id="3_by07e"]
 [ext_resource type="Texture2D" uid="uid://cvmpfj1vklnn1" path="res://assets/ui/hud/exp_bar_empty.png" id="4_af3s3"]
+[ext_resource type="Texture2D" uid="uid://m8a8dyimmq7r" path="res://assets/ui/hud/exp_bg.png" id="4_brn43"]
 [ext_resource type="Texture2D" uid="uid://bs5o82l3etmni" path="res://assets/ui/hud/photo_profil.png" id="4_ks410"]
 [ext_resource type="Texture2D" uid="uid://bemis3riouxbh" path="res://assets/ui/hud/hp_bar.png" id="5_epdrl"]
 [ext_resource type="Texture2D" uid="uid://bgq3co2rl5xoq" path="res://assets/ui/hud/mana_bar.png" id="6_af3s3"]
 [ext_resource type="FontFile" uid="uid://b7wxx57q7gx5r" path="res://assets/font/m5x7.ttf" id="7_af3s3"]
 [ext_resource type="Texture2D" uid="uid://b8cng8xvunr0" path="res://assets/ui/hud/skill.png" id="7_iyywv"]
+[ext_resource type="Texture2D" uid="uid://p2w3kg0ee346" path="res://assets/ui/hud/bg-pp.png" id="7_vdjf3"]
+[ext_resource type="Texture2D" uid="uid://cmodogdtlni51" path="res://assets/ui/hud/hp_bg.png" id="8_4fs3w"]
+[ext_resource type="Texture2D" uid="uid://cdxlln8ygwmki" path="res://assets/icon/Calm.png" id="8_64cnq"]
+[ext_resource type="Texture2D" uid="uid://bxh2q0gduehbr" path="res://assets/ui/hud/mana_bg.png" id="10_vdjf3"]
 
 [sub_resource type="Gradient" id="Gradient_fc3h1"]
 offsets = PackedFloat32Array(0, 0.14766839, 1)
@@ -23,6 +28,15 @@ colors = PackedColorArray(0, 0.23921569, 0.35686275, 1, 0, 0.4509804, 0.65882355
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_by07e"]
 gradient = SubResource("Gradient_4sqfl")
 
+[sub_resource type="Gradient" id="Gradient_64cnq"]
+offsets = PackedFloat32Array(0, 0.013157904)
+colors = PackedColorArray(0, 0, 0, 1, 0.11764706, 0.019607844, 0.15294118, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lq3um"]
+gradient = SubResource("Gradient_64cnq")
+width = 1000
+height = 24
+
 [sub_resource type="LabelSettings" id="LabelSettings_af3s3"]
 font = ExtResource("7_af3s3")
 
@@ -32,16 +46,27 @@ font = ExtResource("7_af3s3")
 [sub_resource type="AtlasTexture" id="AtlasTexture_q25gb"]
 atlas = ExtResource("4_ks410")
 
+[sub_resource type="Gradient" id="Gradient_t4lel"]
+offsets = PackedFloat32Array(0, 0.013157904)
+colors = PackedColorArray(0, 0, 0, 1, 0.31764707, 0.11764706, 0.13725491, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g0k2b"]
+gradient = SubResource("Gradient_t4lel")
+width = 210
+height = 24
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_brn43"]
 atlas = ExtResource("5_epdrl")
 region = Rect2(0, 0, 256, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4fs3w"]
-atlas = ExtResource("6_af3s3")
-region = Rect2(0, 0, 256, 32)
+[sub_resource type="Gradient" id="Gradient_fketn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.1882353, 0.3764706, 0.50980395, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_iyywv"]
-font = ExtResource("7_af3s3")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xr4fe"]
+gradient = SubResource("Gradient_fketn")
+width = 210
+height = 24
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdjf3"]
 atlas = ExtResource("7_iyywv")
@@ -105,7 +130,36 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 24
 
-[node name="Nine_ExpBar" type="NinePatchRect" parent="Margin_PlayerHud/VBox_HudLayout" unique_id=885198614]
+[node name="MarginContainer" type="MarginContainer" parent="Margin_PlayerHud/VBox_HudLayout" unique_id=1312022059]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer" unique_id=1499036143]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 21
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer/MarginContainer" unique_id=1422373959]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("4_brn43")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Texture_ExpProgress" type="TextureProgressBar" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer/MarginContainer" unique_id=889030307]
+custom_minimum_size = Vector2(214, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+tooltip_text = "HP"
+value = 40.0
+rounded = true
+texture_progress = SubResource("GradientTexture2D_lq3um")
+
+[node name="Nine_ExpBar" type="NinePatchRect" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer" unique_id=885198614]
 custom_minimum_size = Vector2(1080, 0)
 layout_mode = 2
 texture = ExtResource("4_af3s3")
@@ -114,7 +168,7 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="Label_LevelDisplay" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/Nine_ExpBar" unique_id=1245535879]
+[node name="Label_LevelDisplay" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer/Nine_ExpBar" unique_id=1245535879]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 6.0
@@ -125,13 +179,32 @@ label_settings = SubResource("LabelSettings_af3s3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label_ExpDisplay" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/Nine_ExpBar" unique_id=522865734]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 6.0
-offset_right = 980.0
-offset_bottom = 26.0
-text = "1000/1000"
+[node name="HBox_ExpLayout" type="HBoxContainer" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer/Nine_ExpBar" unique_id=2022423846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label_ExpDisplay" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer/Nine_ExpBar/HBox_ExpLayout" unique_id=522865734]
+layout_mode = 2
+text = "20"
+label_settings = SubResource("LabelSettings_q25gb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_ExpDisplay3" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer/Nine_ExpBar/HBox_ExpLayout" unique_id=313493656]
+layout_mode = 2
+text = "/"
+label_settings = SubResource("LabelSettings_q25gb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_ExpDisplay2" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/MarginContainer/Nine_ExpBar/HBox_ExpLayout" unique_id=1180243945]
+layout_mode = 2
+text = "1000"
 label_settings = SubResource("LabelSettings_q25gb")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -142,7 +215,23 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 24
 
-[node name="Texture_ProfileBorder" type="TextureRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout" unique_id=2046664630]
+[node name="MarginContainer" type="MarginContainer" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout" unique_id=37539819]
+layout_mode = 2
+
+[node name="Texture_Bg" type="TextureRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/MarginContainer" unique_id=488330293]
+layout_mode = 2
+texture = ExtResource("7_vdjf3")
+
+[node name="Texture_Profil" type="TextureRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/MarginContainer" unique_id=461601899]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_64cnq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Texture_ProfileBorder" type="TextureRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/MarginContainer" unique_id=2046664630]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -161,35 +250,75 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 8
 
-[node name="Texture_Health" type="TextureRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout" unique_id=402141485]
+[node name="Margin_HealthLayout" type="MarginContainer" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout" unique_id=1624067861]
+layout_mode = 2
+
+[node name="Nine_CoverrHealth" type="NinePatchRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_HealthLayout" unique_id=425773584]
+custom_minimum_size = Vector2(206, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_4fs3w")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Texture_HealthProgres" type="TextureProgressBar" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_HealthLayout" unique_id=239054848]
+custom_minimum_size = Vector2(214, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "HP"
+value = 40.0
+rounded = true
+texture_progress = SubResource("GradientTexture2D_g0k2b")
+script = ExtResource("2_4sqfl")
+
+[node name="Texture_Health" type="TextureRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_HealthLayout" unique_id=402141485]
 layout_mode = 2
 texture = SubResource("AtlasTexture_brn43")
 
-[node name="Label_HealthDisplay" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Texture_Health" unique_id=1112050687]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 6.0
-offset_right = 232.0
-offset_bottom = 26.0
-theme_override_fonts/font = ExtResource("7_af3s3")
-text = "100/100"
+[node name="Label_HealthDisplay" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_HealthLayout" unique_id=836666196]
+layout_mode = 2
+text = "40/100"
+label_settings = SubResource("LabelSettings_q25gb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Texture_Mana" type="TextureRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout" unique_id=925910693]
+[node name="Margin_ManaLayout" type="MarginContainer" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout" unique_id=1179990176]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = SubResource("AtlasTexture_4fs3w")
 
-[node name="Label_ManaDisplay" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Texture_Mana" unique_id=296147454]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 6.0
-offset_right = 232.0
-offset_bottom = 26.0
-text = "75/75"
-label_settings = SubResource("LabelSettings_iyywv")
+[node name="Nine_ManaCover" type="NinePatchRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_ManaLayout" unique_id=1601147074]
+custom_minimum_size = Vector2(206, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_vdjf3")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Texture_ManaProgres" type="TextureProgressBar" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_ManaLayout" unique_id=1296855372]
+custom_minimum_size = Vector2(214, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "Mana"
+value = 20.0
+rounded = true
+texture_progress = SubResource("GradientTexture2D_xr4fe")
+script = ExtResource("3_by07e")
+
+[node name="Texture_Mana" type="TextureRect" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_ManaLayout" unique_id=947980719]
+layout_mode = 2
+texture = ExtResource("6_af3s3")
+
+[node name="Label_ManaDisplay" type="Label" parent="Margin_PlayerHud/VBox_HudLayout/HBox_ProfileLayout/VBox_StatusBar/VBox_BarLayout/Margin_ManaLayout" unique_id=414244514]
+layout_mode = 2
+text = "20/100"
+label_settings = SubResource("LabelSettings_q25gb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
