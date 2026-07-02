@@ -1,3 +1,496 @@
 [gd_scene format=3 uid="uid://cgrn4hhlrs8wj"]
 
+[ext_resource type="Texture2D" uid="uid://bq8k3uo4y43ag" path="res://assets/ui/flow/panel.png" id="1_1esoo"]
+[ext_resource type="Texture2D" uid="uid://bdfickap48mn0" path="res://assets/ui/icon/title_bar.png" id="2_7okno"]
+[ext_resource type="FontFile" uid="uid://b7wxx57q7gx5r" path="res://assets/font/m5x7.ttf" id="3_5mmj1"]
+[ext_resource type="Texture2D" uid="uid://ukh4ll0jprad" path="res://assets/ui/icon/close.png" id="4_jii16"]
+[ext_resource type="Texture2D" uid="uid://dyaj0u677dmlx" path="res://assets/ui/icon/ornamen_menu.png" id="4_ldaiv"]
+[ext_resource type="Texture2D" uid="uid://b1tngvo7h1e0b" path="res://assets/ui/flow/coin_counter.png" id="6_wkcqd"]
+[ext_resource type="Texture2D" uid="uid://lwcnpdj3f751" path="res://assets/ui/flow/button/btn_normal.png" id="7_11v0f"]
+[ext_resource type="Texture2D" uid="uid://ci0f3vuy4belg" path="res://assets/ui/flow/button/btn_press.png" id="8_20upv"]
+[ext_resource type="Texture2D" uid="uid://ddowgmcm4fwk4" path="res://assets/ui/flow/button/btn_hover.png" id="9_8kopu"]
+[ext_resource type="Texture2D" uid="uid://c6guw20nh67gh" path="res://assets/ui/flow/button/btn_disable.png" id="10_rs27i"]
+[ext_resource type="Texture2D" uid="uid://dknxm3mdrkggf" path="res://assets/ui/icon/gris.png" id="11_5mmj1"]
+[ext_resource type="Texture2D" uid="uid://p74llqnlcnjk" path="res://assets/ui/hud/coin.png" id="11_gvm5q"]
+[ext_resource type="Texture2D" uid="uid://b4toj3kujf3dh" path="res://assets/ui/hud/HP_Potion.png" id="12_ldaiv"]
+[ext_resource type="Texture2D" uid="uid://6la163pfcxlw" path="res://assets/ui/hud/mana_potion.png" id="13_jii16"]
+[ext_resource type="Texture2D" uid="uid://l440mn7spsky" path="res://assets/ui/icon/skull.png" id="14_ldaiv"]
+[ext_resource type="Texture2D" uid="uid://cf6hlvf63ywxy" path="res://assets/ui/icon/dekorasi_shop.png" id="16_wkcqd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rs27i"]
+font = ExtResource("3_5mmj1")
+font_size = 64
+outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_xp0al"]
+font = ExtResource("3_5mmj1")
+font_size = 24
+outline_size = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_wkcqd"]
+font = ExtResource("3_5mmj1")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_11v0f"]
+font = ExtResource("3_5mmj1")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_20upv"]
+font = ExtResource("3_5mmj1")
+font_color = Color(0.76862746, 0.76862746, 0.76862746, 0.99215686)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8kopu"]
+font = ExtResource("3_5mmj1")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_lscpq"]
+font = ExtResource("3_5mmj1")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_5mmj1"]
+font = ExtResource("3_5mmj1")
+font_size = 24
+font_color = Color(0.76862746, 0.76862746, 0.76862746, 0.99215686)
+
 [node name="Shop" type="Node" unique_id=2022343733]
+
+[node name="Margin_Shop" type="MarginContainer" parent="." unique_id=371123551]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center_ShopLayout" type="CenterContainer" parent="Margin_Shop" unique_id=74579153]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Nine_Panel" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout" unique_id=853641524]
+custom_minimum_size = Vector2(560, 480)
+layout_mode = 2
+texture = ExtResource("1_1esoo")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="Sprite2D_TitleAbsolute" type="Sprite2D" parent="Margin_Shop/Center_ShopLayout/Nine_Panel" unique_id=1324724588]
+
+[node name="Nine_Title" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_TitleAbsolute" unique_id=398848837]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 557.0
+offset_bottom = 74.0
+texture = ExtResource("2_7okno")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label_ValueShop" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_TitleAbsolute/Nine_Title" unique_id=583796232]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 555.0
+offset_bottom = 71.0
+text = "SHOP"
+label_settings = SubResource("LabelSettings_rs27i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texture_CloseButton" type="TextureButton" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_TitleAbsolute/Nine_Title" unique_id=702232094]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 16.0
+offset_right = 542.0
+offset_bottom = 52.0
+texture_normal = ExtResource("4_jii16")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Sprite2D_Ornaments" type="Sprite2D" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_TitleAbsolute" unique_id=1492417261]
+position = Vector2(13, 467)
+texture = ExtResource("4_ldaiv")
+flip_v = true
+
+[node name="OrnamenMenu8" type="Sprite2D" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=1226165494]
+position = Vector2(0, -454)
+texture = ExtResource("4_ldaiv")
+
+[node name="OrnamenMenu7" type="Sprite2D" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=1805269021]
+position = Vector2(534, 0)
+texture = ExtResource("4_ldaiv")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D_ContentAbsolute" type="Sprite2D" parent="Margin_Shop/Center_ShopLayout/Nine_Panel" unique_id=1287140860]
+
+[node name="Margin_ContentLayout" type="MarginContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute" unique_id=1314252714]
+offset_left = 8.0
+offset_top = 76.0
+offset_right = 556.0
+offset_bottom = 478.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox_Contents" type="VBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout" unique_id=719387182]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="HBox_HeaderLayout" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents" unique_id=2065284383]
+layout_mode = 2
+
+[node name="Label_StageDisplay" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_HeaderLayout" unique_id=401807684]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "STAGE 1"
+label_settings = SubResource("LabelSettings_xp0al")
+
+[node name="Nine_CoverCoin" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_HeaderLayout" unique_id=754050757]
+custom_minimum_size = Vector2(96, 40)
+layout_mode = 2
+texture = ExtResource("6_wkcqd")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Margin_CoinLayout" type="MarginContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_HeaderLayout/Nine_CoverCoin" unique_id=1884327688]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 95.0
+offset_bottom = 39.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="Hbox_Coins" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_HeaderLayout/Nine_CoverCoin/Margin_CoinLayout" unique_id=1917356912]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Texture_Coin" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_HeaderLayout/Nine_CoverCoin/Margin_CoinLayout/Hbox_Coins" unique_id=216184610]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_gvm5q")
+
+[node name="Label_CoinDisplay" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_HeaderLayout/Nine_CoverCoin/Margin_CoinLayout/Hbox_Coins" unique_id=1941091985]
+custom_minimum_size = Vector2(27, 0)
+layout_mode = 2
+text = "999"
+label_settings = SubResource("LabelSettings_wkcqd")
+
+[node name="VBox_ItemsLayout" type="VBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents" unique_id=1794199150]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Nine_CoverPotion" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout" unique_id=2089137421]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture = ExtResource("11_5mmj1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 4
+
+[node name="Margin_PotionLayout" type="MarginContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion" unique_id=1159905182]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 502.0
+offset_bottom = 61.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="HBox_ItemPotion" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout" unique_id=651602306]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Nine_CoverPotion" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion" unique_id=816227071]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("11_5mmj1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 4
+
+[node name="Texture_IconPotion" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion/Nine_CoverPotion" unique_id=1796581224]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 35.0
+offset_bottom = 37.0
+texture = ExtResource("12_ldaiv")
+
+[node name="VBox_DescPotion" type="VBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion" unique_id=108211877]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label_TitlePotion" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion/VBox_DescPotion" unique_id=1768108982]
+layout_mode = 2
+text = "POTION"
+label_settings = SubResource("LabelSettings_11v0f")
+
+[node name="Label_DescPotion" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion/VBox_DescPotion" unique_id=150496601]
+layout_mode = 2
+text = "Heal 50 HP"
+label_settings = SubResource("LabelSettings_20upv")
+
+[node name="HBox_CoinLayoutPotion" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion" unique_id=1119880313]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label_PriceDisplay" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion/HBox_CoinLayoutPotion" unique_id=2145270792]
+layout_mode = 2
+text = "50"
+label_settings = SubResource("LabelSettings_8kopu")
+horizontal_alignment = 2
+
+[node name="Texture_IconCoin" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion/HBox_CoinLayoutPotion" unique_id=1289918919]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_gvm5q")
+
+[node name="Texture_BuyButton" type="TextureButton" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion" unique_id=205860591]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+texture_normal = ExtResource("7_11v0f")
+texture_pressed = ExtResource("8_20upv")
+texture_hover = ExtResource("9_8kopu")
+texture_disabled = ExtResource("10_rs27i")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label_BuyDisplay" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverPotion/Margin_PotionLayout/HBox_ItemPotion/Texture_BuyButton" unique_id=972869480]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+text = "BUY"
+label_settings = SubResource("LabelSettings_lscpq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nine_CoverMana" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout" unique_id=1507893242]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture = ExtResource("11_5mmj1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 4
+
+[node name="Margin_ManaLayout" type="MarginContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana" unique_id=1228646322]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 502.0
+offset_bottom = 61.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="HBox_ItemMana" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout" unique_id=472559038]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Nine_CoverMana" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana" unique_id=1183688001]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("11_5mmj1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 4
+
+[node name="Texture_IconMana" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana/Nine_CoverMana" unique_id=853420910]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 35.0
+offset_bottom = 37.0
+texture = ExtResource("13_jii16")
+
+[node name="VBox_DescLayout" type="VBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana" unique_id=675968303]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label_TitleMana" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana/VBox_DescLayout" unique_id=927312408]
+layout_mode = 2
+text = "MANA POTION"
+label_settings = SubResource("LabelSettings_11v0f")
+
+[node name="Label_DescMana" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana/VBox_DescLayout" unique_id=1266067900]
+layout_mode = 2
+text = "Restore 40 MP"
+label_settings = SubResource("LabelSettings_20upv")
+
+[node name="HBox_CoinLayout" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana" unique_id=789144879]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label_PriceDisplay" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana/HBox_CoinLayout" unique_id=118131299]
+layout_mode = 2
+text = "40"
+label_settings = SubResource("LabelSettings_8kopu")
+horizontal_alignment = 2
+
+[node name="Texture_IconCoin" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana/HBox_CoinLayout" unique_id=12764453]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_gvm5q")
+
+[node name="Texture_BuyButton" type="TextureButton" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana" unique_id=1560697994]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+texture_normal = ExtResource("7_11v0f")
+texture_pressed = ExtResource("8_20upv")
+texture_hover = ExtResource("9_8kopu")
+texture_disabled = ExtResource("10_rs27i")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label_BuyDisplay" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverMana/Margin_ManaLayout/HBox_ItemMana/Texture_BuyButton" unique_id=1111193719]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+text = "BUY"
+label_settings = SubResource("LabelSettings_lscpq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nine_CoverSkills" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout" unique_id=794732849]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture = ExtResource("11_5mmj1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 4
+
+[node name="Margin_SkillsLayout" type="MarginContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills" unique_id=1243995271]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 502.0
+offset_bottom = 61.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="HBox_ItemSkills" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout" unique_id=1138725607]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Nine_CoverSkills" type="NinePatchRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills" unique_id=886354446]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("11_5mmj1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 4
+
+[node name="Texture_IconSkills" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills/Nine_CoverSkills" unique_id=2119202001]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 35.0
+offset_bottom = 37.0
+texture = ExtResource("14_ldaiv")
+
+[node name="VBox_DescLayout" type="VBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills" unique_id=58056650]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label_TitleSkills" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills/VBox_DescLayout" unique_id=717447064]
+layout_mode = 2
+text = "SCROLL SKILLS"
+label_settings = SubResource("LabelSettings_11v0f")
+
+[node name="Label_DescSkills" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills/VBox_DescLayout" unique_id=819252816]
+layout_mode = 2
+text = "1 Random Skill"
+label_settings = SubResource("LabelSettings_20upv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills" unique_id=1541064289]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label_PriceSkills" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills/HBoxContainer" unique_id=1382187393]
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_8kopu")
+horizontal_alignment = 2
+
+[node name="Texture_IconCoin" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills/HBoxContainer" unique_id=1510660028]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_gvm5q")
+
+[node name="Texture_BuyButton" type="TextureButton" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills" unique_id=2127817049]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+texture_normal = ExtResource("7_11v0f")
+texture_pressed = ExtResource("8_20upv")
+texture_hover = ExtResource("9_8kopu")
+texture_disabled = ExtResource("10_rs27i")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label_BuyDisplay" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/VBox_ItemsLayout/Nine_CoverSkills/Margin_SkillsLayout/HBox_ItemSkills/Texture_BuyButton" unique_id=1913445689]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+text = "BUY"
+label_settings = SubResource("LabelSettings_lscpq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBox_FooterLayout" type="HBoxContainer" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents" unique_id=701283954]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 16
+
+[node name="Texture_Arrow1" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_FooterLayout" unique_id=1130673594]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("16_wkcqd")
+
+[node name="Label_DescDisplay" type="Label" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_FooterLayout" unique_id=1312535739]
+layout_mode = 2
+text = "Spen your coin wisely"
+label_settings = SubResource("LabelSettings_5mmj1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Texture_Arrow2" type="TextureRect" parent="Margin_Shop/Center_ShopLayout/Nine_Panel/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Contents/HBox_FooterLayout" unique_id=1813120707]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("16_wkcqd")
+flip_h = true

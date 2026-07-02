@@ -11,38 +11,39 @@
 [ext_resource type="Texture2D" uid="uid://c6guw20nh67gh" path="res://assets/ui/flow/button/btn_disable.png" id="9_wbk2k"]
 [ext_resource type="Texture2D" uid="uid://cane07afyho76" path="res://assets/ui/icon/victory.png" id="10_s7sk7"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_v82mm"]
+[sub_resource type="LabelSettings" id="LabelSettings_aos23"]
 font = ExtResource("3_qmdwv")
-font_size = 32
-outline_size = 2
+font_size = 64
 
-[sub_resource type="LabelSettings" id="LabelSettings_5iblv"]
+[sub_resource type="LabelSettings" id="LabelSettings_wyvdd"]
 font = ExtResource("3_qmdwv")
+font_size = 24
 font_color = Color(0.77024835, 0.77024835, 0.77024835, 0.99215686)
 
-[sub_resource type="LabelSettings" id="LabelSettings_5es1a"]
+[sub_resource type="LabelSettings" id="LabelSettings_qmdwv"]
 font = ExtResource("3_qmdwv")
+font_size = 24
 
-[sub_resource type="LabelSettings" id="LabelSettings_uhyhi"]
+[sub_resource type="LabelSettings" id="LabelSettings_kylji"]
 font = ExtResource("3_qmdwv")
-outline_size = 1
+font_size = 24
 
 [node name="Victory" type="Node" unique_id=1271771049]
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=496769650]
+[node name="Margin_Victory" type="MarginContainer" parent="." unique_id=1998564582]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=1935454159]
+[node name="Center_VictoryLayout" type="CenterContainer" parent="Margin_Victory" unique_id=1459680298]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/CenterContainer" unique_id=866494307]
-custom_minimum_size = Vector2(256, 288)
+[node name="Nine_PanelLayout" type="NinePatchRect" parent="Margin_Victory/Center_VictoryLayout" unique_id=919309566]
+custom_minimum_size = Vector2(432, 432)
 layout_mode = 2
 texture = ExtResource("1_aos23")
 patch_margin_left = 32
@@ -50,152 +51,155 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect" unique_id=1024042544]
+[node name="Sprite2D_TitleAbsolute" type="Sprite2D" parent="Margin_Victory/Center_VictoryLayout/Nine_PanelLayout" unique_id=1186776131]
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=2130247970]
+[node name="Nine_TitleBg" type="NinePatchRect" parent="Margin_Victory/Center_VictoryLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute" unique_id=1731901957]
 offset_left = 2.0
 offset_top = 2.0
-offset_right = 254.0
-offset_bottom = 42.0
+offset_right = 429.0
+offset_bottom = 66.0
 texture = ExtResource("2_wyvdd")
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D/NinePatchRect" unique_id=1564242157]
+[node name="Label_ValueVictory" type="Label" parent="Margin_Victory/Center_VictoryLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Nine_TitleBg" unique_id=645507538]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 248.0
-offset_bottom = 36.0
+offset_right = 423.0
+offset_bottom = 45.0
 text = "VICTORY"
-label_settings = SubResource("LabelSettings_v82mm")
+label_settings = SubResource("LabelSettings_aos23")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OrnamenMenu5" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=1135448038]
-position = Vector2(244, 12)
+[node name="Sprite2D_Ornaments" type="Sprite2D" parent="Margin_Victory/Center_VictoryLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute" unique_id=895135848]
+
+[node name="OrnamenMenu5" type="Sprite2D" parent="Margin_Victory/Center_VictoryLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=799122314]
+position = Vector2(419, 13)
 texture = ExtResource("4_kylji")
 flip_h = true
 
-[node name="OrnamenMenu6" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=854736696]
-position = Vector2(12, 276)
+[node name="OrnamenMenu6" type="Sprite2D" parent="Margin_Victory/Center_VictoryLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=1160028115]
+position = Vector2(13, 419)
 texture = ExtResource("4_kylji")
 flip_v = true
 
-[node name="OrnamenMenu7" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=1412010175]
-position = Vector2(244, 276)
+[node name="OrnamenMenu7" type="Sprite2D" parent="Margin_Victory/Center_VictoryLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=671418087]
+position = Vector2(419, 419)
 texture = ExtResource("4_kylji")
 flip_h = true
 flip_v = true
 
-[node name="OrnamenMenu8" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=947355420]
+[node name="OrnamenMenu8" type="Sprite2D" parent="Margin_Victory/Center_VictoryLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=1231082527]
 position = Vector2(13, 12)
 texture = ExtResource("4_kylji")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/NinePatchRect" unique_id=2022948904]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 135.0
-offset_right = 248.0
-offset_bottom = 225.0
+[node name="Sprite2D_ContentAbsolute" type="Sprite2D" parent="Margin_Victory/Center_VictoryLayout" unique_id=1128769454]
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer" unique_id=1448427131]
-custom_minimum_size = Vector2(128, 24)
+[node name="Margin_ContentLayout" type="MarginContainer" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute" unique_id=1622370051]
+offset_left = 6.0
+offset_top = 66.0
+offset_right = 425.0
+offset_bottom = 426.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox_Content" type="VBoxContainer" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout" unique_id=1425546178]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+theme_override_constants/separation = 16
 
-[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer" unique_id=1136574013]
-position = Vector2(-8, -119)
+[node name="Margin_IconLayout" type="MarginContainer" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=249610566]
+layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2" unique_id=629607595]
-offset_left = 33.0
-offset_top = 126.0
-offset_right = 225.0
-offset_bottom = 134.0
+[node name="Texture_SkullBg" type="TextureRect" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/Margin_IconLayout" unique_id=956392580]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_s7sk7")
+
+[node name="Nine_Line1" type="NinePatchRect" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=1429303379]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
 texture = ExtResource("5_rd8g3")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
+patch_margin_left = 16
+patch_margin_right = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2" unique_id=106207312]
-offset_left = 36.0
-offset_top = 141.0
-offset_right = 223.0
-offset_bottom = 225.0
+[node name="HBox_DescLayout" type="HBoxContainer" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=1515085192]
+layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer" unique_id=1954234943]
+[node name="VBox_DescLayout" type="VBoxContainer" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout" unique_id=397173889]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer" unique_id=1206058790]
+[node name="Label_TimeTitle" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_DescLayout" unique_id=1232130906]
 layout_mode = 2
-text = "TIME"
-label_settings = SubResource("LabelSettings_5iblv")
+text = "TIME SURVIVE"
+label_settings = SubResource("LabelSettings_wyvdd")
 
-[node name="Label3" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer" unique_id=1844250189]
+[node name="Label_EnemiesTitle" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_DescLayout" unique_id=1094611254]
 layout_mode = 2
 text = "ENEMIES DEFETED"
-label_settings = SubResource("LabelSettings_5iblv")
+label_settings = SubResource("LabelSettings_wyvdd")
 
-[node name="Label4" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer" unique_id=1581754616]
+[node name="Label_GoldTitle" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_DescLayout" unique_id=1355640486]
 layout_mode = 2
 text = "GOLD COLLECTED"
-label_settings = SubResource("LabelSettings_5iblv")
+label_settings = SubResource("LabelSettings_wyvdd")
 
-[node name="Label5" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer" unique_id=940622375]
+[node name="Label_LevelTitle" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_DescLayout" unique_id=1296347020]
 layout_mode = 2
 text = "LEVEL"
-label_settings = SubResource("LabelSettings_5iblv")
+label_settings = SubResource("LabelSettings_wyvdd")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer" unique_id=1362104127]
+[node name="VBox_ValueLayout" type="VBoxContainer" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout" unique_id=831969307]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer2" unique_id=1254115220]
+[node name="Label_TimeValue" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_ValueLayout" unique_id=890743733]
 layout_mode = 2
 text = "06:89"
-label_settings = SubResource("LabelSettings_5es1a")
+label_settings = SubResource("LabelSettings_qmdwv")
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer2" unique_id=416053882]
+[node name="Label_EnemiesValue" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_ValueLayout" unique_id=1413359902]
 layout_mode = 2
 text = "987"
-label_settings = SubResource("LabelSettings_5es1a")
+label_settings = SubResource("LabelSettings_qmdwv")
 horizontal_alignment = 2
 
-[node name="Label4" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer2" unique_id=1850534639]
+[node name="Label_GoldValue" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_ValueLayout" unique_id=627319094]
 layout_mode = 2
 text = "4567"
-label_settings = SubResource("LabelSettings_5es1a")
+label_settings = SubResource("LabelSettings_qmdwv")
 horizontal_alignment = 2
 
-[node name="Label5" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer2" unique_id=2124831953]
+[node name="Label_LevelValue" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_ValueLayout" unique_id=1312388193]
 layout_mode = 2
-text = "8"
-label_settings = SubResource("LabelSettings_5es1a")
+text = "18"
+label_settings = SubResource("LabelSettings_qmdwv")
 horizontal_alignment = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect" unique_id=828012762]
+[node name="Nine_Line2" type="NinePatchRect" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=684558348]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("5_rd8g3")
+patch_margin_left = 16
+patch_margin_right = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2" unique_id=992679357]
-offset_left = 5.0
-offset_top = 225.0
-offset_right = 251.0
-offset_bottom = 282.0
-
-[node name="Normal" type="HBoxContainer" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer" unique_id=426509505]
+[node name="HBox_ButtonLayout" type="HBoxContainer" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=1058519815]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer/Normal" unique_id=1567395782]
-custom_minimum_size = Vector2(96, 24)
+[node name="Texture_ContinueButton" type="TextureButton" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_ButtonLayout" unique_id=2127155663]
+custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 texture_normal = ExtResource("6_04bsi")
 texture_pressed = ExtResource("7_g3dwv")
@@ -204,20 +208,20 @@ texture_disabled = ExtResource("9_wbk2k")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer/Normal/TextureButton" unique_id=1182711824]
+[node name="Label_ContinueDisplay" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_ButtonLayout/Texture_ContinueButton" unique_id=695683842]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 10.0
-offset_right = 92.0
-offset_bottom = 31.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
 size_flags_horizontal = 4
 text = "CONTINUE"
-label_settings = SubResource("LabelSettings_uhyhi")
+label_settings = SubResource("LabelSettings_kylji")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer/Normal" unique_id=1082295003]
-custom_minimum_size = Vector2(96, 40)
+[node name="Texture_MainMenuButton" type="TextureButton" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_ButtonLayout" unique_id=1660090085]
+custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 texture_normal = ExtResource("6_04bsi")
 texture_pressed = ExtResource("7_g3dwv")
@@ -226,18 +230,14 @@ texture_disabled = ExtResource("9_wbk2k")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer/Normal/TextureButton2" unique_id=1757097030]
+[node name="Label_MainMenuDisplay" type="Label" parent="Margin_Victory/Center_VictoryLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_ButtonLayout/Texture_MainMenuButton" unique_id=1861005449]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 9.0
-offset_right = 92.0
-offset_bottom = 31.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
 size_flags_horizontal = 4
 text = "MAIN MENU"
-label_settings = SubResource("LabelSettings_uhyhi")
+label_settings = SubResource("LabelSettings_kylji")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Victory" type="Sprite2D" parent="." unique_id=426315329]
-position = Vector2(574, 280)
-texture = ExtResource("10_s7sk7")

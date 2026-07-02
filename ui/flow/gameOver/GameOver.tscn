@@ -11,38 +11,40 @@
 [ext_resource type="Texture2D" uid="uid://ddowgmcm4fwk4" path="res://assets/ui/flow/button/btn_hover.png" id="8_qwfax"]
 [ext_resource type="Texture2D" uid="uid://c6guw20nh67gh" path="res://assets/ui/flow/button/btn_disable.png" id="9_gac35"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0bin4"]
+font = ExtResource("3_65grx")
+font_size = 64
+outline_size = 2
+
 [sub_resource type="LabelSettings" id="LabelSettings_wv5w4"]
 font = ExtResource("3_65grx")
-font_size = 32
-outline_size = 2
+font_size = 24
+font_color = Color(0.77024835, 0.77024835, 0.77024835, 0.99215686)
 
 [sub_resource type="LabelSettings" id="LabelSettings_n7wch"]
 font = ExtResource("3_65grx")
-font_color = Color(0.77024835, 0.77024835, 0.77024835, 0.99215686)
+font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_qwfax"]
 font = ExtResource("3_65grx")
-
-[sub_resource type="LabelSettings" id="LabelSettings_3b8rd"]
-font = ExtResource("3_65grx")
-outline_size = 1
+font_size = 24
 
 [node name="GameOver" type="Node" unique_id=1246564059]
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1554500761]
+[node name="Margin_GameOver" type="MarginContainer" parent="." unique_id=1200532324]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=1718458620]
+[node name="Center_GameOverLayout" type="CenterContainer" parent="Margin_GameOver" unique_id=1603941477]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/CenterContainer" unique_id=265086923]
-custom_minimum_size = Vector2(256, 288)
+[node name="Nine_PanelLayout" type="NinePatchRect" parent="Margin_GameOver/Center_GameOverLayout" unique_id=137079640]
+custom_minimum_size = Vector2(432, 400)
 layout_mode = 2
 texture = ExtResource("1_ypqeg")
 patch_margin_left = 32
@@ -50,141 +52,144 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect" unique_id=1222529484]
+[node name="Sprite2D_TitleAbsolute" type="Sprite2D" parent="Margin_GameOver/Center_GameOverLayout/Nine_PanelLayout" unique_id=1326215634]
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=1561013912]
+[node name="Nine_TitleBg" type="NinePatchRect" parent="Margin_GameOver/Center_GameOverLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute" unique_id=1870047750]
 offset_left = 2.0
 offset_top = 2.0
-offset_right = 254.0
-offset_bottom = 42.0
+offset_right = 429.0
+offset_bottom = 74.0
 texture = ExtResource("2_rx6be")
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D/NinePatchRect" unique_id=436344370]
+[node name="Label_ValueGameOver" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Nine_TitleBg" unique_id=1924800172]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 248.0
-offset_bottom = 36.0
+offset_right = 425.0
+offset_bottom = 71.0
 text = "GAME OVER"
-label_settings = SubResource("LabelSettings_wv5w4")
+label_settings = SubResource("LabelSettings_0bin4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OrnamenMenu5" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=529578608]
-position = Vector2(244, 12)
+[node name="Sprite2D_Ornaments" type="Sprite2D" parent="Margin_GameOver/Center_GameOverLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute" unique_id=1665447383]
+
+[node name="OrnamenMenu5" type="Sprite2D" parent="Margin_GameOver/Center_GameOverLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=1842230824]
+position = Vector2(419, 13)
 texture = ExtResource("4_f6ygj")
 flip_h = true
 
-[node name="OrnamenMenu6" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=1010511360]
-position = Vector2(12, 276)
+[node name="OrnamenMenu6" type="Sprite2D" parent="Margin_GameOver/Center_GameOverLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=1265149684]
+position = Vector2(13, 387)
 texture = ExtResource("4_f6ygj")
 flip_v = true
 
-[node name="OrnamenMenu7" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=1010131759]
-position = Vector2(244, 276)
+[node name="OrnamenMenu7" type="Sprite2D" parent="Margin_GameOver/Center_GameOverLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=2038523385]
+position = Vector2(419, 388)
 texture = ExtResource("4_f6ygj")
 flip_h = true
 flip_v = true
 
-[node name="OrnamenMenu8" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D" unique_id=1904636839]
+[node name="OrnamenMenu8" type="Sprite2D" parent="Margin_GameOver/Center_GameOverLayout/Nine_PanelLayout/Sprite2D_TitleAbsolute/Sprite2D_Ornaments" unique_id=96887268]
 position = Vector2(13, 12)
 texture = ExtResource("4_f6ygj")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/NinePatchRect" unique_id=589838695]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 135.0
-offset_right = 248.0
-offset_bottom = 241.0
+[node name="Sprite2D_ContentAbsolute" type="Sprite2D" parent="Margin_GameOver/Center_GameOverLayout" unique_id=698283076]
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer" unique_id=1537750427]
-custom_minimum_size = Vector2(128, 24)
+[node name="Margin_ContentLayout" type="MarginContainer" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute" unique_id=37218218]
+offset_left = 3.0
+offset_top = 69.0
+offset_right = 430.0
+offset_bottom = 398.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox_Content" type="VBoxContainer" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout" unique_id=1833704052]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+theme_override_constants/separation = 16
 
-[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer" unique_id=729151668]
-position = Vector2(-8, -119)
+[node name="Margin_IconLayout" type="MarginContainer" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=1007550037]
+layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2" unique_id=1058088830]
-offset_left = 33.0
-offset_top = 126.0
-offset_right = 225.0
-offset_bottom = 134.0
+[node name="Texture_TconGameOver" type="TextureRect" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/Margin_IconLayout" unique_id=1412088152]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_0bin4")
+
+[node name="Nine_Line1" type="NinePatchRect" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=19009218]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
 texture = ExtResource("5_v8p58")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
+patch_margin_left = 16
+patch_margin_right = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2" unique_id=494001722]
-offset_left = 36.0
-offset_top = 141.0
-offset_right = 223.0
-offset_bottom = 225.0
+[node name="HBox_DescLayout" type="HBoxContainer" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=251346078]
+layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer" unique_id=80427369]
+[node name="VBox_DescLayout" type="VBoxContainer" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout" unique_id=740442306]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer" unique_id=120476592]
+[node name="Label_TimeTitle" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_DescLayout" unique_id=1933764085]
 layout_mode = 2
 text = "TIME SURVIVE"
-label_settings = SubResource("LabelSettings_n7wch")
+label_settings = SubResource("LabelSettings_wv5w4")
 
-[node name="Label3" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer" unique_id=715162503]
+[node name="Label_EnemiesTitle" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_DescLayout" unique_id=1837901613]
 layout_mode = 2
 text = "ENEMIES DEFETED"
-label_settings = SubResource("LabelSettings_n7wch")
+label_settings = SubResource("LabelSettings_wv5w4")
 
-[node name="Label4" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer" unique_id=272515883]
+[node name="Label_GoldTitle" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_DescLayout" unique_id=185947778]
 layout_mode = 2
 text = "GOLD COLLECTED"
-label_settings = SubResource("LabelSettings_n7wch")
+label_settings = SubResource("LabelSettings_wv5w4")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer" unique_id=371198755]
+[node name="VBox_ValueLayout" type="VBoxContainer" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout" unique_id=853874014]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer2" unique_id=8158128]
+[node name="Label_TimeValue" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_ValueLayout" unique_id=1929904638]
 layout_mode = 2
 text = "06:89"
-label_settings = SubResource("LabelSettings_qwfax")
+label_settings = SubResource("LabelSettings_n7wch")
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer2" unique_id=881131910]
+[node name="Label_EnemiesValue" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_ValueLayout" unique_id=768359827]
 layout_mode = 2
 text = "987"
-label_settings = SubResource("LabelSettings_qwfax")
+label_settings = SubResource("LabelSettings_n7wch")
 horizontal_alignment = 2
 
-[node name="Label4" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/MarginContainer/CenterContainer/Sprite2D2/HBoxContainer/VBoxContainer2" unique_id=468121778]
+[node name="Label_GoldValue" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_DescLayout/VBox_ValueLayout" unique_id=1784145012]
 layout_mode = 2
 text = "4567"
-label_settings = SubResource("LabelSettings_qwfax")
+label_settings = SubResource("LabelSettings_n7wch")
 horizontal_alignment = 2
 
-[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/CenterContainer/NinePatchRect" unique_id=1917941970]
+[node name="Nine_Line2" type="NinePatchRect" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=335034860]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("5_v8p58")
+patch_margin_left = 16
+patch_margin_right = 16
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2" unique_id=2072840816]
-offset_left = 5.0
-offset_top = 225.0
-offset_right = 251.0
-offset_bottom = 282.0
-
-[node name="Normal" type="HBoxContainer" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer" unique_id=671013809]
+[node name="HBox_ButtonLayout" type="HBoxContainer" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content" unique_id=586100615]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer/Normal" unique_id=899890910]
-custom_minimum_size = Vector2(96, 24)
+[node name="Texture_RestartButton" type="TextureButton" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_ButtonLayout" unique_id=1563171271]
+custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 texture_normal = ExtResource("6_wv5w4")
 texture_pressed = ExtResource("7_n7wch")
@@ -193,20 +198,20 @@ texture_disabled = ExtResource("9_gac35")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer/Normal/TextureButton" unique_id=1616853700]
+[node name="Label_RestartDisplay" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_ButtonLayout/Texture_RestartButton" unique_id=612448728]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 10.0
-offset_right = 92.0
-offset_bottom = 31.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
 size_flags_horizontal = 4
 text = "RESTART"
-label_settings = SubResource("LabelSettings_3b8rd")
+label_settings = SubResource("LabelSettings_qwfax")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer/Normal" unique_id=1362020067]
-custom_minimum_size = Vector2(96, 40)
+[node name="Texture_MainMenuButton" type="TextureButton" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_ButtonLayout" unique_id=973372615]
+custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 texture_normal = ExtResource("6_wv5w4")
 texture_pressed = ExtResource("7_n7wch")
@@ -215,18 +220,14 @@ texture_disabled = ExtResource("9_gac35")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/NinePatchRect/Sprite2D2/MarginContainer/Normal/TextureButton2" unique_id=332770389]
+[node name="Label_MainMenuDisplay" type="Label" parent="Margin_GameOver/Center_GameOverLayout/Sprite2D_ContentAbsolute/Margin_ContentLayout/VBox_Content/HBox_ButtonLayout/Texture_MainMenuButton" unique_id=1338077169]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 9.0
-offset_right = 92.0
-offset_bottom = 31.0
+offset_top = 5.0
+offset_right = 123.0
+offset_bottom = 35.0
 size_flags_horizontal = 4
 text = "MAIN MENU"
-label_settings = SubResource("LabelSettings_3b8rd")
+label_settings = SubResource("LabelSettings_qwfax")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="SkullBg" type="Sprite2D" parent="." unique_id=242094184]
-position = Vector2(576, 280)
-texture = ExtResource("6_0bin4")

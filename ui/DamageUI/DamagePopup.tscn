@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://c4jtpydtrsak0"]
 
 [ext_resource type="Script" uid="uid://w4i8b4tutvpg" path="res://ui/DamageUI/DamagePopup.gd" id="1_mrnlr"]
+[ext_resource type="FontFile" uid="uid://b7wxx57q7gx5r" path="res://assets/font/m5x7.ttf" id="2_q713t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_phvec"]
+font = ExtResource("2_q713t")
+font_size = 24
 
 [node name="DamagePopup" type="Node2D" unique_id=1265097609]
 script = ExtResource("1_mrnlr")
@@ -8,3 +13,5 @@ script = ExtResource("1_mrnlr")
 [node name="Label" type="Label" parent="." unique_id=2090529325]
 offset_right = 40.0
 offset_bottom = 23.0
+text = "ddd"
+label_settings = SubResource("LabelSettings_phvec")
