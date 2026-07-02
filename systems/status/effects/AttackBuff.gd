@@ -5,10 +5,10 @@ var modifier : StatModifier
 
 
 func on_apply():
-	modifier = StatModifier.new(
-		StatModifierType.Type.ATTACK,
-		20
-	)
+	var modifier := StatModifier.new()
+	modifier.stat_type = StatModifierType.Type.ATTACK
+	modifier.value = 10
+
 	owner.stats.add_modifier(modifier)
 
 

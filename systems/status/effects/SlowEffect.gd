@@ -8,12 +8,10 @@ func on_apply():
 	if owner.movement == null:
 		return
 
-	modifier = StatModifier.new(
-		StatModifierType.Type.MOVE_SPEED,
-		-1.5,
-		modifier.ModifierMode.PERCENT
-	)
-	
+	var modifier := StatModifier.new()
+	modifier.stat_type = StatModifierType.Type.MOVE_SPEED
+	modifier.value = -1.5
+
 	owner.stats.add_modifier(modifier)
 
 

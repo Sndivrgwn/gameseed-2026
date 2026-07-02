@@ -1,4 +1,4 @@
-extends RefCounted
+extends Resource
 class_name StatModifier
 
 enum ModifierMode {
@@ -6,15 +6,17 @@ enum ModifierMode {
 	PERCENT
 }
 
-var stat_type : StatModifierType.Type
-var mode : ModifierMode = ModifierMode.FLAT
-var value : float = 0.0
+@export var stat_type : StatModifierType.Type
+@export var mode : ModifierMode = ModifierMode.FLAT
+@export var value : float = 0.0
 
-func _init(
+static func create(
 	type: StatModifierType.Type,
 	amount: float,
-	modifier_mode : ModifierMode = ModifierMode.FLAT
-):
-	stat_type = type
-	value = amount
-	mode = modifier_mode
+	modifier_mode: ModifierMode = ModifierMode.FLAT
+) -> StatModifier:
+	var modifier := StatModifier.new()
+	modifier.stat_type = type
+	modifier.value = amount
+	modifier.mode = modifier_mode
+	return modifier

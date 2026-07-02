@@ -15,3 +15,4 @@ class_name EnemyData
 @export var movement_strategy : MovementStrategy
 @export_group("Reward")
 @export var exp_reward := 20
+@export var loot_table: LootTable

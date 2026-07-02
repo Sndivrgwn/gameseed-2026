@@ -2,6 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://cpvdkhcnjhbps" path="res://resources/stats/enemy/goblin_stats.tres" id="1_kkmrk"]
 [ext_resource type="Script" uid="uid://b5csn2d3xci6c" path="res://systems/enemy/EnemyData.gd" id="1_luvia"]
+[ext_resource type="Resource" uid="uid://b8mc3igk1gs85" path="res://inventory/resources/loots/goblin_loot.tres" id="2_j5ggb"]
 [ext_resource type="Script" uid="uid://b5f5dak3bsr5o" path="res://systems/combat/ResistanceData.gd" id="2_r4fhy"]
 [ext_resource type="Resource" uid="uid://d0bgr6yoi8lbw" path="res://resources/enemies/movement/chase_movement.tres" id="2_r7erd"]
 
@@ -17,4 +18,5 @@ base_stats = ExtResource("1_kkmrk")
 resistance_data = SubResource("Resource_r7erd")
 attack_skill = "slash"
 movement_strategy = ExtResource("2_r7erd")
+loot_table = ExtResource("2_j5ggb")
 metadata/_custom_type_script = "uid://b5csn2d3xci6c"

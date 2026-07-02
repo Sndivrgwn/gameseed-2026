@@ -18,6 +18,9 @@
 [ext_resource type="Script" uid="uid://ccos28ldja0k0" path="res://systems/status/StatusComponent.gd" id="11_g4noo"]
 [ext_resource type="Script" uid="uid://m1obqaeytkmq" path="res://systems/combat/ResistanceComponent.gd" id="11_ps0bv"]
 [ext_resource type="Script" uid="uid://c7otefy1qs7jg" path="res://components/CooldownComponent.gd" id="13_mvv8q"]
+[ext_resource type="Script" uid="uid://bpy8rgy2ck432" path="res://inventory/components/inventory.gd" id="19_sfsn1"]
+[ext_resource type="Script" uid="uid://d1xboa013v1lm" path="res://inventory/components/wallet.gd" id="20_t35cl"]
+[ext_resource type="Script" uid="uid://b267i0m0ljv8q" path="res://inventory/components/pickup_component.gd" id="20_vxluv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7wmhs"]
 atlas = ExtResource("3_2mr3n")
@@ -609,12 +612,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_p47bc"]
 radius = 12.199998
 
-[node name="Magician" type="CharacterBody2D" unique_id=1463276590 node_paths=PackedStringArray("camera_manager") groups=["player"]]
+[node name="Magician" type="CharacterBody2D" unique_id=1463276590 groups=["player"]]
 scale = Vector2(5, 5)
 collision_layer = 2
 script = ExtResource("1_dovo2")
 basic_attack = ExtResource("2_2mr3n")
-camera_manager = NodePath("")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1837991875]
 z_index = 4
@@ -688,3 +690,17 @@ z_index = 9
 position = Vector2(0.8, 11.2)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("CircleShape2D_p47bc")
+
+[node name="Inventory" type="Node" parent="." unique_id=1350412127]
+script = ExtResource("19_sfsn1")
+metadata/_custom_type_script = "uid://bpy8rgy2ck432"
+
+[node name="PickupComponent" type="Node" parent="." unique_id=348787443 node_paths=PackedStringArray("inventory", "wallet")]
+script = ExtResource("20_vxluv")
+inventory = NodePath("../Inventory")
+wallet = NodePath("../Wallet")
+metadata/_custom_type_script = "uid://b267i0m0ljv8q"
+
+[node name="Wallet" type="Node" parent="." unique_id=686501249]
+script = ExtResource("20_t35cl")
+metadata/_custom_type_script = "uid://d1xboa013v1lm"

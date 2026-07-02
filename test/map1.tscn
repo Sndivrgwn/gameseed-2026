@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cq7lhetw2aexh" path="res://assets/Background/Castle/Bright/wall@windows.png" id="5_7eyj2"]
 [ext_resource type="PackedScene" uid="uid://sog0cmb87pp1" path="res://ui/Enemy/EnemyIndicatorUI.tscn" id="5_pimjf"]
 [ext_resource type="Texture2D" uid="uid://dpgy4xlgkxulb" path="res://assets/Background/Castle/Bright/columns&falgs.png" id="6_ggk5q"]
+[ext_resource type="PackedScene" uid="uid://1y7pyuy8axui" path="res://inventory/ui/inventory_ui.tscn" id="6_lugf8"]
 [ext_resource type="Texture2D" uid="uid://lqiu4rj3aheo" path="res://assets/Background/Castle/Bright/dragon.png" id="7_3qvml"]
 [ext_resource type="PackedScene" uid="uid://c4yy0wj5vyunq" path="res://ui/SpellInputUI.tscn" id="9_6xffr"]
 [ext_resource type="PackedScene" uid="uid://dnukjf7em0khy" path="res://ui/hud/Hud.tscn" id="10_8uxgk"]
@@ -64,6 +65,9 @@ collision_mask = 0
 [node name="MagicCircle" parent="Magician" index="2" unique_id=1422474221]
 position = Vector2(10.999999, 30.2)
 frame_progress = 0.22879344
+
+[node name="InventoryUI" parent="." unique_id=1961446876 instance=ExtResource("6_lugf8")]
+player_path = NodePath("../Magician")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=621158237]
 physics_interpolation_mode = 1

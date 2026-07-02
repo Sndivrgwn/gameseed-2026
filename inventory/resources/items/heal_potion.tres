@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ConsumableItem" format=3 uid="uid://bp2kwsa5gcygs"]
+
+[ext_resource type="Texture2D" uid="uid://b4toj3kujf3dh" path="res://assets/ui/hud/HP_Potion.png" id="1_j6ctc"]
+[ext_resource type="Script" uid="uid://dykka2pmednyb" path="res://inventory/data/items/consumable_item.gd" id="2_or6qs"]
+
+[resource]
+script = ExtResource("2_or6qs")
+heal_hp = 25
+id = "heal_potion"
+item_name = "Heal Potion"
+description = "it heal"
+icon = ExtResource("1_j6ctc")
+max_stack = 10
+sell_price = 200
+metadata/_custom_type_script = "uid://dykka2pmednyb"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CurrencyItem" format=3 uid="uid://ibywko00ohaq"]
+
+[ext_resource type="Texture2D" uid="uid://p74llqnlcnjk" path="res://assets/ui/hud/coin.png" id="1_l81jx"]
+[ext_resource type="Script" uid="uid://dng27jdv7q3j6" path="res://inventory/data/items/currency_item.gd" id="2_wprdh"]
+
+[resource]
+script = ExtResource("2_wprdh")
+id = "coin"
+item_name = "coin"
+description = "its currency boyzs"
+icon = ExtResource("1_l81jx")
+item_type = 3
+metadata/_custom_type_script = "uid://dng27jdv7q3j6"

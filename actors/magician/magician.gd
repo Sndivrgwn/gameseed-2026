@@ -9,6 +9,9 @@ extends BaseCharacter
 @onready var level: LevelComponent = $LevelComponent
 @onready var status: StatusComponent = $StatusComponent
 @onready var resistance: ResistanceComponent = $ResistanceComponent
+@onready var inventory: Inventory = $Inventory
+@onready var wallet: Wallet = $Wallet
+@onready var pickup: PickupComponent = $PickupComponent
 
 var last_direction = Vector2.RIGHT
 var is_invincible := false
@@ -19,8 +22,7 @@ func _ready():
 	hud.setup(self)
 	stats_ui.setup(self)
 	level.level_changed.connect(_on_level_up)
-	
-
+		
 func show_cast_time(duration)  :
 	hud.show_cast_bar(duration)
 

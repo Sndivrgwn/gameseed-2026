@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EquipmentItem" format=3 uid="uid://b4s2j6ok7lamc"]
+
+[ext_resource type="Script" uid="uid://d5l0sbba68o8" path="res://systems/stats/StatModifier.gd" id="1_kbvyb"]
+[ext_resource type="Script" uid="uid://bxthgnkpl614m" path="res://inventory/data/items/equipment_item.gd" id="2_5pd1i"]
+
+[sub_resource type="Resource" id="Resource_fwrp5"]
+script = ExtResource("1_kbvyb")
+stat_type = 1
+mode = 1
+value = 0.1
+metadata/_custom_type_script = "uid://d5l0sbba68o8"
+
+[sub_resource type="Resource" id="Resource_u050h"]
+script = ExtResource("1_kbvyb")
+stat_type = 2
+value = 12.0
+metadata/_custom_type_script = "uid://d5l0sbba68o8"
+
+[resource]
+script = ExtResource("2_5pd1i")
+modifiers = Array[ExtResource("1_kbvyb")]([SubResource("Resource_fwrp5"), SubResource("Resource_u050h")])
+id = "wooden_staff"
+item_name = "wooden staff"
+sell_price = 30
+item_type = 1
+metadata/_custom_type_script = "uid://bxthgnkpl614m"

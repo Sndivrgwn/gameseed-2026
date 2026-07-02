@@ -57,5 +57,23 @@ func _on_died():
 
 	if animation.is_locked():
 		await animation.animation_finished
-
+	print("Enemy died")
+	print(enemy_data)
+	print(enemy_data.loot_table)
+	if enemy_data.loot_table:
+		var loot := enemy_data.loot_table.roll()
+		var player := get_tree().get_first_node_in_group("player")
+		if player:
+			for id in loot.currencies.keys():
+				player.wallet.add(
+					id,
+					loot.currencies[id]
+				)
+		for item in loot.items:
+			print(get_parent().name)
+			WorldItem.spawn(
+				get_parent(),
+				global_position,
+				item
+			)
 	queue_free()

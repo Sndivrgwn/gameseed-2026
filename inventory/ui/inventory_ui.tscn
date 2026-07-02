@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://1y7pyuy8axui"]
+
+[ext_resource type="Script" uid="uid://bripvabm2x180" path="res://inventory/ui/inventory_ui.gd" id="1_uowme"]
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=1961446876]
+script = ExtResource("1_uowme")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=175555496]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -129.0
+offset_right = 160.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1070621691]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=2020911663]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1079416490]
+layout_mode = 2
+text = "inventory"
+
+[node name="CapacityLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1940087322]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/0"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1212628396]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ItemList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=756704696]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1320697153]
+layout_mode = 2
+
+[node name="CurrencyList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=92067797]
+layout_mode = 2

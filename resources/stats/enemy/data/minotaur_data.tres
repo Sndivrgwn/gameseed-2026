@@ -2,6 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://b2oll5s1bju5r" path="res://resources/stats/enemy/minotaur_stats.tres" id="1_8ujvk"]
 [ext_resource type="Script" uid="uid://b5csn2d3xci6c" path="res://systems/enemy/EnemyData.gd" id="1_yxglm"]
+[ext_resource type="Resource" uid="uid://b8mc3igk1gs85" path="res://inventory/resources/loots/goblin_loot.tres" id="2_4ut4v"]
 [ext_resource type="Resource" uid="uid://d0bgr6yoi8lbw" path="res://resources/enemies/movement/chase_movement.tres" id="2_38j4d"]
 [ext_resource type="Script" uid="uid://b5f5dak3bsr5o" path="res://systems/combat/ResistanceData.gd" id="2_fw22j"]
 
@@ -19,4 +20,5 @@ attack_skill = "slash"
 attack_cooldown = 3.0
 movement_strategy = ExtResource("2_38j4d")
 exp_reward = 100
+loot_table = ExtResource("2_4ut4v")
 metadata/_custom_type_script = "uid://b5csn2d3xci6c"
